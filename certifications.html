@@ -7,8 +7,8 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f8f8f8;
+      font-family: Arial, sans-serif;
+      background-color: #f8f9f4;
     }
 
     header {
@@ -17,86 +17,63 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 20px;
+      padding: 10px 20px;
       position: relative;
     }
 
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
+    header img {
+      height: 50px;
+    }
+
+    header h2 {
+      margin-left: 10px;
+      font-size: 20px;
+    }
+
+    .menu-btn {
+      font-size: 28px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: white;
     }
 
     nav {
-      display: flex;
-      align-items: center;
-    }
-
-    .menu-toggle {
       display: none;
       flex-direction: column;
-      cursor: pointer;
-      margin-left: auto;
+      background-color: #ffffff;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      width: 200px;
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      animation: slideDown 0.3s ease forwards;
+      z-index: 999;
     }
 
-    .menu-toggle span {
-      height: 3px;
-      background: white;
-      margin: 4px 0;
-      width: 25px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav ul li a {
+    nav a {
+      padding: 12px 20px;
       text-decoration: none;
-      color: white;
+      color: #295f2d;
       font-weight: bold;
+      border-top: 1px solid #eee;
+      transition: background-color 0.2s, color 0.2s;
     }
 
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: flex;
-      }
+    nav a:hover {
+      background-color: #f1f1f1;
+      color: #1e4720;
+    }
 
-      nav ul {
-        display: none;
-        position: absolute;
-        top: 65px;
-        right: 20px;
-        background-color: #295f2d;
-        flex-direction: column;
-        width: 200px;
-        border-radius: 6px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      }
-
-      nav ul.show {
-        display: flex;
-      }
-
-      nav ul li {
-        padding: 12px 20px;
-        border-bottom: 1px solid #3d8042;
-      }
-
-      nav ul li:last-child {
-        border-bottom: none;
-      }
-
-      nav ul li a {
-        color: white;
-      }
+    .show {
+      display: flex !important;
     }
 
     .hero {
       background: url('CA662141-A730-4177-B08E-4EA1BE08713B.png') no-repeat center center;
       background-size: cover;
+      color: white;
       text-align: center;
       padding: 100px 20px;
     }
@@ -106,15 +83,15 @@
       display: inline-block;
       padding: 15px 30px;
       border-radius: 8px;
-      font-size: 42px;
+      font-size: 36px;
       margin: 0;
-      color: white;
     }
 
-    .cert-section {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
+    .content {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      color: #333;
     }
 
     .cert-box {
@@ -138,25 +115,59 @@
       padding: 15px;
       margin-top: 40px;
     }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (min-width: 768px) {
+      nav {
+        display: flex !important;
+        flex-direction: row;
+        position: static;
+        background: none;
+        box-shadow: none;
+        width: auto;
+        border-radius: 0;
+      }
+
+      nav a {
+        border: none;
+        color: white;
+      }
+
+      nav a:hover {
+        background: none;
+        color: #ddd;
+      }
+
+      .menu-btn {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="logo">K&M</div>
-    <nav>
-      <div class="menu-toggle" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <ul id="menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="certifications.html">Certifications</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+    <div style="display: flex; align-items: center;">
+      <a href="index.html"><img src="D8231576-840A-4047-8413-30F3AF95D10A.png" alt="K&M Logo" /></a>
+      <h2>K&M Exporting Company</h2>
+    </div>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <nav id="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="products.html">Our Products</a>
+      <a href="certifications.html">Certifications</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
@@ -164,7 +175,7 @@
     <h1>Our Certifications</h1>
   </section>
 
-  <section class="cert-section">
+  <section class="content">
     <div class="cert-box">
       <h2>ISO 22000: Food Safety Management</h2>
       <p>This certifies that K&M Exporting Company complies with the international standard ISO 22000 for food safety management, covering export processes for potatoes, onions, and sauces.</p>
@@ -178,8 +189,7 @@
 
   <script>
     function toggleMenu() {
-      const menu = document.getElementById('menu');
-      menu.classList.toggle('show');
+      document.getElementById('nav').classList.toggle('show');
     }
   </script>
 
