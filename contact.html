@@ -71,13 +71,28 @@
     }
 
     .hero {
-      background-color: #e6efe7;
-      color: #295f2d;
+      background: url('IMG_2583.jpeg') no-repeat center center;
+      background-size: cover;
+      color: white;
       text-align: center;
       padding: 100px 20px;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
     }
 
     .hero h1 {
+      position: relative;
+      z-index: 2;
       font-size: 36px;
       margin: 0;
     }
@@ -95,7 +110,8 @@
       box-shadow: 0 0 12px rgba(0,0,0,0.1);
     }
 
-    .contact-form input, .contact-form textarea {
+    .contact-form input,
+    .contact-form textarea {
       width: 100%;
       padding: 12px;
       margin-top: 12px;
