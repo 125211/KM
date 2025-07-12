@@ -3,62 +3,171 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="K&M Exporting Company – Quality certifications and compliance standards."/>
-  <title>Certifications - K&M Exporting Company</title>
+  <meta name="description" content="Certifications and quality standards for K&M Exporting Company."/>
+  <title>Certifications | K&M Exporting Company</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f5f8f3;
       margin: 0;
-      color: #333;
+      font-family: Arial, sans-serif;
+      background-color: #f8f9f4;
     }
+
     header {
       background-color: #295f2d;
       color: white;
-      padding: 20px;
-      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: relative;
     }
+
     header img {
-      height: 60px;
-      vertical-align: middle;
+      height: 50px;
     }
+
     header h2 {
-      display: inline-block;
       margin-left: 10px;
-      vertical-align: middle;
+      font-size: 20px;
+    }
+
+    .menu-btn {
+      font-size: 28px;
+      cursor: pointer;
+      background: none;
+      border: none;
       color: white;
     }
+
+    nav {
+      display: none;
+      flex-direction: column;
+      background-color: #ffffff;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      width: 200px;
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      animation: slideDown 0.3s ease forwards;
+      z-index: 999;
+    }
+
     nav a {
-      margin: 0 15px;
-      color: white;
+      padding: 12px 20px;
       text-decoration: none;
+      color: #295f2d;
       font-weight: bold;
+      border-top: 1px solid #eee;
+      transition: background-color 0.2s, color 0.2s;
     }
+
+    nav a:hover {
+      background-color: #f1f1f1;
+      color: #1e4720;
+    }
+
+    .show {
+      display: flex !important;
+    }
+
+    .hero {
+      background-image: url('IMG_2578.jpeg'); /* You can change this image later */
+      background-size: cover;
+      background-position: center;
+      height: 40vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 15px 25px;
+      border-radius: 8px;
+    }
+
     .content {
       padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      color: #333;
     }
-    h1 {
+
+    .certification-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .cert-box {
+      background-color: #fff;
+      border-left: 6px solid #295f2d;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      border-radius: 6px;
+    }
+
+    .cert-box h3 {
+      margin-top: 0;
       color: #295f2d;
     }
-    .cert-list {
-      margin-top: 30px;
-      list-style-type: square;
-      padding-left: 20px;
-    }
+
     footer {
       background-color: #ddd;
       padding: 20px;
       text-align: center;
     }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (min-width: 768px) {
+      nav {
+        display: flex !important;
+        flex-direction: row;
+        position: static;
+        background: none;
+        box-shadow: none;
+        width: auto;
+        border-radius: 0;
+      }
+
+      nav a {
+        border: none;
+        color: white;
+      }
+
+      nav a:hover {
+        background: none;
+        color: #ddd;
+      }
+
+      .menu-btn {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
-    <a href="index.html">
-      <img src="D8231576-840A-4047-8413-30F3AF95D10A.png" alt="K&M Logo">
-    </a>
-    <h2>K&M Exporting Company</h2>
-    <nav>
+    <div style="display: flex; align-items: center;">
+      <a href="index.html"><img src="D8231576-840A-4047-8413-30F3AF95D10A.png" alt="K&M Logo" /></a>
+      <h2>K&M Exporting Company</h2>
+    </div>
+    <button class="menu-btn">☰</button>
+    <nav id="nav">
       <a href="index.html">Home</a>
       <a href="about.html">About Us</a>
       <a href="products.html">Our Products</a>
@@ -67,23 +176,39 @@
     </nav>
   </header>
 
+  <section class="hero">
+    <h1>Our Certifications</h1>
+  </section>
+
   <section class="content">
-    <h1>Certifications</h1>
-    <p>We are committed to delivering food products that meet international quality and safety standards.</p>
+    <p>
+      At K&M, we maintain the highest international standards in quality, safety, and export compliance. Below are key certifications that reflect our commitment to excellence:
+    </p>
 
-    <ul class="cert-list">
-      <li>ISO 22000 – Food Safety Management</li>
-      <li>HACCP – Hazard Analysis and Critical Control Points</li>
-      <li>Global GAP – Good Agricultural Practices</li>
-      <li>Export License Certified by the Egyptian Ministry of Trade</li>
-      <li>Customs Compliance & Trade Documentation</li>
-    </ul>
-
-    <p>If you require specific certifications or private labeling, we are happy to accommodate export-specific requirements.</p>
+    <div class="certification-list">
+      <div class="cert-box">
+        <h3>ISO 22000 – Food Safety Management</h3>
+        <p>Ensures our food handling, packaging, and storage meet international food safety standards.</p>
+      </div>
+      <div class="cert-box">
+        <h3>Global GAP (Good Agricultural Practices)</h3>
+        <p>Guarantees responsible farming, traceability, and hygiene across all our agricultural supply chains.</p>
+      </div>
+      <div class="cert-box">
+        <h3>Export License - Egypt</h3>
+        <p>Official certification allowing us to export food products globally under Egyptian trade law.</p>
+      </div>
+    </div>
   </section>
 
   <footer>
     &copy; 2025 K&M Exporting Company. All rights reserved.
   </footer>
+
+  <script>
+    document.querySelector('.menu-btn').addEventListener('click', () => {
+      document.getElementById('nav').classList.toggle('show');
+    });
+  </script>
 </body>
 </html>
