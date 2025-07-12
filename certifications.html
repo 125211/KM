@@ -3,176 +3,135 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Certifications and quality standards for K&M Exporting Company."/>
   <title>Certifications | K&M Exporting Company</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f8f9f4;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f8f8;
     }
 
     header {
       background-color: #295f2d;
       color: white;
+      padding: 15px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 20px;
-      position: relative;
     }
 
-    header img {
-      height: 50px;
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
     }
 
-    header h2 {
-      margin-left: 10px;
-      font-size: 20px;
-    }
-
-    .menu-btn {
-      font-size: 28px;
-      cursor: pointer;
-      background: none;
-      border: none;
-      color: white;
-    }
-
-    nav {
+    .menu-toggle {
       display: none;
       flex-direction: column;
-      background-color: #ffffff;
-      position: absolute;
-      top: 60px;
-      right: 20px;
-      width: 200px;
-      border-radius: 8px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-      animation: slideDown 0.3s ease forwards;
-      z-index: 999;
+      cursor: pointer;
     }
 
-    nav a {
-      padding: 12px 20px;
+    .menu-toggle span {
+      height: 3px;
+      background: white;
+      margin: 4px 0;
+      width: 25px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
       text-decoration: none;
-      color: #295f2d;
+      color: white;
       font-weight: bold;
-      border-top: 1px solid #eee;
-      transition: background-color 0.2s, color 0.2s;
     }
 
-    nav a:hover {
-      background-color: #f1f1f1;
-      color: #1e4720;
-    }
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: #295f2d;
+        width: 100%;
+      }
 
-    .show {
-      display: flex !important;
+      nav ul.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
     }
 
     .hero {
-      background-image: url('IMG_2578.jpeg'); /* You can change this image later */
+      background: url('CA662141-A730-4177-B08E-4EA1BE08713B.png') no-repeat center center;
       background-size: cover;
-      background-position: center;
-      height: 40vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
       color: white;
+      text-align: center;
+      padding: 100px 20px;
     }
 
     .hero h1 {
-      font-size: 36px;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 15px 25px;
+      background-color: rgba(0, 0, 0, 0.6);
+      display: inline-block;
+      padding: 15px 30px;
       border-radius: 8px;
+      font-size: 42px;
+      margin: 0;
     }
 
-    .content {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-      color: #333;
-    }
-
-    .certification-list {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
+    .cert-section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
 
     .cert-box {
-      background-color: #fff;
-      border-left: 6px solid #295f2d;
-      padding: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      border-radius: 6px;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 30px;
+      text-align: center;
+      border-radius: 10px;
     }
 
-    .cert-box h3 {
-      margin-top: 0;
-      color: #295f2d;
+    .cert-box img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 20px;
     }
 
     footer {
-      background-color: #ddd;
-      padding: 20px;
+      background-color: #295f2d;
+      color: white;
       text-align: center;
-    }
-
-    @keyframes slideDown {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (min-width: 768px) {
-      nav {
-        display: flex !important;
-        flex-direction: row;
-        position: static;
-        background: none;
-        box-shadow: none;
-        width: auto;
-        border-radius: 0;
-      }
-
-      nav a {
-        border: none;
-        color: white;
-      }
-
-      nav a:hover {
-        background: none;
-        color: #ddd;
-      }
-
-      .menu-btn {
-        display: none;
-      }
+      padding: 15px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <div style="display: flex; align-items: center;">
-      <a href="index.html"><img src="D8231576-840A-4047-8413-30F3AF95D10A.png" alt="K&M Logo" /></a>
-      <h2>K&M Exporting Company</h2>
+    <div class="logo">K&M</div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-    <button class="menu-btn">☰</button>
-    <nav id="nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="products.html">Our Products</a>
-      <a href="certifications.html">Certifications</a>
-      <a href="contact.html">Contact</a>
+    <nav>
+      <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
@@ -180,35 +139,24 @@
     <h1>Our Certifications</h1>
   </section>
 
-  <section class="content">
-    <p>
-      At K&M, we maintain the highest international standards in quality, safety, and export compliance. Below are key certifications that reflect our commitment to excellence:
-    </p>
-
-    <div class="certification-list">
-      <div class="cert-box">
-        <h3>ISO 22000 – Food Safety Management</h3>
-        <p>Ensures our food handling, packaging, and storage meet international food safety standards.</p>
-      </div>
-      <div class="cert-box">
-        <h3>Global GAP (Good Agricultural Practices)</h3>
-        <p>Guarantees responsible farming, traceability, and hygiene across all our agricultural supply chains.</p>
-      </div>
-      <div class="cert-box">
-        <h3>Export License - Egypt</h3>
-        <p>Official certification allowing us to export food products globally under Egyptian trade law.</p>
-      </div>
+  <section class="cert-section">
+    <div class="cert-box">
+      <h2>ISO 22000: Food Safety Management</h2>
+      <p>This certifies that K&M Exporting Company complies with the international standard ISO 22000 for food safety management, covering export processes for potatoes, onions, and sauces.</p>
+      <img src="certificate.png" alt="ISO Certificate" />
     </div>
   </section>
 
   <footer>
-    &copy; 2025 K&M Exporting Company. All rights reserved.
+    &copy; 2025 K&M Exporting Company | All rights reserved
   </footer>
 
   <script>
-    document.querySelector('.menu-btn').addEventListener('click', () => {
-      document.getElementById('nav').classList.toggle('show');
-    });
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('show');
+    }
   </script>
+
 </body>
 </html>
