@@ -3,81 +3,162 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="K&M Exporting Company - Premium Egyptian Food Exports to UAE, Russia, and West Africa."/>
+  <meta name="description" content="K&M Exporting Company - Premium Egyptian Food Exports to UAE, Russia, West Africa, and Europe."/>
   <title>K&M Exporting Company</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
+      font-family: Arial, sans-serif;
       background-color: #f8f9f4;
-      color: #333;
     }
+
     header {
       background-color: #295f2d;
       color: white;
-      padding: 20px;
-      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: relative;
     }
+
     header img {
-      height: 60px;
-      vertical-align: middle;
+      height: 50px;
     }
+
     header h2 {
-      display: inline-block;
       margin-left: 10px;
-      vertical-align: middle;
+      font-size: 20px;
+    }
+
+    .menu-btn {
+      font-size: 28px;
+      cursor: pointer;
+      background: none;
+      border: none;
       color: white;
     }
- nav a {
-  padding: 12px 20px;
-  text-decoration: none;
-  color: #295f2d;
-  font-weight: bold;
-  border-top: 1px solid #eee;
-  transition: background-color 0.2s, color 0.2s;
-  nav a:hover {
-  background-color: #f1f1f1;
-  color: #1e4720;
-    } 
-   .hero {
-      padding: 80px 20px;
-      text-align: center;
-     background-image: url('IMG_2570.jpeg');
+
+    nav {
+      display: none;
+      flex-direction: column;
+      background-color: #ffffff;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      width: 200px;
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      animation: slideDown 0.3s ease forwards;
+      z-index: 999;
+    }
+
+    nav a {
+      padding: 12px 20px;
+      text-decoration: none;
+      color: #295f2d;
+      font-weight: bold;
+      border-top: 1px solid #eee;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    nav a:hover {
+      background-color: #f1f1f1;
+      color: #1e4720;
+    }
+
+    .show {
+      display: flex !important;
+    }
+
+    .hero {
+      background-image: url('IMG_2570.jpeg');
       background-size: cover;
       background-position: center;
+      height: 70vh;
       color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
     }
+
     .hero h1 {
-      font-size: 48px;
-      background: rgba(0,0,0,0.6);
-      display: inline-block;
-      padding: 10px 20px;
+      font-size: 40px;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 15px 25px;
+      border-radius: 8px;
     }
+
     .content {
       padding: 40px 20px;
       text-align: center;
+      color: #333;
     }
+
     .btn {
       background-color: #295f2d;
       color: white;
-      padding: 10px 20px;
+      padding: 12px 24px;
       text-decoration: none;
       border-radius: 5px;
+      display: inline-block;
+      margin-top: 20px;
     }
+
     footer {
       background-color: #ddd;
       padding: 20px;
       text-align: center;
     }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (min-width: 768px) {
+      nav {
+        display: flex !important;
+        flex-direction: row;
+        position: static;
+        background: none;
+        box-shadow: none;
+        width: auto;
+        border-radius: 0;
+      }
+
+      nav a {
+        border: none;
+        color: white;
+      }
+
+      nav a:hover {
+        background: none;
+        color: #ddd;
+      }
+
+      .menu-btn {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
-    <a href="index.html">
-      <img src="D8231576-840A-4047-8413-30F3AF95D10A.png" alt="K&M Logo">
-    </a>
-    <h2>K&M Exporting Company</h2>
-    <nav>
+    <div style="display: flex; align-items: center;">
+      <a href="index.html"><img src="D8231576-840A-4047-8413-30F3AF95D10A.png" alt="K&M Logo" /></a>
+      <h2>K&M Exporting Company</h2>
+    </div>
+    <button class="menu-btn" onclick="document.getElementById('nav').classList.toggle('show')">☰</button>
+    <nav id="nav">
       <a href="index.html">Home</a>
       <a href="about.html">About Us</a>
       <a href="products.html">Our Products</a>
@@ -87,20 +168,28 @@
   </header>
 
   <section class="hero">
-    <h1>Premium Egyptian Food Exports</h1>
-    <p>Delivering excellence to Europe, UAE, Russia, and West Africa</p>
+    <h1>Reliable Food Export from Egypt to the World</h1>
   </section>
 
   <section class="content">
     <h2>Welcome to K&M</h2>
-   <p> We are a leading food exporting company based in Egypt, supplying high-quality products to international markets — 
-  including the <strong>UAE</strong>, <strong>Russia</strong>, <strong>West Africa</strong>, and <strong>Europe</strong>. 
-  Our focus is on reliability, product quality, and long-term partnerships.</p>
+    <p>
+      We are a leading food exporting company based in Egypt, supplying high-quality products to international markets — 
+      including the <strong>UAE</strong>, <strong>Russia</strong>, <strong>West Africa</strong>, and <strong>Europe</strong>. 
+      Our focus is on reliability, product quality, and long-term partnerships.
+    </p>
     <a href="contact.html" class="btn">Get in Touch</a>
   </section>
 
   <footer>
     &copy; 2025 K&M Exporting Company. All rights reserved.
   </footer>
+
+  <script>
+    // Toggle menu visibility
+    document.querySelector('.menu-btn').addEventListener('click', () => {
+      document.getElementById('nav').classList.toggle('show');
+    });
+  </script>
 </body>
 </html>
