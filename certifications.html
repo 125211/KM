@@ -14,10 +14,11 @@
     header {
       background-color: #295f2d;
       color: white;
-      padding: 15px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 15px 20px;
+      position: relative;
     }
 
     .logo {
@@ -25,10 +26,16 @@
       font-weight: bold;
     }
 
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
     .menu-toggle {
       display: none;
       flex-direction: column;
       cursor: pointer;
+      margin-left: auto;
     }
 
     .menu-toggle span {
@@ -53,26 +60,43 @@
     }
 
     @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+
       nav ul {
         display: none;
+        position: absolute;
+        top: 65px;
+        right: 20px;
+        background-color: #295f2d;
         flex-direction: column;
-        background: #295f2d;
-        width: 100%;
+        width: 200px;
+        border-radius: 6px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       }
 
       nav ul.show {
         display: flex;
       }
 
-      .menu-toggle {
-        display: flex;
+      nav ul li {
+        padding: 12px 20px;
+        border-bottom: 1px solid #3d8042;
+      }
+
+      nav ul li:last-child {
+        border-bottom: none;
+      }
+
+      nav ul li a {
+        color: white;
       }
     }
 
     .hero {
       background: url('CA662141-A730-4177-B08E-4EA1BE08713B.png') no-repeat center center;
       background-size: cover;
-      color: white;
       text-align: center;
       padding: 100px 20px;
     }
@@ -84,6 +108,7 @@
       border-radius: 8px;
       font-size: 42px;
       margin: 0;
+      color: white;
     }
 
     .cert-section {
@@ -119,12 +144,12 @@
 
   <header>
     <div class="logo">K&M</div>
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
     <nav>
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
       <ul id="menu">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
