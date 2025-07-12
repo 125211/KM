@@ -3,82 +3,183 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Contact K&M Exporting Company – Send us your export inquiries."/>
-  <title>Contact Us - K&M Exporting Company</title>
+  <title>Contact Us | K&M Exporting Company</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f2;
       margin: 0;
-      color: #333;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
     }
+
     header {
       background-color: #295f2d;
       color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    header img {
-      height: 60px;
-      vertical-align: middle;
-    }
-    header h2 {
-      display: inline-block;
-      margin-left: 10px;
-      vertical-align: middle;
-      color: white;
-    }
-    nav a {
-      margin: 0 15px;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .content {
-      padding: 40px 20px;
-    }
-    h1 {
-      color: #295f2d;
-    }
-    form {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    button {
-      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       padding: 10px 20px;
+      position: relative;
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    header h2 {
+      margin-left: 10px;
+      font-size: 20px;
+    }
+
+    .menu-btn {
+      font-size: 28px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: white;
+    }
+
+    nav {
+      display: none;
+      flex-direction: column;
+      background-color: #ffffff;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      width: 200px;
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      animation: slideDown 0.3s ease forwards;
+      z-index: 999;
+    }
+
+    nav a {
+      padding: 12px 20px;
+      text-decoration: none;
+      color: #295f2d;
+      font-weight: bold;
+      border-top: 1px solid #eee;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    nav a:hover {
+      background-color: #f1f1f1;
+      color: #1e4720;
+    }
+
+    .show {
+      display: flex !important;
+    }
+
+    .hero {
+      background-color: #e6efe7;
+      color: #295f2d;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      margin: 0;
+    }
+
+    .contact-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .contact-form {
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .contact-form button {
       background-color: #295f2d;
       color: white;
+      padding: 12px 25px;
       border: none;
-      border-radius: 4px;
+      border-radius: 6px;
+      font-size: 16px;
       cursor: pointer;
     }
-    footer {
-      background-color: #ddd;
-      padding: 20px;
+
+    .contact-form button:hover {
+      background-color: #3d8042;
+    }
+
+    .contact-info {
+      margin-top: 40px;
       text-align: center;
+      color: #333;
+    }
+
+    footer {
+      background-color: #295f2d;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (min-width: 768px) {
+      nav {
+        display: flex !important;
+        flex-direction: row;
+        position: static;
+        background: none;
+        box-shadow: none;
+        width: auto;
+        border-radius: 0;
+      }
+
+      nav a {
+        border: none;
+        color: white;
+      }
+
+      nav a:hover {
+        background: none;
+        color: #ddd;
+      }
+
+      .menu-btn {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <a href="index.html">
-      <img src="D8231576-840A-4047-8413-30F3AF95D10A.png" alt="K&M Logo">
-    </a>
-    <h2>K&M Exporting Company</h2>
-    <nav>
+    <div style="display: flex; align-items: center;">
+      <a href="index.html"><img src="D8231576-840A-4047-8413-30F3AF95D10A.png" alt="K&M Logo" /></a>
+      <h2>K&M Exporting Company</h2>
+    </div>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <nav id="nav">
       <a href="index.html">Home</a>
       <a href="about.html">About Us</a>
       <a href="products.html">Our Products</a>
@@ -87,30 +188,36 @@
     </nav>
   </header>
 
-  <section class="content">
+  <section class="hero">
     <h1>Contact Us</h1>
-    <p>Send us your export inquiries or questions. We respond within 24 hours.</p>
+  </section>
 
-    <form action="https://formsubmit.co/your-email@example.com" method="POST">
-      <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" required>
+  <section class="contact-container">
+    <div class="contact-form">
+      <form action="#" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
 
-      <label for="email">Your Email</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-
-      <button type="submit">Send Message</button>
-    </form>
-
-    <p style="margin-top: 20px; font-size: 14px; color: gray;">
-      🔒 Your data is secure and will only be used to respond to your inquiry.
-    </p>
+    <div class="contact-info">
+      <p>Email: info@kmexport.com</p>
+      <p>Phone: +20 123 456 7890</p>
+      <p>Location: 6th October, Cairo, Egypt</p>
+    </div>
   </section>
 
   <footer>
-    &copy; 2025 K&M Exporting Company. All rights reserved.
+    &copy; 2025 K&M Exporting Company | All rights reserved
   </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav').classList.toggle('show');
+    }
+  </script>
+
 </body>
 </html>
