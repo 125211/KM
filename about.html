@@ -1,59 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Learn about K&M Exporting Company, a trusted food exporter from Egypt.">
-  <title>About Us - K&M Exporting Company</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Learn more about K&M Exporting Company – your trusted Egyptian partner for global food trade."/>
+  <title>About Us | K&M Exporting Company</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f6f2;
-      color: #333;
       margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f9f4;
     }
+
     header {
       background-color: #295f2d;
       color: white;
-      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: relative;
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    header h2 {
+      margin-left: 10px;
+      font-size: 20px;
+    }
+
+    .menu-btn {
+      font-size: 28px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: white;
+    }
+
+    nav {
+      display: none;
+      flex-direction: column;
+      background-color: #ffffff;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      width: 200px;
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      animation: slideDown 0.3s ease forwards;
+      z-index: 999;
+    }
+
+    nav a {
+      padding: 12px 20px;
+      text-decoration: none;
+      color: #295f2d;
+      font-weight: bold;
+      border-top: 1px solid #eee;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    nav a:hover {
+      background-color: #f1f1f1;
+      color: #1e4720;
+    }
+
+    .show {
+      display: flex !important;
+    }
+
+    .hero {
+      background-color: #295f2d;
+      color: white;
+      height: 40vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
     }
-    header img {
-      height: 60px;
-      vertical-align: middle;
+
+    .hero h1 {
+      font-size: 36px;
     }
-    header h2 {
-      display: inline-block;
-      margin-left: 10px;
-      vertical-align: middle;
-      color: white;
-    }
-    nav a {
-      margin: 0 15px;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
+
     .content {
       padding: 40px 20px;
+      text-align: center;
+      color: #333;
+      max-width: 800px;
+      margin: auto;
     }
-    h1 {
-      color: #295f2d;
-    }
+
     footer {
       background-color: #ddd;
       padding: 20px;
       text-align: center;
     }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (min-width: 768px) {
+      nav {
+        display: flex !important;
+        flex-direction: row;
+        position: static;
+        background: none;
+        box-shadow: none;
+        width: auto;
+        border-radius: 0;
+      }
+
+      nav a {
+        border: none;
+        color: white;
+      }
+
+      nav a:hover {
+        background: none;
+        color: #ddd;
+      }
+
+      .menu-btn {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
-    <a href="index.html">
-      <img src="D8231576-840A-4047-8413-30F3AF95D10A.png" alt="K&M Logo">
-    </a>
-    <h2>K&M Exporting Company</h2>
-    <nav>
+    <div style="display: flex; align-items: center;">
+      <a href="index.html"><img src="D8231576-840A-4047-8413-30F3AF95D10A.png" alt="K&M Logo" /></a>
+      <h2>K&M Exporting Company</h2>
+    </div>
+    <button class="menu-btn">☰</button>
+    <nav id="nav">
       <a href="index.html">Home</a>
       <a href="about.html">About Us</a>
       <a href="products.html">Our Products</a>
@@ -62,21 +153,34 @@
     </nav>
   </header>
 
+  <section class="hero">
+    <h1>About K&M</h1>
+  </section>
+
   <section class="content">
-    <h1>About Us</h1>
+    <h2>Our Story</h2>
     <p>
-      K&M Exporting Company is an Egypt-based business dedicated to delivering premium-quality food products to global markets. We specialize in sourcing, packaging, and exporting a wide range of food items with a focus on freshness, safety, and international compliance.
+      K&M Exporting Company was founded with a clear mission: to deliver Egypt's finest food products to the world. 
+      With deep roots in agriculture and a passion for quality, we specialize in exporting key staples such as potatoes, onions, and sauces 
+      to global markets — including the UAE, Russia, West Africa, and Europe.
     </p>
     <p>
-      Our export operations primarily serve the United Arab Emirates, Russia, West Africa, and the European market. We build long-term relationships with international importers, distributors, and wholesalers who count on us for consistency and service.
+      We believe that success in international trade begins with trust, consistency, and exceptional product standards. 
+      Our team works closely with farmers, processors, and logistics partners to ensure every shipment meets international expectations.
     </p>
     <p>
-      At K&M, we believe in trust, transparency, and sustainable growth through strong partnerships. Whether it's fresh produce like potatoes and onions or processed foods like sauces, we ensure reliable sourcing and timely delivery.
+      Whether you're a supermarket chain, distributor, or wholesale buyer, we are here to be your long-term, reliable supplier from Egypt.
     </p>
   </section>
 
   <footer>
     &copy; 2025 K&M Exporting Company. All rights reserved.
   </footer>
+
+  <script>
+    document.querySelector('.menu-btn').addEventListener('click', () => {
+      document.getElementById('nav').classList.toggle('show');
+    });
+  </script>
 </body>
 </html>
