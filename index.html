@@ -1,163 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>K&M Exporting Company</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    body {
-      background-color: #f8f8f4;
-      color: #333;
-    }
-
-    header {
-      background-image: url('IMG_2570.jpeg');
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-align: center;
-      position: relative;
-    }
-
-    header::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.5);
-      z-index: 0;
-    }
-
-    header h1 {
-      z-index: 1;
-      font-size: 48px;
-      max-width: 90%;
-    }
-
-    nav {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      z-index: 2;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      margin-left: 20px;
-      font-size: 16px;
-    }
-
-    section {
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    .markets, .partners {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 30px;
-    }
-
-    .markets img, .partners img {
-      height: 60px;
-      object-fit: contain;
-      background-color: white;
-      border-radius: 8px;
-      padding: 5px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .about {
-      max-width: 700px;
-      margin: auto;
-      font-size: 17px;
-      line-height: 1.6;
-      margin-top: 20px;
-    }
-
-    .products {
-      padding: 60px 20px;
-      background-color: #fff;
-    }
-
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 32px;
-      }
-
-      nav {
-        top: 10px;
-        right: 15px;
-      }
-
-      nav a {
-        font-size: 14px;
-      }
-
-      .markets img, .partners img {
-        height: 45px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="products.html">Products</a>
-      <a href="certifications.html">Certifications</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <h1>Delivering Egypt’s Finest Produce to the World</h1>
-  </header>
-
-  <section>
-    <h2>Where We Export</h2>
-    <div class="markets">
-      <img src="https://flagcdn.com/w320/ae.png" alt="UAE" title="UAE" />
-      <img src="https://flagcdn.com/w320/ru.png" alt="Russia" title="Russia" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Flag-map_of_Africa.svg" alt="West Africa" title="West Africa" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Europe_flag_map.svg" alt="Europe" title="Europe" />
-    </div>
-  </section>
-
-  <section>
-    <h2>Our Partners</h2>
-    <div class="partners">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Logo_placeholder.png" alt="Partner 1" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Circle-icons-leaf.svg/1024px-Circle-icons-leaf.svg.png" alt="Partner 2" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Leaf_icon.svg/1200px-Leaf_icon.svg.png" alt="Partner 3" />
-    </div>
-  </section>
-
-  <section>
-    <h2>About Us</h2>
-    <p class="about">
-      K&M is a proud Egyptian exporting company, focused on delivering high-quality produce like potatoes, onions, and sauces to international markets. Our goal is to provide trusted food exports while maintaining strong relationships with partners across the UAE, Russia, West Africa, and Europe.
-    </p>
-  </section>
-
-  <section class="products">
-    <h2>Our Products</h2>
-    <p>Explore our top-quality Egyptian potatoes, onions, and sauces — grown with care and packed for freshness.</p>
-  </section>
-</body>
-</html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K&M - Exporting Egypt's Finest Foods</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary: #234E70; /* Egyptian blue */
+            --secondary: #F7B538; /* Golden yellow */
+            --accent: #2A9D8F;
+            --dark: #264653;
+            --light: #F8F9FA;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('IMG_2570.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: #222;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
+            position: fixed;
+            width: 100%;
+            background-color: rgba(35, 78, 112, 0.9);
+            padding: 15px 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        nav.scrolled {
+            padding: 10px 0;
+            background-color: var(--primary);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-l
