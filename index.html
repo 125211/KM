@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K&M - Exporting Egypt's Finest Foods</title>
+    <title>K&M Exports - Premium Egyptian Food Products</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary: #234E70; /* Egyptian blue */
-            --secondary: #F7B538; /* Golden yellow */
+            --primary: #234E70;
+            --secondary: #F7B538;
             --accent: #2A9D8F;
             --dark: #264653;
             --light: #F8F9FA;
@@ -25,76 +25,35 @@
             font-family: 'Poppins', sans-serif;
             color: #333;
             line-height: 1.6;
+            background-color: white;
             overflow-x: hidden;
         }
         
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('IMG_2570.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 0 20px;
-        }
-        
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin-bottom: 2rem;
-        }
-        
-        .btn {
-            display: inline-block;
-            background: var(--secondary);
-            color: #222;
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        nav {
+        /* Header and Navigation */
+        header {
+            background-color: rgba(35, 78, 112, 0.95);
             position: fixed;
             width: 100%;
-            background-color: rgba(35, 78, 112, 0.9);
-            padding: 15px 0;
             z-index: 1000;
+            padding: 1.5rem 2rem;
             transition: all 0.3s ease;
         }
         
-        nav.scrolled {
-            padding: 10px 0;
-            background-color: var(--primary);
+        header.scrolled {
+            padding: 1rem 2rem;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
-        .nav-container {
+        .container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 20px;
         }
         
         .logo {
@@ -110,7 +69,7 @@
         }
         
         .nav-links li {
-            margin-left: 30px;
+            margin-left: 2rem;
         }
         
         .nav-links a {
@@ -119,6 +78,633 @@
             font-weight: 500;
             transition: all 0.3s ease;
             position: relative;
+            padding: 0.5rem 0;
         }
         
-        .nav-l
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu {
+            display: none;
+            cursor: pointer;
+            color: white;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url('https://placehold.co/1920x1080') center/cover no-repeat;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: #222;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Destinations Section */
+        .destinations {
+            background-color: var(--light);
+        }
+        
+        .flag-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .flag-item {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .flag-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .flag-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        /* Partners Section */
+        .partners {
+            background-color: white;
+        }
+        
+        .partner-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .partner-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+            background: var(--light);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .partner-logo img {
+            max-width: 100%;
+            max-height: 80px;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+        
+        .partner-logo:hover img {
+            filter: grayscale(0);
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--light);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-img {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Products Section */
+        .products {
+            background-color: white;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background: var(--light);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .product-info p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+        
+        .contact-info {
+            list-style: none;
+        }
+        
+        .contact-info li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            color: var(--dark);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .about-img {
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+                font-size: 1.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            section {
+                padding: 3rem 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav class="nav-container">
+                <a href="#" class="logo">K&M Exports</a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#destinations">Destinations</a></li>
+                    <li><a href="#partners">Partners</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Delivering Egypt's Finest Produce to the World</h1>
+            <p>Premium quality Egyptian potatoes, onions, and sauces exported globally with the highest standards</p>
+            <a href="#products" class="btn">Explore Our Products</a>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section class="destinations" id="destinations">
+        <div class="container">
+            <div class="section-title">
+                <h2>Where We Export</h2>
+                <p>We deliver premium Egyptian food products to markets across the world</p>
+            </div>
+            <div class="flag-grid">
+                <div class="flag-item">
+                    <i class="fas fa-flag flag-icon"></i>
+                    <h3>United Arab Emirates</h3>
+                    <p>Serving UAE markets since 2015</p>
+                </div>
+                <div class="flag-item">
+                    <i class="fas fa-flag flag-icon"></i>
+                    <h3>Russia</h3>
+                    <p>Leading supplier of Egyptian onions</p>
+                </div>
+                <div class="flag-item">
+                    <i class="fas fa-flag flag-icon"></i>
+                    <h3>West Africa</h3>
+                    <p>Growing distribution network</p>
+                </div>
+                <div class="flag-item">
+                    <i class="fas fa-flag flag-icon"></i>
+                    <h3>Europe</h3>
+                    <p>EU-compliant export standards</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners" id="partners">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Trusted Partners</h2>
+                <p>We work with the most reputable organizations in the food industry</p>
+            </div>
+            <div class="partner-grid">
+                <div class="partner-logo">
+                    <img src="https://placehold.co/150x60?text=Partner+1" alt="Agricultural Export Council logo">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://placehold.co/150x60?text=Partner+2" alt="Egyptian Food Safety logo">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://placehold.co/150x60?text=Partner+3" alt="Global Food Distributors logo">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://placehold.co/150x60?text=Partner+4" alt="International Trade Organization logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>About K&M Exports</h3>
+                    <p>Founded in 2010, K&M Exports has grown to become one of Egypt's leading food export companies. With our headquarters in Cairo and extensive network of farms across the Nile Delta, we specialize in sourcing, processing, and exporting the highest quality Egyptian agricultural products.</p>
+                    <p>Our team of agricultural experts and food safety professionals ensure that all our products meet the strictest international standards. We pride ourselves on building long-term relationships with our clients worldwide by providing consistent quality and reliable service.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+                <div class="about-img">
+                    <img src="https://placehold.co/600x400?text=K+M+Exports+Team" alt="K&M Exports team members inspecting potato harvest">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Premium Products</h2>
+                <p>Exporting Egypt's finest agricultural products to global markets</p>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://placehold.co/400x300?text=Egyptian+Potatoes" alt="Premium Egyptian potatoes freshly harvested">
+                    </div>
+                    <div class="product-info">
+                        <h3>Premium Potatoes</h3>
+                        <p>High-quality Egyptian potatoes with excellent shelf life and taste, available in multiple varieties including Spunta, Cara, and Valor.</p>
+                        <a href="#" class="btn">Inquire Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://placehold.co/400x300?text=Egyptian+Onions" alt="Freshly harvested Egyptian onions">
+                    </div>
+                    <div class="product-info">
+                        <h3>Fresh Onions</h3>
+                        <p>Egyptian onions known for their strong flavor and long storage capabilities, available in red, white, and yellow varieties.</p>
+                        <a href="#" class="btn">Inquire Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://placehold.co/400x300?text=Egyptian+Sauces" alt="Assortment of traditional Egyptian sauces">
+                    </div>
+                    <div class="product-info">
+                        <h3>Traditional Sauces</h3>
+                        <p>Authentic Egyptian sauces including tahini, molokhia, and other traditional condiments prepared using time-honored recipes.</p>
+                        <a href="#" class="btn">Inquire Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch with our export team for product inquiries</p>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name">
+                        <input type="email" placeholder="Your Email">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Subject">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>K&M Exports</h3>
+                    <p>Exporting Egypt's finest agricultural products to global markets with uncompromising quality standards.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#products">Our Products</a></li>
+                        <li><a href="#destinations">Export Destinations</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</li>
+                        <li><i class="fas fa-phone"></i> +20 123 456 789</li>
+                        <li><i class="fas fa-envelope"></i> info@kmexports.com</li>
+                        <li><i class="fas fa-clock"></i> Sun-Thu: 9:00 AM - 5:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 K&M Exports. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sticky Header
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenu.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Responsive Fix
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navLinks.style.display = 'flex';
+            } else {
+                navLinks.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
