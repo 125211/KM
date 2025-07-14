@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>K&M Exports</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
   <style>
     :root {
       --primary: #234E70;
@@ -40,9 +40,10 @@
     }
 
     .mobile-menu {
-      font-size: 1.8rem;
+      font-size: 2rem;
       color: white;
       cursor: pointer;
+      margin-left: auto;
     }
 
     nav ul {
@@ -77,104 +78,62 @@
 
     section { padding: 5rem 0; }
 
-    .hero {
-      background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('IMG_2570.jpeg') center/cover no-repeat;
-      color: white;
-      text-align: center;
-      padding: 10rem 2rem 5rem;
-    }
-
-    .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-    .hero p { font-size: 1.1rem; margin-bottom: 1.5rem; }
-    .btn {
-      display: inline-block;
-      background: var(--secondary);
-      color: #000;
-      padding: 12px 24px;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: 600;
-      margin-top: 1rem;
-    }
-
     .section-title {
       text-align: center;
       margin-bottom: 2rem;
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--primary);
     }
 
-    .about .about-img {
-      background: url('IMG_2574.jpeg') center/cover no-repeat;
-      height: 300px;
-      border-radius: 8px;
-      margin-top: 2rem;
-    }
-
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      padding: 0 2rem;
-    }
-
-    .product-card {
-      background: var(--light);
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,.05);
-    }
-
-    .product-img {
-      height: 200px;
-      background-size: cover;
-      background-position: center;
-    }
-
-    .product-info {
-      padding: 1rem;
-    }
-
-    .flags,
-    .partners {
+    /* === FLAG SECTION FIXED === */
+    .flags {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 2rem;
     }
 
-    .flags img,
-    .partners img {
-      width: 100px;
+    .flags .flag-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .flags .flag-item img {
+      width: 120px;
       height: auto;
+      object-fit: contain;
+      display: block;
     }
 
-    .contact {
-      background: url('IMG_2583.jpeg') center/cover no-repeat;
-      padding: 5rem 1rem;
-      background-attachment: fixed;
+    .flags .flag-item p {
+      margin-top: .5rem;
+      font-weight: 600;
     }
 
-    .contact-form {
-      background: rgba(255, 255, 255, 0.9);
-      max-width: 500px;
-      margin: auto;
-      padding: 2rem;
-      border-radius: 8px;
+    /* === MENU FIX === */
+    header .mobile-menu {
+      order: 2;
     }
 
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: .8rem;
-      margin-bottom: 1rem;
-      border-radius: 4px;
-      border: 1px solid #ccc;
+    .logo {
+      order: 1;
     }
 
-    footer {
-      background: var(--dark);
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
+    nav {
+      display: none;
+    }
+
+    @media (min-width: 769px) {
+      nav {
+        display: block;
+        order: 3;
+      }
+
+      .mobile-menu {
+        display: none;
+      }
     }
   </style>
 </head>
@@ -198,98 +157,28 @@
     </nav>
   </header>
 
-  <!-- Hero -->
-  <section class="hero" id="home">
-    <h1>Delivering Egypt's Finest Produce to the World</h1>
-    <p>High-quality Egyptian potatoes, onions, and sauces exported globally.</p>
-    <a href="#products" class="btn">Explore Our Products</a>
-  </section>
-
-  <!-- About -->
-  <section class="about" id="about">
-    <div class="section-title">
-      <h2>About K&M Exports</h2>
-    </div>
-    <div class="about-img"></div>
-    <p style="max-width: 800px; margin: 2rem auto; text-align: center;">
-      We are one of Egypt's leading exporters of agricultural products.
-    </p>
-    <div style="text-align:center;">
-      <a href="#contact" class="btn">Learn More</a>
-    </div>
-  </section>
-
-  <!-- Products -->
-  <section id="products">
-    <div class="section-title"><h2>Our Premium Products</h2></div>
-    <div class="product-grid">
-      <div class="product-card">
-        <div class="product-img" style="background-image:url('IMG_2575.jpeg');"></div>
-        <div class="product-info">
-          <h3>Premium Potatoes</h3>
-          <p>Spunta, Cara & Valor varieties available year-round.</p>
-          <a href="#contact" class="btn">Inquire Now</a>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-img" style="background-image:url('IMG_2576.jpeg');"></div>
-        <div class="product-info">
-          <h3>Fresh Onions</h3>
-          <p>Red, yellow & white onions with strong flavor and long shelf life.</p>
-          <a href="#contact" class="btn">Inquire Now</a>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-img" style="background-image:url('IMG_2577.jpeg');"></div>
-        <div class="product-info">
-          <h3>Traditional Sauces</h3>
-          <p>Authentic tahini, molokhia & more, made using time-honored recipes.</p>
-          <a href="#contact" class="btn">Inquire Now</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Export Destinations -->
-  <section id="destinations">
-    <div class="section-title"><h2>Where We Export</h2></div>
+  <section id="destinations" style="margin-top: 100px;">
+    <div class="section-title">Where We Export</div>
     <div class="flags">
-      <img src="IMG_2606.png" alt="UAE Flag">
-      <img src="IMG_2605.png" alt="Russia Flag">
-      <img src="IMG_2607.jpeg" alt="West Africa Flag">
-      <img src="IMG_2608.png" alt="Europe Flag">
+      <div class="flag-item">
+        <img src="IMG_2606.png" alt="UAE Flag">
+        <p>United Arab Emirates</p>
+      </div>
+      <div class="flag-item">
+        <img src="IMG_2605.png" alt="Russia Flag">
+        <p>Russia</p>
+      </div>
+      <div class="flag-item">
+        <img src="IMG_2607.jpeg" alt="West Africa Flag">
+        <p>West Africa</p>
+      </div>
+      <div class="flag-item">
+        <img src="IMG_2608.png" alt="Europe Flag">
+        <p>Europe</p>
+      </div>
     </div>
   </section>
-
-  <!-- Partners -->
-  <section id="partners">
-    <div class="section-title"><h2>Our Trusted Partners</h2></div>
-    <div class="partners">
-      <img src="IMG_2601.jpeg" alt="Partner 1">
-      <img src="IMG_2602.jpeg" alt="Partner 2">
-      <img src="IMG_2603.jpeg" alt="Partner 3">
-      <img src="IMG_2604.jpeg" alt="Partner 4">
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section class="contact" id="contact">
-    <div class="section-title"><h2>Contact Us</h2></div>
-    <div class="contact-form">
-      <form>
-        <input type="text" placeholder="Your Name" />
-        <input type="email" placeholder="Your Email" />
-        <input type="text" placeholder="Subject" />
-        <textarea rows="5" placeholder="Your Message"></textarea>
-        <button type="submit" class="btn">Send Message</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 K&M Exports. All rights reserved.</p>
-  </footer>
 
   <script>
     function toggleMenu() {
@@ -302,6 +191,5 @@
       });
     });
   </script>
-
 </body>
 </html>
