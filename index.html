@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>K&M Exports - Premium Egyptian Food Products</title>
+  <title>K&M Exports</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
     :root {
       --primary: #234E70;
@@ -17,112 +17,111 @@
     body {
       font-family: 'Poppins', sans-serif;
       color: #333;
-      background-color: white;
+      background: white;
       overflow-x: hidden;
     }
     header {
-      background-color: rgba(35, 78, 112, 0.95);
-      position: fixed; top: 0; width: 100%; z-index: 1000;
+      background: var(--primary);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10000;
       padding: 1rem 2rem;
-      display: flex; justify-content: space-between; align-items: center;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    .logo {
-      height: 50px;
-    }
+    .logo { height: 50px; }
     .nav-toggle {
-      color: white;
-      font-size: 1.5rem;
-      cursor: pointer;
       display: none;
+      font-size: 1.5rem;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
     }
     nav ul {
       list-style: none;
       display: flex;
-      gap: 2rem;
+      gap: 1.5rem;
     }
     nav a {
-      text-decoration: none;
       color: white;
+      text-decoration: none;
       font-weight: 500;
     }
+    section { padding: 6rem 2rem 4rem; margin-top: 70px; }
     .hero {
-      height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('IMG_2570.jpeg') center/cover no-repeat;
-      display: flex; justify-content: center; align-items: center;
-      text-align: center; color: white; padding: 2rem;
+      height: calc(100vh - 70px);
+      background: url('IMG_2570.jpeg') center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
     }
-    .hero h1 {
-      font-size: 3rem; margin-bottom: 1rem;
-    }
+    .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.2rem; margin-bottom: 2rem; }
     .btn {
-      background: var(--secondary); color: #222;
-      padding: 12px 30px;
+      background: var(--secondary);
+      color: #222;
+      padding: 12px 25px;
       border-radius: 4px;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
+      margin-top: 1rem;
+      display: inline-block;
     }
-    section {
-      padding: 5rem 2rem;
-    }
+    .section-title { text-align: center; margin-bottom: 2rem; }
     .section-title h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
+      font-size: 2.4rem;
       color: var(--primary);
-      text-align: center;
-      margin-bottom: 1rem;
+      margin-bottom: .5rem;
     }
-    .section-title p {
-      text-align: center;
-      margin-bottom: 2rem;
-      color: #666;
-    }
-
-    /* About */
     .about-img {
       width: 100%;
-      height: 300px;
+      max-width: 800px;
+      height: 400px;
       background: url('IMG_2574.jpeg') center/cover no-repeat;
-      margin: 2rem 0;
       border-radius: 8px;
+      margin: 2rem auto;
     }
-
-    /* Products */
-    .product-grid {
+    .product-grid, .partner-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 1.5rem;
     }
     .product-card {
       background: var(--light);
       border-radius: 8px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.05);
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
     .product-img {
-      height: 200px;
+      height: 180px;
       background-size: cover;
       background-position: center;
     }
     .product-info {
-      padding: 1.5rem;
+      padding: 1.2rem;
+      flex: 1;
     }
-
-    /* Partners */
-    .partner-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-      justify-items: center;
+    .partner-logo {
+      text-align: center;
+      padding: 1.2rem;
+      background: var(--light);
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     }
     .partner-logo img {
       max-height: 60px;
       max-width: 100%;
     }
-
-    /* Contact */
     .contact {
       background: url('IMG_2583.jpeg') center/cover no-repeat;
-      padding: 5rem 2rem;
+      background-size: cover;
     }
     .contact-form {
       background: rgba(255,255,255,0.95);
@@ -139,80 +138,74 @@
       border: 1px solid #ccc;
       border-radius: 4px;
     }
-
     footer {
       background: var(--dark);
       color: white;
       text-align: center;
       padding: 2rem;
     }
-
-    /* Mobile Styles */
-    @media(max-width: 768px) {
+    @media(max-width:768px){
       .nav-toggle { display: block; }
       nav ul {
         position: fixed;
         top: 70px;
         right: -100%;
-        flex-direction: column;
         background: var(--primary);
+        flex-direction: column;
         width: 200px;
-        height: 100vh;
+        height: calc(100vh - 70px);
         padding: 2rem;
-        transition: right 0.3s ease;
+        transition: right .3s ease;
       }
       nav ul.open { right: 0; }
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <img src="logo.png" alt="K&M Logo" class="logo">
-  <div class="nav-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
-  <nav>
-    <ul id="menu">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#products">Products</a></li>
-      <li><a href="#destinations">Destinations</a></li>
-      <li><a href="#partners">Partners</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+  <header>
+    <img src="logo.png" alt="K&M Exports Logo" class="logo">
+    <button class="nav-toggle" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </button>
+    <nav>
+      <ul id="navList">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#destinations">Destinations</a></li>
+        <li><a href="#partners">Partners</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<section class="hero" id="home">
-  <div>
-    <h1>Delivering Egypt's Finest Produce to the World</h1>
-    <p>Premium potatoes, onions, and sauces exported globally</p>
-    <a href="#products" class="btn">Explore Our Products</a>
-  </div>
-</section>
-
-<section class="about" id="about">
-  <div class="container">
-    <div class="section-title">
-      <h2>About K&M Exports</h2>
+  <section class="hero" id="home">
+    <div>
+      <h1>Delivering Egypt's Finest Produce to the World</h1>
+      <p>Premium potatoes, onions, and traditional sauces exported globally</p>
+      <a href="#products" class="btn">Explore Our Products</a>
     </div>
+  </section>
+
+  <section id="about">
+    <div class="section-title"><h2>About K&M Exports</h2></div>
     <div class="about-img"></div>
-    <p>Founded in 2010, K&M Exports is a leading food export company based in Egypt, specializing in potatoes, onions, and traditional sauces.</p>
+    <p style="max-width:800px; margin:auto; margin-bottom:1rem;">
+      Founded in 2010, K&M Exports is a leading agricultural exporter from Egypt, specializing in potatoes, onions, and traditional sauces. Sourcing from Nile Delta farms, we ensure quality and reliability in every shipment.
+    </p>
     <a href="#contact" class="btn">Learn More</a>
-  </div>
-</section>
+  </section>
 
-<section class="products" id="products">
-  <div class="container">
-    <div class="section-title">
-      <h2>Our Premium Products</h2>
-      <p>Explore our top-quality agricultural exports</p>
-    </div>
+  <section id="products">
+    <div class="section-title"><h2>Our Premium Products</h2></div>
     <div class="product-grid">
       <div class="product-card">
         <div class="product-img" style="background-image:url('IMG_2575.jpeg')"></div>
         <div class="product-info">
           <h3>Premium Potatoes</h3>
-          <p>Spunta, Cara, and Valor varieties with high shelf life</p>
+          <p>High-quality Spunta, Cara, and Valor varieties.</p>
           <a href="#contact" class="btn">Inquire Now</a>
         </div>
       </div>
@@ -220,7 +213,7 @@
         <div class="product-img" style="background-image:url('IMG_2576.jpeg')"></div>
         <div class="product-info">
           <h3>Fresh Onions</h3>
-          <p>Red, yellow, and white onions for global markets</p>
+          <p>Red, Yellow, and White onions with long shelf life.</p>
           <a href="#contact" class="btn">Inquire Now</a>
         </div>
       </div>
@@ -228,34 +221,35 @@
         <div class="product-img" style="background-image:url('IMG_2577.jpeg')"></div>
         <div class="product-info">
           <h3>Traditional Sauces</h3>
-          <p>Tahini, molokhia, and more using authentic recipes</p>
+          <p>Authentic Tahini, Molokhia, and more.</p>
           <a href="#contact" class="btn">Inquire Now</a>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="partners" id="partners">
-  <div class="container">
-    <div class="section-title">
-      <h2>Our Trusted Partners</h2>
+  <section id="destinations">
+    <div class="section-title"><h2>Where We Export</h2></div>
+    <div class="product-grid">
+      <div class="partner-logo"><img src="flags/ae.png" alt="UAE Flag"><p>UAE</p></div>
+      <div class="partner-logo"><img src="flags/ru.png" alt="Russia Flag"><p>Russia</p></div>
+      <div class="partner-logo"><img src="flags/ng.png" alt="West Africa Flag"><p>West Africa</p></div>
+      <div class="partner-logo"><img src="flags/eu.png" alt="Europe Flag"><p>Europe</p></div>
     </div>
+  </section>
+
+  <section id="partners">
+    <div class="section-title"><h2>Our Trusted Partners</h2></div>
     <div class="partner-grid">
       <div class="partner-logo"><img src="partner1.png" alt="Partner 1"></div>
       <div class="partner-logo"><img src="partner2.png" alt="Partner 2"></div>
       <div class="partner-logo"><img src="partner3.png" alt="Partner 3"></div>
       <div class="partner-logo"><img src="partner4.png" alt="Partner 4"></div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="contact" id="contact">
-  <div class="container">
-    <div class="section-title">
-      <h2>Contact Us</h2>
-      <p>We’re here to help with any inquiries</p>
-    </div>
+  <section class="contact" id="contact">
+    <div class="section-title"><h2>Contact Us</h2></div>
     <div class="contact-form">
       <form>
         <input type="text" placeholder="Your Name" required>
@@ -265,25 +259,18 @@
         <button type="submit" class="btn">Send Message</button>
       </form>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <p>&copy; 2015 K&M Exports. All Rights Reserved.</p>
-</footer>
+  <footer>&copy; 2015 K&M Exports. All Rights Reserved.</footer>
 
-<script>
-  function toggleMenu() {
-    document.getElementById("menu").classList.toggle("open");
-  }
-
-  // Close menu when link clicked (on mobile)
-  document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', () => {
-      document.getElementById("menu").classList.remove("open");
+  <script>
+    function toggleMenu() {
+      document.getElementById('navList').classList.toggle('open');
+    }
+    document.querySelectorAll('nav a').forEach(a => {
+      a.addEventListener('click', () => document.getElementById('navList').classList.remove('open'));
     });
-  });
-</script>
+  </script>
 
 </body>
 </html>
