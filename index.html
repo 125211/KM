@@ -9,7 +9,6 @@
     :root {
       --primary: #234E70;
       --secondary: #F7B538;
-      --accent: #2A9D8F;
       --dark: #264653;
       --light: #F8F9FA;
     }
@@ -18,50 +17,62 @@
       font-family: 'Poppins', sans-serif;
       color: #333;
       background-color: white;
+      overflow-x: hidden;
     }
     header {
       background-color: rgba(35,78,112,0.95);
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      z-index: 1000;
+      position: fixed; top: 0; width: 100%; z-index: 1000;
       padding: 1rem 2rem;
       display: flex; justify-content: space-between; align-items: center;
     }
     .logo img {
       height: 50px;
     }
-    .nav-toggle {
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .mobile-menu {
       display: none;
       font-size: 1.8rem;
       color: white;
       cursor: pointer;
     }
-    nav {
-      display: flex;
-      gap: 1.5rem;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    nav a:hover {
-      text-decoration: underline;
+
+    @media(max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        background: var(--primary);
+        width: 250px;
+        height: 100vh;
+        padding: 2rem;
+        transition: right 0.3s ease;
+      }
+      .nav-links.open {
+        right: 0;
+      }
+      .mobile-menu {
+        display: block;
+      }
     }
 
+    section { padding: 5rem 20px; }
+
     .hero {
-      height: 100vh;
-      background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('IMG_2570.jpeg') center/cover no-repeat;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('IMG_2570.jpeg') center/cover no-repeat;
+      height: 100vh; color: white;
+      display: flex; justify-content: center; align-items: center; flex-direction: column;
       text-align: center;
-      color: white;
-      padding: 2rem;
     }
     .hero h1 {
-      font-family: 'Playfair Display', serif;
       font-size: 3rem;
       margin-bottom: 1rem;
     }
@@ -69,86 +80,81 @@
       font-size: 1.2rem;
       margin-bottom: 2rem;
     }
+
     .btn {
-      background: var(--secondary);
-      color: #000;
-      padding: 10px 24px;
-      border-radius: 5px;
+      background-color: var(--secondary);
+      color: black;
+      padding: 12px 25px;
       text-decoration: none;
-      font-weight: 500;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 15px;
     }
 
-    section {
-      padding: 4rem 2rem;
-      max-width: 1200px;
-      margin: auto;
+    .section-title h2 {
+      color: var(--primary);
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
     }
 
     .about img {
       width: 100%;
+      max-width: 700px;
+      margin: 20px 0;
       border-radius: 10px;
-      margin-bottom: 1rem;
     }
 
-    .product-grid, .partner-grid, .flag-grid {
+    .product-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
     }
-
-    .product-card, .flag-item, .partner-logo {
-      background: #f5f5f5;
-      padding: 1rem;
-      border-radius: 10px;
+    .product-card {
+      background: var(--light);
+      border-radius: 8px;
+      overflow: hidden;
       text-align: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      padding: 1rem;
     }
-
     .product-card img {
       width: 100%;
       height: 200px;
       object-fit: cover;
-      border-radius: 10px;
     }
 
-    .partner-logo img {
-      width: 100%;
-      height: 80px;
+    .partner-grid, .flag-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      justify-items: center;
+    }
+    .partner-logo img, .flag-item img {
+      width: 120px;
+      height: auto;
       object-fit: contain;
     }
 
-    .flag-item img {
-      height: 40px;
-      margin-bottom: 10px;
+    .flag-item h3 {
+      margin-top: 10px;
+      font-size: 1.1rem;
     }
 
     .contact {
       background: url('IMG_2583.jpeg') center/cover no-repeat;
-      padding: 4rem 2rem;
-      color: white;
+      padding: 5rem 20px;
     }
     .contact-form {
-      background: rgba(0, 0, 0, 0.7);
-      padding: 2rem;
-      border-radius: 10px;
+      background: rgba(255,255,255,0.9);
       max-width: 600px;
       margin: auto;
+      padding: 2rem;
+      border-radius: 10px;
     }
     .contact-form input, .contact-form textarea {
       width: 100%;
-      padding: 10px;
       margin-bottom: 1rem;
-      border-radius: 5px;
-      border: none;
-      font-size: 1rem;
-    }
-    .contact-form button {
-      width: 100%;
-      padding: 12px;
-      background: var(--secondary);
-      color: black;
-      border: none;
-      font-weight: bold;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
       border-radius: 5px;
     }
 
@@ -156,38 +162,15 @@
       background: var(--dark);
       color: white;
       text-align: center;
-      padding: 2rem;
-    }
-
-    @media (max-width: 768px) {
-      .nav-toggle {
-        display: block;
-      }
-      nav {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background: var(--primary);
-        flex-direction: column;
-        width: 100%;
-        display: none;
-      }
-      nav.open {
-        display: flex;
-      }
-      nav a {
-        padding: 1rem;
-        border-top: 1px solid rgba(255,255,255,0.1);
-      }
+      padding: 2rem 20px;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <a class="logo" href="#"><img src="D8231576-840A-4047-8413-30F3AF95D10A.png" alt="K&M Logo"></a>
-    <div class="nav-toggle" id="navToggle">&#9776;</div>
-    <nav id="navMenu">
+    <a href="#" class="logo"><img src="D8231576-840A-4047-8413-30F3AF95D10A.png" alt="K&M Logo"></a>
+    <nav class="nav-links" id="navLinks">
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#products">Products</a>
@@ -195,75 +178,70 @@
       <a href="#partners">Partners</a>
       <a href="#contact">Contact</a>
     </nav>
+    <div class="mobile-menu" onclick="toggleMenu()">☰</div>
   </header>
 
   <section class="hero" id="home">
-    <div>
-      <h1>Delivering Egypt's Finest Produce to the World</h1>
-      <p>Premium quality Egyptian potatoes, onions, and sauces exported globally with the highest standards</p>
-      <a href="#products" class="btn">Explore Our Products</a>
-    </div>
+    <h1>Delivering Egypt's Finest Produce to the World</h1>
+    <p>Premium potatoes, onions, and sauces exported globally with quality and care</p>
+    <a href="#products" class="btn">Explore Our Products</a>
   </section>
 
   <section class="about" id="about">
-    <img src="IMG_2574.jpeg" alt="About K&M">
-    <h2>About K&M Exports</h2>
-    <p>K&M Exports is a leading food exporting company based in Egypt. We deliver premium potatoes, onions, and sauces with strict international standards to partners around the world.</p>
+    <div class="section-title"><h2>About K&M Exports</h2></div>
+    <img src="IMG_2574.jpeg" alt="About Image" />
+    <p>Founded in 2010, K&M Exports is one of Egypt’s leading food export companies. With farms across the Nile Delta and a strict quality process, we serve markets in UAE, Russia, West Africa, and Europe.</p>
     <a href="#contact" class="btn">Learn More</a>
   </section>
 
   <section class="products" id="products">
-    <h2>Our Products</h2>
+    <div class="section-title"><h2>Our Premium Products</h2></div>
     <div class="product-grid">
       <div class="product-card">
-  <img src="IMG_2575.jpeg" alt="Potatoes">
-  <h3>Premium Potatoes</h3>
-  <p>Spunta, Cara & Valor potatoes with great shelf life and export quality.</p>
-  <a href="#contact" class="btn">Inquire Now</a>
-</div>
-      <div class="product-card">
-        <img src="IMG_2576.jpeg" alt="Onions">
-        <h3>Fresh Onions</h3>
-        <p>Red, yellow, and white onions grown in nutrient-rich Egyptian soil.</p>
+        <img src="IMG_2575.jpeg" alt="Potatoes" />
+        <h3>Premium Potatoes</h3>
+        <p>High-quality Egyptian potatoes with long shelf life and taste.</p>
         <a href="#contact" class="btn">Inquire Now</a>
       </div>
       <div class="product-card">
-        <img src="IMG_2577.jpeg" alt="Sauces">
+        <img src="IMG_2576.jpeg" alt="Onions" />
+        <h3>Fresh Onions</h3>
+        <p>Flavorful Egyptian onions in red, yellow, and white types.</p>
+        <a href="#contact" class="btn">Inquire Now</a>
+      </div>
+      <div class="product-card">
+        <img src="IMG_2577.jpeg" alt="Sauces" />
         <h3>Traditional Sauces</h3>
-        <p>Molokhia, tahini & Egyptian sauces made with authentic recipes.</p>
+        <p>Tahini, molokhia, and other authentic Egyptian condiments.</p>
         <a href="#contact" class="btn">Inquire Now</a>
       </div>
     </div>
   </section>
 
   <section class="destinations" id="destinations">
-    <h2>Where We Export</h2>
+    <div class="section-title"><h2>Where We Export</h2></div>
     <div class="flag-grid">
       <div class="flag-item">
-        <img src="IMG_2606.png" alt="UAE Flag">
+        <img src="IMG_2606.png" alt="UAE Flag" />
         <h3>United Arab Emirates</h3>
-        <p>Serving UAE markets since 2015</p>
       </div>
       <div class="flag-item">
-        <img src="IMG_2605.png" alt="Russia Flag">
+        <img src="IMG_2605.png" alt="Russia Flag" />
         <h3>Russia</h3>
-        <p>Leading supplier of Egyptian onions</p>
       </div>
       <div class="flag-item">
-        <img src="IMG_2607.jpeg" alt="West Africa Flag">
+        <img src="IMG_2607.jpeg" alt="West Africa Flag" />
         <h3>West Africa</h3>
-        <p>Growing distribution network</p>
       </div>
       <div class="flag-item">
-        <img src="IMG_2608.png" alt="Europe Flag">
+        <img src="IMG_2608.png" alt="Europe Flag" />
         <h3>Europe</h3>
-        <p>EU-compliant export standards</p>
       </div>
     </div>
   </section>
 
   <section class="partners" id="partners">
-    <h2>Our Trusted Partners</h2>
+    <div class="section-title"><h2>Our Trusted Partners</h2></div>
     <div class="partner-grid">
       <div class="partner-logo"><img src="IMG_2601.jpeg" alt="Partner 1"></div>
       <div class="partner-logo"><img src="IMG_2602.jpeg" alt="Partner 2"></div>
@@ -273,32 +251,33 @@
   </section>
 
   <section class="contact" id="contact">
-    <h2>Contact Us</h2>
+    <div class="section-title"><h2>Contact Us</h2></div>
     <div class="contact-form">
       <form>
-        <input type="text" placeholder="Your Name">
-        <input type="email" placeholder="Your Email">
+        <input type="text" placeholder="Your Name" />
+        <input type="email" placeholder="Your Email" />
+        <input type="text" placeholder="Subject" />
         <textarea rows="5" placeholder="Your Message"></textarea>
-        <button type="submit">Send Inquiry</button>
+        <button type="submit" class="btn">Send Message</button>
       </form>
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 K&M Exports. All rights reserved.</p>
+    <p>&copy; 2014 K&M Exports. All rights reserved.</p>
   </footer>
 
   <script>
-    const navToggle = document.getElementById('navToggle');
-    const navMenu = document.getElementById('navMenu');
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
 
-    navToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
-    });
-
-    document.querySelectorAll('nav a').forEach(link => {
-      link.addEventListener('click', () => navMenu.classList.remove('open'));
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('open');
+      });
     });
   </script>
+
 </body>
 </html>
