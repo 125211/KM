@@ -3,229 +3,250 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>K&M Exports</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <title>K&M Exporting Company</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Poppins', sans-serif; background: #fff; color: #333; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+
     header {
-      background: #234E70; color: #fff; padding: 1rem 2rem;
-      position: fixed; top: 0; width: 100%; z-index: 999;
-      display: flex; justify-content: space-between; align-items: center;
+      position: fixed;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      z-index: 1000;
     }
-    .logo img { height: 40px; }
-    .menu-toggle {
-      display: none; font-size: 1.5rem; color: #fff; cursor: pointer;
+
+    .logo img {
+      height: 50px;
     }
-    nav ul {
-      list-style: none; display: flex; gap: 1.5rem;
+
+    nav {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background: white;
+      border: 1px solid #ddd;
     }
-    nav ul li a {
-      text-decoration: none; color: white; font-weight: 500;
+
+    nav a {
+      padding: 10px;
+      text-decoration: none;
+      color: black;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .menu-button {
+      font-size: 28px;
+      cursor: pointer;
+      position: absolute;
+      top: 20px;
+      right: 20px;
     }
 
     .hero {
-      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('IMG_2570.jpeg') center/cover no-repeat;
-      text-align: center; color: white; padding: 10rem 2rem 6rem;
-    }
-    .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
-    .hero p { font-size: 1.2rem; }
-    .btn {
-      background: #F7B538; color: #000;
-      padding: 10px 25px; border-radius: 5px;
-      text-decoration: none; font-weight: 600;
-      display: inline-block; margin-top: 1rem;
-    }
-
-    section { padding: 4rem 2rem; max-width: 1200px; margin: auto; }
-    .section-title { text-align: center; margin-bottom: 2rem; }
-
-    .about-img {
-      background: url('IMG_2649.jpeg') center/cover no-repeat;
-      height: 300px; border-radius: 10px; margin-bottom: 1.5rem;
-    }
-
-    .product-grid {
-      display: grid;
-      gap: 2rem;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-    .product-card {
-      background: #f9f9f9; border-radius: 10px; overflow: hidden;
-      border: 1px solid #ccc;
-    }
-    .product-img {
-      height: 200px; background-size: cover; background-position: center;
-    }
-    .product-info { padding: 1rem; }
-
-    .regions {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+      height: 100vh;
+      background: url('images/IMG_2570.jpeg') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
       text-align: center;
     }
-    .region-box {
-      background: #f2f2f2; padding: 2rem;
-      border-radius: 8px;
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
     }
 
-    .partner-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem; justify-items: center;
+    #about img {
+      width: 100%;
+      max-width: 800px;
+      margin-top: 20px;
     }
-    .partner-grid img {
-      width: 150px; height: auto;
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .product-card {
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #f9f9f9;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .product-card h3 {
+      margin: 10px 0;
+    }
+
+    .product-card p {
+      padding: 0 10px 10px;
+    }
+
+    .export-grid, .partners-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      justify-items: center;
+      max-width: 600px;
+      margin: auto;
     }
 
     .contact {
-      background: url('IMG_2583.jpeg') center/cover no-repeat;
-      padding: 4rem 2rem;
-    }
-    .contact-form {
-      background: rgba(255,255,255,0.95);
-      padding: 2rem;
-      max-width: 600px; margin: auto;
-      border-radius: 10px;
-    }
-    .contact-form input, .contact-form textarea {
-      width: 100%; padding: 12px; margin-bottom: 1rem;
-      border: 1px solid #ccc; border-radius: 4px;
+      background: url('images/IMG_2583.jpeg') no-repeat center center/cover;
+      color: white;
     }
 
-    footer {
-      background: #264653; color: white;
-      padding: 2rem; text-align: center;
-    }
-    .social-icons a {
-      margin: 0 10px; color: white;
-      font-size: 1.3rem; text-decoration: none;
+    .contact form {
+      max-width: 500px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 8px;
     }
 
-    @media(max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        position: absolute; top: 70px; right: 0;
-        background: #234E70; width: 200px;
+    .contact input, .contact textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    @media (min-width: 768px) {
+      nav {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        background: none;
+        border: none;
+      }
+
+      nav a {
+        border: none;
+        margin: 0 10px;
+      }
+
+      .menu-button {
         display: none;
       }
-      nav ul.open { display: flex; }
-      .menu-toggle { display: block; }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="logo"><img src="D8231576-840A-4047-8413-30F3AF95D10A.png" alt="K&M Logo"></div>
-    <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
-    <nav>
-      <ul id="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#regions">Regions</a></li>
-        <li><a href="#partners">Partners</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <div class="logo"><img src="images/D8231576-840A-4047-8413-30F3AF95D10A.png" alt="K&M Logo" /></div>
+    <div class="menu-button" onclick="toggleMenu()">☰</div>
+    <nav id="mobileMenu">
+      <a href="#hero" onclick="closeMenu()">Home</a>
+      <a href="#about" onclick="closeMenu()">About</a>
+      <a href="#products" onclick="closeMenu()">Products</a>
+      <a href="#export" onclick="closeMenu()">Where We Export</a>
+      <a href="#partners" onclick="closeMenu()">Partners</a>
+      <a href="#contact" onclick="closeMenu()">Contact</a>
     </nav>
   </header>
 
-  <section class="hero" id="home">
-    <h1>Delivering Egypt’s Finest Produce</h1>
-    <p>Supplying premium potatoes, onions, and sauces to international markets</p>
-    <a href="#products" class="btn">Explore Our Products</a>
+  <section class="hero" id="hero">
+    <div>
+      <h1>K&M Exporting Company</h1>
+      <p>Delivering Quality Food Products Worldwide</p>
+      <button onclick="document.getElementById('contact').scrollIntoView()">Inquire Now</button>
+    </div>
   </section>
 
   <section id="about">
-    <div class="section-title"><h2>About K&M Exports</h2></div>
-    <div class="about-img"></div>
-    <p>K&M Exports is a trusted Egyptian supplier of high-quality agricultural products including potatoes, onions, and sauces. We specialize in global exports with a strong presence in regional markets and strict commitment to international standards.</p>
-    <a href="#contact" class="btn">Learn More</a>
+    <h2>About K&M Exports</h2>
+    <p>We specialize in exporting premium potatoes, onions, and sauces to global markets.</p>
+    <img src="images/IMG_2649.jpeg" alt="About Us" />
   </section>
 
   <section id="products">
-    <div class="section-title"><h2>Our Products</h2></div>
-    <div class="product-grid">
+    <h2>Our Products</h2>
+    <div class="products">
       <div class="product-card">
-        <div class="product-img" style="background-image: url('IMG_2575.jpeg');"></div>
-        <div class="product-info">
-          <h3>Potatoes</h3>
-          <p>High-quality Egyptian potatoes with excellent taste and shelf life, available in multiple varieties including Spunta and Cara.</p>
-          <a href="#contact" class="btn">Inquire Now</a>
-        </div>
+        <img src="images/IMG_2575.jpeg" alt="Potatoes" />
+        <h3>Potatoes</h3>
+        <p>Fresh, export-grade potatoes with high quality packaging and global certification.</p>
       </div>
       <div class="product-card">
-        <div class="product-img" style="background-image: url('IMG_2576.jpeg');"></div>
-        <div class="product-info">
-          <h3>Onions</h3>
-          <p>Egyptian onions with rich flavor and long storage, available in red, white, and yellow types suitable for global markets.</p>
-          <a href="#contact" class="btn">Inquire Now</a>
-        </div>
+        <img src="images/IMG_2576.jpeg" alt="Onions" />
+        <h3>Onions</h3>
+        <p>Golden and red onions hand-picked and sorted for international markets.</p>
       </div>
       <div class="product-card">
-        <div class="product-img" style="background-image: url('IMG_2644.jpeg');"></div>
-        <div class="product-info">
-          <h3>Sauces</h3>
-          <p>We offer a wide range of high-quality sauces including ketchup, BBQ, mustard, ranch, burger sauce, and mayonnaise—perfect for retail and food service.</p>
-          <a href="#contact" class="btn">Inquire Now</a>
-        </div>
+        <img src="images/IMG_2644.jpeg" alt="Sauces" />
+        <h3>Sauces</h3>
+        <p>Ketchup, BBQ, mustard, ranch, burger sauce, and mayonnaise in export packaging.</p>
       </div>
     </div>
   </section>
 
-  <section id="regions">
-    <div class="section-title"><h2>Where We Export</h2></div>
-    <div class="regions">
-      <div class="region-box"><h3>Gulf Region</h3><p>Strong distribution network across the Gulf Cooperation Council countries.</p></div>
-      <div class="region-box"><h3>West Africa</h3><p>Expanding partnerships and consistent market presence in West African countries.</p></div>
-      <div class="region-box"><h3>Russia & CIS</h3><p>Trusted supplier of Egyptian onions and potatoes to Russian markets.</p></div>
-      <div class="region-box"><h3>Europe</h3><p>Compliant with EU export standards and serving diverse clients across Europe.</p></div>
+  <section id="export">
+    <h2>Where We Export</h2>
+    <div class="export-grid">
+      <div>UAE</div>
+      <div>Russia</div>
+      <div>West Africa</div>
+      <div>Europe</div>
     </div>
   </section>
 
   <section id="partners">
-    <div class="section-title"><h2>Our Trusted Partners</h2></div>
-    <div class="partner-grid">
-      <img src="IMG_2601.jpeg" alt="Partner 1">
-      <img src="IMG_2602.jpeg" alt="Partner 2">
-      <img src="IMG_2603.jpeg" alt="Partner 3">
-      <img src="IMG_2604.jpeg" alt="Partner 4">
+    <h2>Our Trusted Partners</h2>
+    <div class="partners-grid">
+      <img src="images/IMG_2601.jpeg" alt="Partner 1" width="120" />
+      <img src="images/IMG_2602.jpeg" alt="Partner 2" width="120" />
+      <img src="images/IMG_2603.jpeg" alt="Partner 3" width="120" />
+      <img src="images/IMG_2604.jpeg" alt="Partner 4" width="120" />
     </div>
   </section>
 
   <section class="contact" id="contact">
-    <div class="section-title"><h2>Contact Us</h2></div>
-    <div class="contact-form">
-      <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn">Send Message</button>
-      </form>
-    </div>
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" rows="4" required></textarea>
+      <button type="submit">Send</button>
+    </form>
   </section>
-
-  <footer>
-    <p>&copy; 2020 K&M Exports. All rights reserved.</p>
-    <div class="social-icons">
-      <a href="https://www.facebook.com/share/1Apf6JrWZp/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.instagram.com/km_exportes?igsh=MXYxcTUxaHBweG8xZw" target="_blank"><i class="fab fa-instagram"></i></a>
-    </div>
-  </footer>
 
   <script>
     function toggleMenu() {
-      document.getElementById('nav-links').classList.toggle('open');
+      const menu = document.getElementById("mobileMenu");
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
     }
 
-    document.querySelectorAll('#nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        document.getElementById('nav-links').classList.remove('open');
-      });
-    });
+    function closeMenu() {
+      const menu = document.getElementById("mobileMenu");
+      if (window.innerWidth < 768) {
+        menu.style.display = "none";
+      }
+    }
   </script>
+
 </body>
 </html>
