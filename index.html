@@ -3,107 +3,103 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>K&M Exporter</title>
+  <title>K&M Exporting Company</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
     }
     header {
+      background-color: #333;
+      color: white;
+      padding: 15px 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 20px;
-      background-color: #fff;
-      position: sticky;
-      top: 0;
-      z-index: 999;
     }
     header img {
       height: 50px;
     }
+    .menu-button {
+      font-size: 26px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: white;
+    }
     nav {
       display: none;
       flex-direction: column;
+      background-color: #444;
       position: absolute;
-      top: 60px;
-      right: 20px;
-      background-color: #fff;
-      border: 1px solid #ddd;
-    }
-    nav a {
-      padding: 10px 20px;
-      text-decoration: none;
-      color: #333;
-      border-bottom: 1px solid #eee;
-    }
-    nav a:hover {
-      background-color: #f0f0f0;
-    }
-    .menu-btn {
-      font-size: 24px;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    .section {
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .hero {
-      background: url('IMG_2570.jpeg') no-repeat center center/cover;
-      color: white;
-      padding: 100px 20px;
-    }
-    .about img,
-    .contact img {
-      max-width: 100%;
-      margin-top: 20px;
-    }
-
-    .products .card {
-      display: inline-block;
-      width: 300px;
-      margin: 10px;
-      border: 1px solid #ccc;
-    }
-    .products .card img {
+      top: 70px;
+      right: 0;
       width: 100%;
     }
-
-    .partners, .export {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .partners img, .export .region {
-      width: 150px;
-      margin: 10px;
-    }
-
-    .contact {
-      background: url('IMG_2583.jpeg') no-repeat center center/cover;
+    nav a {
       color: white;
+      padding: 15px 20px;
+      text-decoration: none;
+      border-top: 1px solid #555;
     }
-
-    footer {
-      background-color: #111;
-      color: #eee;
-      padding: 20px;
+    nav a:hover {
+      background-color: #555;
+    }
+    .section {
+      padding: 100px 20px 60px;
+    }
+    .hero {
+      background-image: url('IMG_2570.jpeg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 200px 20px 100px;
+    }
+    .about img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 20px;
+    }
+    .products .product {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .products img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .products button {
+      margin-top: 10px;
+    }
+    .regions, .partners {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
       text-align: center;
     }
-    .social-icons a {
-      margin: 0 10px;
+    .contact {
+      background-image: url('IMG_2583.jpeg');
+      background-size: cover;
+      background-position: center;
       color: white;
-      font-size: 24px;
-      text-decoration: none;
+      padding: 60px 20px;
     }
-
-    @media (max-width: 768px) {
-      nav.show {
-        display: flex;
-      }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    footer a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
     }
   </style>
 </head>
@@ -111,65 +107,73 @@
 
 <header>
   <img src="D8231576-840A-4047-8413-30F3AF95D10A.png" alt="K&M Logo">
-  <button class="menu-btn" onclick="toggleMenu()">☰</button>
-  <nav id="mobileMenu">
-    <a href="#hero" onclick="closeMenu()">Home</a>
-    <a href="#about" onclick="closeMenu()">About</a>
-    <a href="#products" onclick="closeMenu()">Products</a>
-    <a href="#export" onclick="closeMenu()">Export</a>
-    <a href="#partners" onclick="closeMenu()">Partners</a>
-    <a href="#contact" onclick="closeMenu()">Contact</a>
-  </nav>
+  <button class="menu-button" onclick="toggleMenu()">☰</button>
 </header>
 
+<nav id="navMenu">
+  <a href="#hero" onclick="closeMenu()">Home</a>
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#products" onclick="closeMenu()">Products</a>
+  <a href="#export" onclick="closeMenu()">Export</a>
+  <a href="#partners" onclick="closeMenu()">Partners</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+</nav>
+
 <section class="hero" id="hero">
-  <h1>Welcome to K&M Exporter</h1>
-  <p>Delivering quality food products globally</p>
+  <h1>Welcome to K&M Exporting Company</h1>
+  <p>High-quality agricultural products at competitive prices</p>
   <button onclick="document.getElementById('contact').scrollIntoView()">Inquire Now</button>
 </section>
 
 <section class="section about" id="about">
   <h2>About K&M Exports</h2>
-  <p>We specialize in exporting fresh vegetables and sauces with a focus on quality, reliability, and timely delivery.</p>
-  <img src="IMG_2649.jpeg" alt="About Us Image">
+  <p>We are a dedicated food exporting company based in Egypt, specializing in delivering fresh and high-quality produce including potatoes, onions, and sauces to international markets.</p>
+  <img src="IMG_2649.jpeg" alt="About Us">
 </section>
 
 <section class="section products" id="products">
   <h2>Our Products</h2>
-  <div class="card">
+  <div class="product">
+    <h3>Potatoes</h3>
     <img src="IMG_2575.jpeg" alt="Potatoes">
-    <h3>Fresh Potatoes</h3>
+    <button onclick="document.getElementById('contact').scrollIntoView()">Inquire Now</button>
   </div>
-  <div class="card">
+  <div class="product">
+    <h3>Onions</h3>
     <img src="IMG_2576.jpeg" alt="Onions">
-    <h3>Fresh Onions</h3>
+    <button onclick="document.getElementById('contact').scrollIntoView()">Inquire Now</button>
   </div>
-  <div class="card">
-    <img src="IMG_2644.jpeg" alt="Sauces">
+  <div class="product">
     <h3>Sauces</h3>
-    <p>Ketchup, BBQ, Mustard, Ranch, Burger Sauce, Mayonnaise</p>
+    <img src="IMG_2644.jpeg" alt="Sauces">
+    <p>Ketchup, BBQ, Mustard, Ranch, Burger Sauce, and Mayonnaise.</p>
+    <button onclick="document.getElementById('contact').scrollIntoView()">Inquire Now</button>
   </div>
 </section>
 
-<section class="section export" id="export">
+<section class="section" id="export">
   <h2>Where We Export</h2>
-  <div class="region">Middle East</div>
-  <div class="region">West Africa</div>
-  <div class="region">Europe</div>
-  <div class="region">Russia & CIS</div>
+  <div class="regions">
+    <div>UAE</div>
+    <div>Russia</div>
+    <div>West Africa</div>
+    <div>Europe</div>
+  </div>
 </section>
 
-<section class="section partners" id="partners">
+<section class="section" id="partners">
   <h2>Our Trusted Partners</h2>
-  <img src="IMG_2601.jpeg" alt="Partner 1">
-  <img src="IMG_2602.jpeg" alt="Partner 2">
-  <img src="IMG_2603.jpeg" alt="Partner 3">
-  <img src="IMG_2604.jpeg" alt="Partner 4">
+  <div class="partners">
+    <img src="IMG_2601.jpeg" alt="Partner 1">
+    <img src="IMG_2602.jpeg" alt="Partner 2">
+    <img src="IMG_2603.jpeg" alt="Partner 3">
+    <img src="IMG_2604.jpeg" alt="Partner 4">
+  </div>
 </section>
 
-<section class="section contact" id="contact">
+<section class="contact" id="contact">
   <h2>Contact Us</h2>
-  <p>Email us at <strong>info@kmexporter.org</strong></p>
+  <p>We’d love to hear from you. Please fill in the form below to inquire about our products or services.</p>
   <form>
     <input type="text" placeholder="Your Name" required><br><br>
     <input type="email" placeholder="Your Email" required><br><br>
@@ -179,22 +183,17 @@
 </section>
 
 <footer>
-  <p>&copy; 2020 K&M Exporter. All rights reserved.</p>
-  <div class="social-icons">
-    <a href="https://www.facebook.com/share/1Apf6JrWZp/?mibextid=wwXIfr" target="_blank">📘</a>
-    <a href="https://www.instagram.com/km_exportes?igsh=MXYxcTUxaHBweG8xZw" target="_blank">📷</a>
-  </div>
+  <p>© 2020 K&M Exporting Company. All rights reserved.</p>
+  <a href="https://www.instagram.com/km_exportes?igsh=MXYxcTUxaHBweG8xZw%3D%3D&utm_source=qr" target="_blank">Instagram</a>
 </footer>
 
 <script>
   function toggleMenu() {
-    const menu = document.getElementById('mobileMenu');
-    menu.classList.toggle('show');
+    const nav = document.getElementById("navMenu");
+    nav.style.display = nav.style.display === "flex" ? "none" : "flex";
   }
-
   function closeMenu() {
-    const menu = document.getElementById('mobileMenu');
-    menu.classList.remove('show');
+    document.getElementById("navMenu").style.display = "none";
   }
 </script>
 
