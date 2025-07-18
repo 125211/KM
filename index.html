@@ -619,4 +619,71 @@
 
 <section class="section contact" id="contact">
   <h2>Contact Us</h2>
-  <p>We'd love to hear from you. Please fill in the form below to inquire about our products or services.</
+  <p>We'd love to hear from you. Please fill in the form below to inquire about our products or services.</p>
+  <p class="email-contact">Or email us at: <a href="mailto:info@kmexporter.org">info@kmexporter.org</a></p>
+  <div class="contact-form">
+    <form action="https://formspree.io/f/mbjvkzgj" method="POST">
+      <input type="hidden" name="_subject" value="New Contact Form Submission">
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Your Name" required>
+      </div>
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Your Email" required>
+      </div>
+      <div class="form-group">
+        <textarea name="message" placeholder="Your Message" required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="social-links">
+    <a href="https://www.instagram.com/km_exportes?igsh=MXYxcTUxaHBweG8xZw%3D%3D&utm_source=qr" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.facebook.com/share/14Khpu3bwmG/?mibextid=wwXIfr" target="_blank">
+      <i class="fab fa-facebook"></i>
+    </a>
+  </div>
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#products">Products</a>
+    <a href="#contact">Contact</a>
+    <a href="#export">Export</a>
+  </div>
+  <div class="copyright">
+    <p>© 2020 K&M Exporting Company. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById("navMenu");
+    nav.classList.toggle('active');
+  }
+  
+  function closeMenu() {
+    document.getElementById("navMenu").classList.remove('active');
+  }
+  
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
