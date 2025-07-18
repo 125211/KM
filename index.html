@@ -1,3 +1,10 @@
+
+
+These are the only changes needed to:
+1. Update the region name from "Eurasia" to "Asia"
+2. Move the about image above the text content while maintaining all stylingHere is the updated HTML content after applying above edits:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,6 +52,7 @@
     .logo-container {
       display: flex;
       align-items: center;
+      flex-grow: 1;
     }
     
     header img {
@@ -409,6 +417,22 @@
       background-color: #e69500;
       transform: translateY(-3px);
     }
+
+    .email-contact {
+      margin: 20px 0;
+      font-size: 1.1rem;
+    }
+
+    .email-contact a {
+      color: var(--secondary);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .email-contact a:hover {
+      color: white;
+      text-decoration: underline;
+    }
     
     /* Footer */
     footer {
@@ -425,7 +449,7 @@
     .social-links a {
       color: white;
       font-size: 1.5rem;
-      margin: 0 15px;
+      margin: 0 10px;
       transition: color 0.3s;
       display: inline-block;
     }
@@ -524,12 +548,12 @@
 <section class="section about" id="about">
   <h2>About K&M Exports</h2>
   <div class="about-content">
+    <div class="about-image">
+      <img src="IMG_2649.jpeg" alt="About Us">
+    </div>
     <div class="about-text">
       <p>We are a dedicated food exporting company based in Egypt, specializing in delivering fresh and high-quality produce including potatoes, onions, and sauces to international markets.</p>
       <p>With years of experience in the industry, we maintain rigorous quality standards while offering competitive pricing for bulk orders.</p>
-    </div>
-    <div class="about-image">
-      <img src="IMG_2649.jpeg" alt="About Us">
     </div>
   </div>
 </section>
@@ -573,12 +597,12 @@
 </section>
 
 <section class="section export" id="export">
-  <h2>Where We Export</h2>
+  <h2>Export Regions</h2>
   <div class="regions">
-    <div class="region">UAE</div>
-    <div class="region">Russia</div>
-    <div class="region">West Africa</div>
-    <div class="region">Europe</div>
+    <div class="region">Middle East</div>
+    <div class="region">Asia</div>
+    <div class="region">Africa</div>
+    <div class="region">European Union</div>
   </div>
 </section>
 
@@ -603,16 +627,18 @@
 <section class="section contact" id="contact">
   <h2>Contact Us</h2>
   <p>We'd love to hear from you. Please fill in the form below to inquire about our products or services.</p>
+  <p class="email-contact">Or email us at: <a href="mailto:info@kmexporter.org">info@kmexporter.org</a></p>
   <div class="contact-form">
-    <form>
+    <form action="https://formspree.io/f/mbjvkzgj" method="POST">
+      <input type="hidden" name="_subject" value="New Contact Form Submission">
       <div class="form-group">
-        <input type="text" placeholder="Your Name" required>
+        <input type="text" name="name" placeholder="Your Name" required>
       </div>
       <div class="form-group">
-        <input type="email" placeholder="Your Email" required>
+        <input type="email" name="email" placeholder="Your Email" required>
       </div>
       <div class="form-group">
-        <textarea placeholder="Your Message" required></textarea>
+        <textarea name="message" placeholder="Your Message" required></textarea>
       </div>
       <button type="submit" class="submit-btn">Send Message</button>
     </form>
@@ -623,6 +649,9 @@
   <div class="social-links">
     <a href="https://www.instagram.com/km_exportes?igsh=MXYxcTUxaHBweG8xZw%3D%3D&utm_source=qr" target="_blank">
       <i class="fab fa-instagram"></i>
+    </a>
+    <a href="YOUR_FACEBOOK_PAGE_URL" target="_blank">
+      <i class="fab fa-facebook"></i>
     </a>
   </div>
   <div class="footer-links">
