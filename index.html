@@ -3,511 +3,155 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>K&M Exporting Company</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>K&M Exports</title>
   <style>
-    :root {
-      --primary: #2c7d3b;
-      --secondary: #f8a51b;
-      --dark: #1a3a1f;
-      --light: #f5f5f5;
-      --text: #333333;
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      color: var(--text);
-      background-color: #f9f9f9;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
     }
-    
-    /* Header Styles */
+
     header {
-      background-color: var(--dark);
-      color: white;
-      padding: 15px 5%;
       position: fixed;
-      width: 100%;
       top: 0;
-      z-index: 1000;
+      width: 100%;
+      background: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 10px 20px;
+      z-index: 999;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    
-    .logo-container {
-      display: flex;
-      align-items: center;
-      flex-grow: 1;
+
+    .logo img {
+      height: 40px;
     }
-    
-    header img {
-      height: 60px;
-      transition: transform 0.3s;
-    }
-    
-    header img:hover {
-      transform: scale(1.05);
-    }
-    
-    .menu-button {
-      font-size: 1.5rem;
-      cursor: pointer;
-      background: none;
-      border: none;
-      color: white;
-      padding: 10px;
-    }
-    
-    /* Navigation */
+
     nav {
       display: none;
       flex-direction: column;
-      background-color: rgba(26, 58, 31, 0.95);
-      position: fixed;
-      top: 78px;
+      background-color: white;
+      position: absolute;
+      top: 60px;
       right: 0;
-      width: 250px;
-      border-radius: 0 0 0 10px;
-      box-shadow: -2px 4px 10px rgba(0,0,0,0.2);
+      width: 200px;
+      border: 1px solid #ddd;
     }
-    
-    nav.active {
-      display: flex;
-    }
-    
+
     nav a {
-      color: white;
-      padding: 15px 20px;
+      padding: 15px;
       text-decoration: none;
-      transition: background-color 0.3s;
-      display: block;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      color: black;
+      border-bottom: 1px solid #eee;
     }
-    
-    nav a:hover {
-      background-color: var(--primary);
+
+    .menu-btn {
+      cursor: pointer;
+      font-size: 20px;
     }
-    
-    nav a:last-child {
-      border-bottom: none;
-    }
-    
-    /* Hero Section */
+
     .hero {
-      background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('IMG_2570.jpeg');
+      background-image: url('IMG_2570.jpeg');
       background-size: cover;
       background-position: center;
+      height: 100vh;
       color: white;
-      text-align: center;
-      padding: 200px 5% 120px;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
-    }
-    
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-    }
-    
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin-bottom: 30px;
-    }
-    
-    .hero button {
-      background-color: var(--secondary);
-      color: var(--dark);
-      padding: 12px 30px;
-      border: none;
-      border-radius: 30px;
-      font-weight: bold;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.3s;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    
-    .hero button:hover {
-      background-color: #e69500;
-      transform: translateY(-3px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-    }
-    
-    /* Sections */
-    .section {
-      padding: 100px 5%;
-      scroll-margin-top: 80px;
-    }
-    
-    .section h2 {
+      justify-content: center;
       text-align: center;
-      margin-bottom: 40px;
-      font-size: 2.2rem;
-      color: var(--dark);
-      position: relative;
+      padding: 20px;
     }
-    
-    .section h2::after {
-      content: '';
-      display: block;
-      width: 80px;
-      height: 4px;
-      background-color: var(--secondary);
-      margin: 15px auto;
-      border-radius: 2px;
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
     }
-    
-    /* About Section */
-    .about {
-      background-color: white;
+
+    .hero p {
+      font-size: 24px;
     }
-    
-    .about-content {
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .about img {
+      max-width: 100%;
+      margin-top: 20px;
+    }
+
+    .products {
       display: flex;
       flex-wrap: wrap;
-      gap: 40px;
-      align-items: center;
       justify-content: center;
-    }
-    
-    .about-text {
-      flex: 1;
-      min-width: 300px;
-    }
-    
-    .about-image {
-      flex: 1;
-      min-width: 300px;
-      overflow: hidden;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-    
-    .about-image img {
-      width: 100%;
-      height: auto;
-      display: block;
-      transition: transform 0.5s;
-    }
-    
-    .about-image:hover img {
-      transform: scale(1.03);
-    }
-    
-    /* Products Section */
-    .products {
-      background-color: #f1f8f1;
-    }
-    
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-    
-    .product {
-      background: white;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: all 0.3s;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .product:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-    }
-    
-    .product-image {
-      height: 250px;
-      overflow: hidden;
-    }
-    
-    .product-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s;
-    }
-    
-    .product:hover .product-image img {
-      transform: scale(1.05);
-    }
-    
-    .product-info {
-      padding: 20px;
-      flex-grow: 1;
-    }
-    
-    .product-info h3 {
-      margin-bottom: 10px;
-      color: var(--primary);
-    }
-    
-    .product-info p {
-      margin-bottom: 20px;
-    }
-    
-    .product button {
-      background-color: var(--primary);
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: all 0.3s;
-      width: 100%;
-      font-weight: bold;
-    }
-    
-    .product button:hover {
-      background-color: #1e5e29;
-      transform: translateY(-2px);
-    }
-    
-    /* Export Section */
-    .export {
-      background-color: white;
-    }
-    
-    .regions {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
-      max-width: 800px;
-      margin: 0 auto;
     }
-    
-    .region {
-      background: var(--light);
-      padding: 20px;
-      border-radius: 8px;
-      text-align: center;
-      font-weight: bold;
-      transition: all 0.3s;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    }
-    
-    .region:hover {
-      background: var(--primary);
-      color: white;
-      transform: translateY(-5px);
-    }
-    
-    /* Partners Section */
-    .partners {
-      background-color: #f1f8f1;
-    }
-    
-    .partners-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
-      align-items: center;
-    }
-    
-    .partner {
-      background: white;
-      padding: 20px;
+
+    .product-card {
+      background: #f4f4f4;
       border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: all 0.3s;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      padding: 20px;
+      width: 300px;
     }
-    
-    .partner:hover {
-      transform: scale(1.05);
-    }
-    
-    .partner img {
-      max-width: 100%;
-      height: auto;
-      max-height: 100px;
-      object-fit: contain;
-    }
-    
-    /* Contact Section */
-    .contact {
-      background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('IMG_2583.jpeg');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      padding: 100px 5%;
-      text-align: center;
-    }
-    
-    .contact h2 {
-      color: white;
-    }
-    
-    .contact h2::after {
-      background-color: var(--secondary);
-    }
-    
-    .contact p {
-      max-width: 700px;
-      margin: 0 auto 40px;
-    }
-    
-    .contact-form {
-      max-width: 600px;
-      margin: 0 auto;
-      background: rgba(255,255,255,0.1);
-      padding: 30px;
-      border-radius: 10px;
-      backdrop-filter: blur(5px);
-    }
-    
-    .form-group {
-      margin-bottom: 20px;
-    }
-    
-    .form-group input,
-    .form-group textarea {
+
+    .product-card img {
       width: 100%;
-      padding: 12px 15px;
-      border: none;
-      border-radius: 5px;
-      font-family: inherit;
-      background: rgba(255,255,255,0.9);
-    }
-    
-    .form-group textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-    
-    .submit-btn {
-      background-color: var(--secondary);
-      color: var(--dark);
-      padding: 12px 30px;
-      border: none;
-      border-radius: 30px;
-      font-weight: bold;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-    
-    .submit-btn:hover {
-      background-color: #e69500;
-      transform: translateY(-3px);
+      border-radius: 10px;
     }
 
-    .email-contact {
-      margin: 20px 0;
-      font-size: 1.1rem;
+    .product-card h3 {
+      margin-top: 10px;
     }
 
-    .email-contact a {
-      color: var(--secondary);
-      text-decoration: none;
-      transition: color 0.3s;
+    .grid-2x2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      max-width: 600px;
+      margin: auto;
     }
 
-    .email-contact a:hover {
-      color: white;
-      text-decoration: underline;
+    .grid-2x2 img {
+      width: 100%;
+      height: auto;
     }
-    
-    /* Footer */
-    footer {
-      background-color: var(--dark);
-      color: white;
-      text-align: center;
-      padding: 30px 5%;
-    }
-    
-    .social-links {
-      margin-bottom: 20px;
-    }
-    
-    .social-links a {
-      color: white;
-      font-size: 1.5rem;
-      margin: 0 10px;
-      transition: color 0.3s;
+
+    .btn {
       display: inline-block;
-    }
-    
-    .social-links a:hover {
-      color: var(--secondary);
-      transform: translateY(-3px);
-    }
-    
-    .footer-links {
-      margin-bottom: 20px;
-    }
-    
-    .footer-links a {
-      color: white;
-      margin: 0 15px;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #ffcc00;
+      color: black;
       text-decoration: none;
-      transition: color 0.3s;
+      border-radius: 5px;
+      font-weight: bold;
     }
-    
-    .footer-links a:hover {
-      color: var(--secondary);
+
+    footer {
+      background: #222;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
     }
-    
-    .copyright {
-      font-size: 0.9rem;
-      opacity: 0.8;
-    }
-    
-    /* Responsive Adjustments */
-    @media (max-width: 768px) {
-      header {
-        padding: 15px 20px;
-      }
-      
-      .hero {
-        padding: 150px 20px 80px;
-      }
-      
-      .hero h1 {
-        font-size: 2rem;
-      }
-      
-      .section {
-        padding: 80px 20px;
-      }
-      
-      .regions {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .regions {
-        grid-template-columns: 1fr;
-      }
-      
-      .hero h1 {
-        font-size: 1.8rem;
-      }
-      
+
+    @media (min-width: 768px) {
       nav {
-        width: 100%;
-        right: 0;
-        border-radius: 0;
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        width: auto;
+        border: none;
+      }
+
+      nav a {
+        border: none;
+      }
+
+      .menu-btn {
+        display: none;
       }
     }
   </style>
@@ -515,168 +159,134 @@
 <body>
 
 <header>
-  <div class="logo-container">
-    <img src="D8231576-840A-4047-8413-30F3AF95D10A.png" alt="K&M Logo">
+  <div class="logo">
+    <img src="D8231576-840A-4047-8413-30F3AF95D10A.png" alt="K&M Logo" />
   </div>
-  <button class="menu-button" onclick="toggleMenu()">
-    <i class="fas fa-bars"></i>
-  </button>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  <nav id="navMenu">
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#products" onclick="closeMenu()">Products</a>
+    <a href="#export" onclick="closeMenu()">Export</a>
+    <a href="#partners" onclick="closeMenu()">Partners</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
+  </nav>
 </header>
 
-<nav id="navMenu">
-  <a href="#hero" onclick="closeMenu()">Home</a>
-  <a href="#about" onclick="closeMenu()">About</a>
-  <a href="#products" onclick="closeMenu()">Products</a>
-  <a href="#export" onclick="closeMenu()">Export</a>
-  <a href="#partners" onclick="closeMenu()">Partners</a>
-  <a href="#contact" onclick="closeMenu()">Contact</a>
-</nav>
+<div class="hero">
+  <div>
+    <h1>K&M Exports</h1>
+    <p>Premium Quality • Competitive Prices • On-Time Delivery</p>
+    <a href="#products" class="btn">Explore Our Products</a>
+  </div>
+</div>
 
-<section class="hero" id="hero">
-  <h1>Welcome to K&M Exporting Company</h1>
-  <p>High-quality agricultural products at competitive prices</p>
-  <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Inquire Now</button>
-</section>
-
-<section class="section about" id="about">
+<section id="about" class="about">
   <h2>About K&M Exports</h2>
-  <div class="about-content">
-    <div class="about-image">
-      <img src="IMG_2649.jpeg" alt="About Us">
-    </div>
-    <div class="about-text">
-      <p>We are a dedicated food exporting company based in Egypt, specializing in delivering fresh and high-quality produce including potatoes, onions, and sauces to international markets.</p>
-      <p>With years of experience in the industry, we maintain rigorous quality standards while offering competitive pricing for bulk orders.</p>
-    </div>
-  </div>
+  <p>We specialize in exporting fresh potatoes, onions, and sauces with a commitment to quality, timeliness, and international standards.</p>
+  <img src="IMG_2574.jpeg" alt="About K&M">
 </section>
 
-<section class="section products" id="products">
+<section id="products">
   <h2>Our Products</h2>
-  <div class="products-grid">
-    <div class="product">
-      <div class="product-image">
-        <img src="IMG_2575.jpeg" alt="Fresh Potatoes">
-      </div>
-      <div class="product-info">
-        <h3>Potatoes</h3>
-        <p>Premium quality potatoes grown in fertile Egyptian soil, available in various sizes and grades for export.</p>
-        <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Inquire Now</button>
-      </div>
+  <div class="products">
+    <div class="product-card">
+      <img src="IMG_2575.jpeg" alt="Potatoes" />
+      <h3>Fresh Potatoes</h3>
+      <p>High-quality potatoes, sorted, cleaned, and packaged for export. Available in various sizes.</p>
+      <a href="#contact" class="btn">Inquire Now</a>
     </div>
-    
-    <div class="product">
-      <div class="product-image">
-        <img src="IMG_2576.jpeg" alt="Fresh Onions">
-      </div>
-      <div class="product-info">
-        <h3>Onions</h3>
-        <p>High-grade onions with excellent shelf life, perfect for international shipping and storage.</p>
-        <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Inquire Now</button>
-      </div>
+    <div class="product-card">
+      <img src="IMG_2576.jpeg" alt="Onions" />
+      <h3>Fresh Onions</h3>
+      <p>Golden and red onions, harvested at peak freshness. Long shelf life and premium export grade.</p>
+      <a href="#contact" class="btn">Inquire Now</a>
     </div>
-    
-    <div class="product">
-      <div class="product-image">
-        <img src="IMG_2644.jpeg" alt="Various Sauces">
-      </div>
-      <div class="product-info">
-        <h3>Sauces</h3>
-        <p>Complete range of high-quality sauces including Ketchup, BBQ, Mustard, Ranch, Burger Sauce, and Mayonnaise.</p>
-        <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Inquire Now</button>
-      </div>
+    <div class="product-card">
+      <img src="IMG_2577.jpeg" alt="Sauces" />
+      <h3>Sauces</h3>
+      <p>Export-quality sauces including ketchup, BBQ, mustard, ranch, burger sauce, and mayonnaise.</p>
+      <a href="#contact" class="btn">Inquire Now</a>
     </div>
   </div>
 </section>
 
-<section class="section export" id="export">
-  <h2>Export Regions</h2>
-  <div class="regions">
-    <div class="region">Middle East</div>
-    <div class="region">Asia</div>
-    <div class="region">Africa</div>
-    <div class="region">European Union</div>
+<section id="export">
+  <h2>Where We Export</h2>
+  <div class="grid-2x2">
+    <div><strong>Middle East</strong></div>
+    <div><strong>Europe</strong></div>
+    <div><strong>Russia & CIS</strong></div>
+    <div><strong>West Africa</strong></div>
   </div>
 </section>
 
-<section class="section partners" id="partners">
+<section id="partners">
   <h2>Our Trusted Partners</h2>
-  <div class="partners-grid">
-    <div class="partner">
-      <img src="IMG_2601.jpeg" alt="Partner 1">
-    </div>
-    <div class="partner">
-      <img src="IMG_2602.jpeg" alt="Partner 2">
-    </div>
-    <div class="partner">
-      <img src="IMG_2603.jpeg" alt="Partner 3">
-    </div>
-    <div class="partner">
-      <img src="IMG_2604.jpeg" alt="Partner 4">
-    </div>
+  <div class="grid-2x2">
+    <img src="IMG_2601.jpeg" alt="Partner 1">
+    <img src="IMG_2602.jpeg" alt="Partner 2">
+    <img src="IMG_2603.jpeg" alt="Partner 3">
+    <img src="IMG_2604.jpeg" alt="Partner 4">
   </div>
 </section>
 
-<section class="section contact" id="contact">
-  <h2>Contact Us</h2>
-  <p>We'd love to hear from you. Please fill in the form below to inquire about our products or services.</p>
-  <p class="email-contact">Or email us at: <a href="mailto:info@kmexporter.org">info@kmexporter.org</a></p>
-  <div class="contact-form">
-   <form action="https://formsubmit.co/d1d06c70dd9a9da99d5badcbbcb63098" method="POST">
-  <input type="hidden" name="_captcha" value="false">
+<section id="contact" style="background-image: url('IMG_2583.jpeg'); background-size: cover; background-position: center; padding: 60px 20px; color: white;">
+  <div style="max-width: 600px; margin: auto; background-color: rgba(0, 0, 0, 0.6); padding: 30px; border-radius: 10px;">
+    <h2 style="text-align: center; margin-bottom: 30px;">Contact Us</h2>
+    
+    <form id="contact-form">
+      <div style="margin-bottom: 20px;">
+        <input type="text" name="name" placeholder="Your Name" required style="width: 100%; padding: 10px; border: none; border-radius: 5px;">
+      </div>
+      <div style="margin-bottom: 20px;">
+        <input type="email" name="email" placeholder="Your Email" required style="width: 100%; padding: 10px; border: none; border-radius: 5px;">
+      </div>
+      <div style="margin-bottom: 20px;">
+        <textarea name="message" placeholder="Your Message" required rows="5" style="width: 100%; padding: 10px; border: none; border-radius: 5px;"></textarea>
+      </div>
+      <div style="text-align: center;">
+        <button type="submit" style="padding: 12px 30px; background-color: #ffcc00; color: black; border: none; border-radius: 5px; font-weight: bold;">Send Message</button>
+      </div>
+    </form>
 
-  <input type="text" name="name" placeholder="Your Name" required>
-  <input type="email" name="email" placeholder="Your Email" required>
-  <textarea name="message" placeholder="Your Message" required></textarea>
-  
-  <button type="submit">Send Message</button>
-</form>
+    <div id="form-message" style="margin-top: 20px; text-align: center; font-weight: bold;"></div>
   </div>
 </section>
 
 <footer>
-  <div class="social-links">
-    <a href="https://www.instagram.com/km_exportes?igsh=MXYxcTUxaHBweG8xZw%3D%3D&utm_source=qr" target="_blank">
-      <i class="fab fa-instagram"></i>
-    </a>
-    <a href="https://www.facebook.com/share/14Khpu3bwmG/?mibextid=wwXIfr" target="_blank">
-      <i class="fab fa-facebook"></i>
-    </a>
-  </div>
-  <div class="footer-links">
-    <a href="#about">About</a>
-    <a href="#products">Products</a>
-    <a href="#contact">Contact</a>
-    <a href="#export">Export</a>
-  </div>
-  <div class="copyright">
-    <p>© 2020 K&M Exporting Company. All rights reserved.</p>
-  </div>
+  <p>&copy; 2025 K&M Exports. All rights reserved.</p>
 </footer>
 
 <script>
   function toggleMenu() {
-    const nav = document.getElementById("navMenu");
-    nav.classList.toggle('active');
+    const menu = document.getElementById('navMenu');
+    menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
   }
-  
+
   function closeMenu() {
-    document.getElementById("navMenu").classList.remove('active');
+    const menu = document.getElementById('navMenu');
+    if (window.innerWidth < 768) {
+      menu.style.display = 'none';
+    }
   }
-  
-  // Smooth scrolling for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-      
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        targetElement.scrollIntoView({
-          behavior: 'smooth'
-        });
-      }
+
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const form = e.target;
+    const data = new FormData(form);
+
+    fetch('https://formsubmit.co/ajax/info@kmexporter.org', {
+      method: 'POST',
+      body: data,
+    })
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('form-message').innerText = "✅ Thank you! Your message has been sent.";
+      form.reset();
+    })
+    .catch(error => {
+      document.getElementById('form-message').innerText = "❌ Oops! Something went wrong.";
     });
   });
 </script>
