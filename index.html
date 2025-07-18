@@ -3,250 +3,200 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>K&M Exporting Company</title>
+  <title>K&M Exporter</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      scroll-behavior: smooth;
     }
-
     header {
-      position: fixed;
-      width: 100%;
-      background-color: rgba(255, 255, 255, 0.9);
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 10px 20px;
-      z-index: 1000;
+      background-color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 999;
     }
-
-    .logo img {
+    header img {
       height: 50px;
     }
-
     nav {
       display: none;
       flex-direction: column;
       position: absolute;
       top: 60px;
       right: 20px;
-      background: white;
+      background-color: #fff;
       border: 1px solid #ddd;
     }
-
     nav a {
-      padding: 10px;
+      padding: 10px 20px;
       text-decoration: none;
-      color: black;
-      border-bottom: 1px solid #ddd;
+      color: #333;
+      border-bottom: 1px solid #eee;
     }
-
-    .menu-button {
-      font-size: 28px;
+    nav a:hover {
+      background-color: #f0f0f0;
+    }
+    .menu-btn {
+      font-size: 24px;
+      background: none;
+      border: none;
       cursor: pointer;
-      position: absolute;
-      top: 20px;
-      right: 20px;
     }
 
-    .hero {
-      height: 100vh;
-      background: url('images/IMG_2570.jpeg') no-repeat center center/cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-align: center;
-    }
-
-    section {
+    .section {
       padding: 60px 20px;
       text-align: center;
     }
-
-    #about img {
-      width: 100%;
-      max-width: 800px;
+    .hero {
+      background: url('IMG_2570.jpeg') no-repeat center center/cover;
+      color: white;
+      padding: 100px 20px;
+    }
+    .about img,
+    .contact img {
+      max-width: 100%;
       margin-top: 20px;
     }
 
-    .products {
+    .products .card {
+      display: inline-block;
+      width: 300px;
+      margin: 10px;
+      border: 1px solid #ccc;
+    }
+    .products .card img {
+      width: 100%;
+    }
+
+    .partners, .export {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
     }
-
-    .product-card {
-      width: 250px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      overflow: hidden;
-      background: #f9f9f9;
-    }
-
-    .product-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .product-card h3 {
-      margin: 10px 0;
-    }
-
-    .product-card p {
-      padding: 0 10px 10px;
-    }
-
-    .export-grid, .partners-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      justify-items: center;
-      max-width: 600px;
-      margin: auto;
+    .partners img, .export .region {
+      width: 150px;
+      margin: 10px;
     }
 
     .contact {
-      background: url('images/IMG_2583.jpeg') no-repeat center center/cover;
+      background: url('IMG_2583.jpeg') no-repeat center center/cover;
       color: white;
     }
 
-    .contact form {
-      max-width: 500px;
-      margin: auto;
-      background: rgba(0, 0, 0, 0.6);
+    footer {
+      background-color: #111;
+      color: #eee;
       padding: 20px;
-      border-radius: 8px;
+      text-align: center;
+    }
+    .social-icons a {
+      margin: 0 10px;
+      color: white;
+      font-size: 24px;
+      text-decoration: none;
     }
 
-    .contact input, .contact textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-    }
-
-    button {
-      padding: 10px 20px;
-      cursor: pointer;
-    }
-
-    @media (min-width: 768px) {
-      nav {
-        display: flex !important;
-        position: static;
-        flex-direction: row;
-        background: none;
-        border: none;
-      }
-
-      nav a {
-        border: none;
-        margin: 0 10px;
-      }
-
-      .menu-button {
-        display: none;
+    @media (max-width: 768px) {
+      nav.show {
+        display: flex;
       }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="logo"><img src="images/D8231576-840A-4047-8413-30F3AF95D10A.png" alt="K&M Logo" /></div>
-    <div class="menu-button" onclick="toggleMenu()">☰</div>
-    <nav id="mobileMenu">
-      <a href="#hero" onclick="closeMenu()">Home</a>
-      <a href="#about" onclick="closeMenu()">About</a>
-      <a href="#products" onclick="closeMenu()">Products</a>
-      <a href="#export" onclick="closeMenu()">Where We Export</a>
-      <a href="#partners" onclick="closeMenu()">Partners</a>
-      <a href="#contact" onclick="closeMenu()">Contact</a>
-    </nav>
-  </header>
+<header>
+  <img src="D8231576-840A-4047-8413-30F3AF95D10A.png" alt="K&M Logo">
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+  <nav id="mobileMenu">
+    <a href="#hero" onclick="closeMenu()">Home</a>
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#products" onclick="closeMenu()">Products</a>
+    <a href="#export" onclick="closeMenu()">Export</a>
+    <a href="#partners" onclick="closeMenu()">Partners</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
+  </nav>
+</header>
 
-  <section class="hero" id="hero">
-    <div>
-      <h1>K&M Exporting Company</h1>
-      <p>Delivering Quality Food Products Worldwide</p>
-      <button onclick="document.getElementById('contact').scrollIntoView()">Inquire Now</button>
-    </div>
-  </section>
+<section class="hero" id="hero">
+  <h1>Welcome to K&M Exporter</h1>
+  <p>Delivering quality food products globally</p>
+  <button onclick="document.getElementById('contact').scrollIntoView()">Inquire Now</button>
+</section>
 
-  <section id="about">
-    <h2>About K&M Exports</h2>
-    <p>We specialize in exporting premium potatoes, onions, and sauces to global markets.</p>
-    <img src="images/IMG_2649.jpeg" alt="About Us" />
-  </section>
+<section class="section about" id="about">
+  <h2>About K&M Exports</h2>
+  <p>We specialize in exporting fresh vegetables and sauces with a focus on quality, reliability, and timely delivery.</p>
+  <img src="IMG_2649.jpeg" alt="About Us Image">
+</section>
 
-  <section id="products">
-    <h2>Our Products</h2>
-    <div class="products">
-      <div class="product-card">
-        <img src="images/IMG_2575.jpeg" alt="Potatoes" />
-        <h3>Potatoes</h3>
-        <p>Fresh, export-grade potatoes with high quality packaging and global certification.</p>
-      </div>
-      <div class="product-card">
-        <img src="images/IMG_2576.jpeg" alt="Onions" />
-        <h3>Onions</h3>
-        <p>Golden and red onions hand-picked and sorted for international markets.</p>
-      </div>
-      <div class="product-card">
-        <img src="images/IMG_2644.jpeg" alt="Sauces" />
-        <h3>Sauces</h3>
-        <p>Ketchup, BBQ, mustard, ranch, burger sauce, and mayonnaise in export packaging.</p>
-      </div>
-    </div>
-  </section>
+<section class="section products" id="products">
+  <h2>Our Products</h2>
+  <div class="card">
+    <img src="IMG_2575.jpeg" alt="Potatoes">
+    <h3>Fresh Potatoes</h3>
+  </div>
+  <div class="card">
+    <img src="IMG_2576.jpeg" alt="Onions">
+    <h3>Fresh Onions</h3>
+  </div>
+  <div class="card">
+    <img src="IMG_2644.jpeg" alt="Sauces">
+    <h3>Sauces</h3>
+    <p>Ketchup, BBQ, Mustard, Ranch, Burger Sauce, Mayonnaise</p>
+  </div>
+</section>
 
-  <section id="export">
-    <h2>Where We Export</h2>
-    <div class="export-grid">
-      <div>UAE</div>
-      <div>Russia</div>
-      <div>West Africa</div>
-      <div>Europe</div>
-    </div>
-  </section>
+<section class="section export" id="export">
+  <h2>Where We Export</h2>
+  <div class="region">Middle East</div>
+  <div class="region">West Africa</div>
+  <div class="region">Europe</div>
+  <div class="region">Russia & CIS</div>
+</section>
 
-  <section id="partners">
-    <h2>Our Trusted Partners</h2>
-    <div class="partners-grid">
-      <img src="images/IMG_2601.jpeg" alt="Partner 1" width="120" />
-      <img src="images/IMG_2602.jpeg" alt="Partner 2" width="120" />
-      <img src="images/IMG_2603.jpeg" alt="Partner 3" width="120" />
-      <img src="images/IMG_2604.jpeg" alt="Partner 4" width="120" />
-    </div>
-  </section>
+<section class="section partners" id="partners">
+  <h2>Our Trusted Partners</h2>
+  <img src="IMG_2601.jpeg" alt="Partner 1">
+  <img src="IMG_2602.jpeg" alt="Partner 2">
+  <img src="IMG_2603.jpeg" alt="Partner 3">
+  <img src="IMG_2604.jpeg" alt="Partner 4">
+</section>
 
-  <section class="contact" id="contact">
-    <h2>Contact Us</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" rows="4" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </section>
+<section class="section contact" id="contact">
+  <h2>Contact Us</h2>
+  <p>Email us at <strong>info@kmexporter.org</strong></p>
+  <form>
+    <input type="text" placeholder="Your Name" required><br><br>
+    <input type="email" placeholder="Your Email" required><br><br>
+    <textarea placeholder="Your Message" required></textarea><br><br>
+    <button type="submit">Send</button>
+  </form>
+</section>
 
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById("mobileMenu");
-      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-    }
+<footer>
+  <p>&copy; 2020 K&M Exporter. All rights reserved.</p>
+  <div class="social-icons">
+    <a href="https://www.facebook.com/share/1Apf6JrWZp/?mibextid=wwXIfr" target="_blank">📘</a>
+    <a href="https://www.instagram.com/km_exportes?igsh=MXYxcTUxaHBweG8xZw" target="_blank">📷</a>
+  </div>
+</footer>
 
-    function closeMenu() {
-      const menu = document.getElementById("mobileMenu");
-      if (window.innerWidth < 768) {
-        menu.style.display = "none";
-      }
-    }
-  </script>
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('show');
+  }
+
+  function closeMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.remove('show');
+  }
+</script>
 
 </body>
 </html>
