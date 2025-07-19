@@ -682,15 +682,8 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
 </script>
 <script>
   function toggleMenu() {
-    const navMenu = document.querySelector("nav ul");
-    navMenu.classList.toggle("show");
-
-    // Auto-close menu on link click
-    document.querySelectorAll("nav ul li a").forEach(link => {
-      link.addEventListener("click", () => {
-        navMenu.classList.remove("show");
-      });
-    });
+    const menu = document.getElementById("mobile-menu");
+    menu.classList.toggle("open");
   }
 </script>
 </body>
