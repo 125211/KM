@@ -79,14 +79,14 @@
       box-shadow: -2px 4px 10px rgba(0,0,0,0.2);
     }
     
-   nav.active {
+  nav.active {
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 60px;
-  right: 10px; /* aligns to right */
-  background-color: #333;
-  width: 200px; /* smaller menu */
+  top: 60px; /* adjust based on your header height */
+  right: 0;
+  background-color: #1a1a1a; /* ← match your header color */
+  width: 200px;
   z-index: 1000;
   padding: 10px;
   border-radius: 5px;
@@ -521,15 +521,13 @@
   <div class="menu-button" onclick="toggleMenu()">☰</div>
 </header>
 
-<nav id="mobile-menu" class="mobile-menu">
-  <ul>
-    <li><a href="#hero" onclick="toggleMenu()">Home</a></li>
-    <li><a href="#about" onclick="toggleMenu()">About</a></li>
-    <li><a href="#products" onclick="toggleMenu()">Products</a></li>
-    <li><a href="#export" onclick="toggleMenu()">Where We Export</a></li>
-    <li><a href="#partners" onclick="toggleMenu()">Partners</a></li>
-    <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-  </ul>
+<nav id="navMenu">
+  <a href="#hero">Home</a>
+  <a href="#about">About</a>
+  <a href="#products">Products</a>
+  <a href="#exports">Export Destinations</a>
+  <a href="#partners">Partners</a>
+  <a href="#contact">Contact</a>
 </nav>
 <section class="hero" id="hero">
   <h1>Welcome to K&M Exporting Company</h1>
