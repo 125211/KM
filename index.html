@@ -521,15 +521,16 @@
   <div class="menu-button" onclick="toggleMenu()">☰</div>
 </header>
 
-<nav id="navMenu">
-  <a href="#hero" onclick="closeMenu()">Home</a>
-  <a href="#about" onclick="closeMenu()">About</a>
-  <a href="#products" onclick="closeMenu()">Products</a>
-  <a href="#export" onclick="closeMenu()">Export</a>
-  <a href="#partners" onclick="closeMenu()">Partners</a>
-  <a href="#contact" onclick="closeMenu()">Contact</a>
+<nav id="mobile-menu" class="mobile-menu">
+  <ul>
+    <li><a href="#hero" onclick="toggleMenu()">Home</a></li>
+    <li><a href="#about" onclick="toggleMenu()">About</a></li>
+    <li><a href="#products" onclick="toggleMenu()">Products</a></li>
+    <li><a href="#export" onclick="toggleMenu()">Where We Export</a></li>
+    <li><a href="#partners" onclick="toggleMenu()">Partners</a></li>
+    <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+  </ul>
 </nav>
-
 <section class="hero" id="hero">
   <h1>Welcome to K&M Exporting Company</h1>
   <p>High-quality agricultural products at competitive prices</p>
