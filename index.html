@@ -79,18 +79,18 @@
       box-shadow: -2px 4px 10px rgba(0,0,0,0.2);
     }
     
-    nav.active {
-      display: flex;
-    }
-    
-    nav a {
-      color: white;
-      padding: 15px 20px;
-      text-decoration: none;
-      transition: background-color 0.3s;
-      display: block;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
+   nav.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 10px; /* aligns to right */
+  background-color: #333;
+  width: 200px; /* smaller menu */
+  z-index: 1000;
+  padding: 10px;
+  border-radius: 5px;
+}
     
     nav a:hover {
       background-color: var(--primary);
