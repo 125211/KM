@@ -681,6 +681,18 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
   });
 });
 </script>
+<script>
+  function toggleMenu() {
+    const navMenu = document.querySelector("nav ul");
+    navMenu.classList.toggle("show");
 
+    // Auto-close menu on link click
+    document.querySelectorAll("nav ul li a").forEach(link => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("show");
+      });
+    });
+  }
+</script>
 </body>
 </html>
