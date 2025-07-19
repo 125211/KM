@@ -82,14 +82,15 @@
   nav.active {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  top: 60px; /* adjust based on your header height */
+  position: fixed;
+  top: 78px; /* height of your header */
   right: 0;
-  background-color: #1a1a1a; /* ← match your header color */
-  width: 200px;
-  z-index: 1000;
-  padding: 10px;
-  border-radius: 5px;
+  background-color: var(--dark); /* match the header */
+  width: 250px;
+  padding: 15px;
+  border-radius: 0 0 0 10px;
+  box-shadow: -2px 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 999;
 }
     
     nav a:hover {
@@ -680,7 +681,7 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
 </script>
 <script>
   function toggleMenu() {
-    const menu = document.getElementById("mobile-menu");
+    const menu = document.getElementById("navMenu");
     menu.classList.toggle("active");
   }
 </script>
