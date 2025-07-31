@@ -14,96 +14,30 @@
   --text-light: #ffffff;
 }
 
-
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
+body {
   background-color: var(--light);
   color: var(--text-dark);
 }
 
-    
-    /* Header Styles */
-    header {
+header {
   background-color: var(--primary);
   color: var(--text-light);
 }
 
 .menu-button {
   color: var(--text-light);
-    }
-    
-    .logo-container {
-      display: flex;
-      align-items: center;
-      flex-grow: 1;
-    }
-    
-    header img {
-      height: 60px;
-      transition: transform 0.3s;
-    }
-    
-    header img:hover {
-      transform: scale(1.05);
-    }
-    
-    .menu-button {
-      font-size: 1.5rem;
-      cursor: pointer;
-      background: none;
-      border: none;
-      color: white;
-      padding: 10px;
-    }
-    
-    /* Navigation */
- nav {
-  display: none;
-  flex-direction: column;
-  background-color: rgba(26, 58, 31, 0.95);
-  position: fixed;
-  top: 78px;
-  right: 0;
-  width: 250px;
-  border-radius: 0 0 0 10px;
-  box-shadow: -2px 4px 10px rgba(0, 0, 0, 0.2);
-  z-index: 999;
 }
 
-nav.active {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  top: 78px; /* height of your header */
-  right: 0;
-  background-color: rgba(26, 58, 31, 0.95); /* Same as default */
-  width: 250px; /* FIXED: there was a duplicate 'width:' */
-  padding: 15px;
-  border-radius: 0 0 0 10px;
-  box-shadow: -2px 4px 10px rgba(0, 0, 0, 0.2);
-  z-index: 999;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  padding: 10px 15px;
-  display: block;
-  transition: background-color 0.3s ease;
-}
-
-nav a:hover {
+nav {
   background-color: var(--primary);
 }
 
-nav a:last-child {
-  border-bottom: none;
+nav a {
+  color: var(--text-light);
+}
+
+nav a:hover {
+  background-color: var(--accent);
 }
     
     /* Hero Section */
