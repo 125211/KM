@@ -18,7 +18,7 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: var(--light);
       color: var(--dark);
       scroll-behavior: smooth;
@@ -79,21 +79,59 @@
 
     section {
       padding: 100px 20px;
+      text-align: center;
     }
 
     .home {
       background: url('IMG_2570.jpeg') no-repeat center center/cover;
       color: white;
-      text-align: center;
       height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .about {
-      background: url('IMG_2583.jpeg') no-repeat center center/cover;
-      color: white;
+    h2 {
+      margin-bottom: 40px;
+      font-size: 32px;
+      color: var(--dark);
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      padding: 25px;
+      width: 300px;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-icon {
+      font-size: 40px;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .card-title {
+      font-size: 20px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .card-desc {
+      font-size: 16px;
+      color: #555;
     }
 
     .partners img {
@@ -111,7 +149,7 @@
     }
 
     form {
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.9);
       padding: 20px;
       max-width: 500px;
       margin: 20px auto;
@@ -149,7 +187,6 @@
 
   <nav id="menu">
     <a href="#home" onclick="closeMenu()">Home</a>
-    <a href="#about" onclick="closeMenu()">About Us</a>
     <a href="#products" onclick="closeMenu()">Our Products</a>
     <a href="#exports" onclick="closeMenu()">Where We Export</a>
     <a href="#partners" onclick="closeMenu()">Our Partners</a>
@@ -160,29 +197,51 @@
     <h1>Welcome to K&M Exporter</h1>
   </section>
 
-  <section id="about" class="about">
-    <h2>About Us</h2>
-    <p>K&M Exporter is a modern export company specializing in fresh vegetables and sauces. With a strong presence in international markets, we pride ourselves on quality and reliability.</p>
-  </section>
-
   <section id="products">
     <h2>Our Products</h2>
-    <ul>
-      <li>Fresh Potatoes</li>
-      <li>Onions</li>
-      <li>Assorted Sauces</li>
-      <li>Other seasonal vegetables</li>
-    </ul>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🥔</div>
+        <div class="card-title">Fresh Potatoes</div>
+        <div class="card-desc">High-quality, freshly harvested potatoes ready for export year-round.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🧅</div>
+        <div class="card-title">Onions</div>
+        <div class="card-desc">Top-grade onions sourced from trusted farms across Egypt.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🍅</div>
+        <div class="card-title">Assorted Sauces</div>
+        <div class="card-desc">Tomato-based sauces and other varieties for international food markets.</div>
+      </div>
+    </div>
   </section>
 
   <section id="exports">
     <h2>Where We Export</h2>
-    <ul>
-      <li>Middle East</li>
-      <li>Europe</li>
-      <li>North Africa</li>
-      <li>Asia</li>
-    </ul>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🌍</div>
+        <div class="card-title">Middle East</div>
+        <div class="card-desc">Delivering fresh produce to major Gulf and Levant countries.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🇪🇺</div>
+        <div class="card-title">Europe</div>
+        <div class="card-desc">Supplying select EU countries with quality Egyptian exports.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌍</div>
+        <div class="card-title">North Africa</div>
+        <div class="card-desc">Serving markets across Libya, Algeria, Tunisia, and Morocco.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌏</div>
+        <div class="card-title">Asia</div>
+        <div class="card-desc">New partnerships developing in Southeast and East Asia.</div>
+      </div>
+    </div>
   </section>
 
   <section id="partners" class="partners">
@@ -209,5 +268,6 @@
       document.getElementById("menu").classList.remove("active");
     }
   </script>
+
 </body>
 </html>
