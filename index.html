@@ -70,7 +70,6 @@
       text-decoration: none;
       color: white;
       border-bottom: 1px solid #ccc;
-      background-color: var(--dark);
     }
 
     nav a:hover {
@@ -171,10 +170,44 @@
       color: white;
       border: none;
       cursor: pointer;
+      font-size: 16px;
     }
 
     button:hover {
       background-color: #2F4C5A;
+    }
+
+    .socials {
+      background-color: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .socials a {
+      color: white;
+      margin: 0 10px;
+      font-size: 24px;
+      text-decoration: none;
+    }
+
+    .socials img {
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+
+    footer {
+      background-color: #0B1F36;
+      color: #ccc;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 14px;
+    }
+
+    .inquiry-btn {
+      margin-top: 20px;
     }
   </style>
 </head>
@@ -187,6 +220,7 @@
 
   <nav id="menu">
     <a href="#home" onclick="closeMenu()">Home</a>
+    <a href="#about" onclick="closeMenu()">About Us</a>
     <a href="#products" onclick="closeMenu()">Our Products</a>
     <a href="#exports" onclick="closeMenu()">Where We Export</a>
     <a href="#partners" onclick="closeMenu()">Our Partners</a>
@@ -195,6 +229,27 @@
 
   <section id="home" class="home">
     <h1>Welcome to K&M Exporter</h1>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🌿</div>
+        <div class="card-title">Who We Are</div>
+        <div class="card-desc">K&M Exporter is a trusted supplier of premium agricultural products based in Egypt, exporting globally.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🚚</div>
+        <div class="card-title">Our Mission</div>
+        <div class="card-desc">To deliver top-quality fresh produce with reliability and sustainability at the heart of our operations.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌍</div>
+        <div class="card-title">Our Vision</div>
+        <div class="card-desc">To become a global leader in agricultural exports, proudly representing Egyptian excellence.</div>
+      </div>
+    </div>
   </section>
 
   <section id="products">
@@ -216,28 +271,31 @@
         <div class="card-desc">Tomato-based sauces and other varieties for international food markets.</div>
       </div>
     </div>
+    <div class="inquiry-btn">
+      <a href="#contact"><button>Send Inquiry</button></a>
+    </div>
   </section>
 
   <section id="exports">
     <h2>Where We Export</h2>
     <div class="cards">
       <div class="card">
-        <div class="card-icon">🌍</div>
+        <div class="card-icon">🇸🇦</div>
         <div class="card-title">Middle East</div>
         <div class="card-desc">Delivering fresh produce to major Gulf and Levant countries.</div>
       </div>
       <div class="card">
-        <div class="card-icon">🇪🇺</div>
+        <div class="card-icon">🇩🇪</div>
         <div class="card-title">Europe</div>
         <div class="card-desc">Supplying select EU countries with quality Egyptian exports.</div>
       </div>
       <div class="card">
-        <div class="card-icon">🌍</div>
+        <div class="card-icon">🇲🇦</div>
         <div class="card-title">North Africa</div>
         <div class="card-desc">Serving markets across Libya, Algeria, Tunisia, and Morocco.</div>
       </div>
       <div class="card">
-        <div class="card-icon">🌏</div>
+        <div class="card-icon">🇲🇾</div>
         <div class="card-title">Asia</div>
         <div class="card-desc">New partnerships developing in Southeast and East Asia.</div>
       </div>
@@ -258,6 +316,19 @@
       <button type="submit">Send Message</button>
     </form>
   </section>
+
+  <div class="socials">
+    <a href="https://www.facebook.com/share/19ZX3PnsXk/?mibextid=wwXIfr" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Facebook-icon-1.png" alt="FB">Facebook
+    </a>
+    <a href="https://www.instagram.com/km_exportes?igsh=MXYxcTUxaHBweG8xZw%3D%3D&utm_source=qr" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="IG">Instagram
+    </a>
+  </div>
+
+  <footer>
+    &copy; 2020 K&M Exporter. All rights reserved.
+  </footer>
 
   <script>
     function toggleMenu() {
