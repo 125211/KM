@@ -319,39 +319,30 @@ nav a:last-child {
     }
     
     /* Partners Section */
-    .partners {
-      background-color: #f1f8f1;
-    }
-    
-    .partners-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
-      align-items: center;
-    }
-    
-    .partner {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: all 0.3s;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    .partner:hover {
-      transform: scale(1.05);
-    }
-    
-    .partner img {
-      max-width: 100%;
-      height: auto;
-      max-height: 100px;
-      object-fit: contain;
-    }
+  #partners {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.partners-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.partner-logo {
+  max-width: 300px;
+  height: auto;
+  margin: 10px;
+  filter: grayscale(0%);
+  transition: transform 0.3s;
+}
+
+.partner-logo:hover {
+  transform: scale(1.05);
+}
     
     /* Contact Section */
     .contact {
