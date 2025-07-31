@@ -2,42 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>K&M Exporter</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     :root {
       --primary: #1a3a1f;
       --text-light: #ffffff;
-      --text-dark: #333333;
-      --background: #f3f6f4;
+      --text-dark: #222;
+      --background: #f4f7f5;
     }
 
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--background);
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--background);
       color: var(--text-dark);
     }
 
     header {
       background-color: var(--primary);
+      padding: 10px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 20px;
     }
 
     .logo-container img {
-      max-width: 160px;
-      height: auto;
-    }
-
-    .menu-button {
-      font-size: 28px;
-      color: var(--text-light);
-      cursor: pointer;
-      display: none;
+      max-height: 60px;
     }
 
     nav {
@@ -49,56 +40,48 @@
       color: var(--text-light);
       text-decoration: none;
       font-weight: bold;
+      font-size: 16px;
     }
 
-    @media (max-width: 768px) {
-      .menu-button {
-        display: block;
-      }
-
-      nav {
-        display: none;
-        flex-direction: column;
-        background-color: var(--primary);
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 200px;
-        padding: 15px;
-        border-radius: 0 0 0 10px;
-        z-index: 999;
-      }
-
-      nav.active {
-        display: flex;
-      }
-    }
-
-    section {
-      padding: 30px 20px;
+    .section {
+      padding: 60px 20px;
       text-align: center;
     }
 
-    .product-card {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      margin: 20px auto;
-      max-width: 500px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    .home-section {
+      background: url('IMG_2570.jpeg') no-repeat center center / cover;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-light);
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
     }
 
-    .product-card img {
+    .home-section h1 {
+      font-size: 48px;
+      max-width: 90%;
+    }
+
+    .product-img {
       width: 100%;
+      max-width: 500px;
       border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
     }
 
-    .product-card h2 {
+    h2 {
       color: var(--primary);
     }
 
-    .product-card p {
-      font-size: 16px;
+    .product-card {
+      background-color: white;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 500px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
 
     .btn {
@@ -108,12 +91,30 @@
       border: none;
       border-radius: 6px;
       cursor: pointer;
-      margin-top: 10px;
       font-weight: bold;
+      margin-top: 10px;
     }
 
     .btn:hover {
-      background-color: #154d26;
+      background-color: #0f2d14;
+    }
+
+    footer {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .home-section h1 {
+        font-size: 32px;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
@@ -124,47 +125,59 @@
     <div class="logo-container">
       <img src="IMG_2963.jpeg" alt="K&M Exporter Logo">
     </div>
-    <div class="menu-button" onclick="toggleMenu()">☰</div>
-    <nav id="navbar">
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
       <a href="#onions">Onions</a>
       <a href="#sauces">Sauces</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
+  <!-- Home Section -->
+  <section class="home-section" id="home">
+    <h1>Welcome to K&M Exporter – Quality You Can Trust Worldwide</h1>
+  </section>
+
+  <!-- Our Products Section -->
+  <section class="section" id="products">
+    <h2>Our Products</h2>
+    <img src="IMG_2575.jpeg" alt="Potatoes" class="product-img">
+    <p>We specialize in exporting premium-quality potatoes, sourced directly from trusted farms and packed with care for global distribution.</p>
+    <button class="btn">Inquire Now</button>
+  </section>
+
   <!-- Onions Section -->
-  <section id="onions">
+  <section class="section" id="onions">
     <div class="product-card">
-      <img src="https://images.unsplash.com/photo-1590080877873-584e6aa1a8f8" alt="Onions">
       <h2>Onions</h2>
+      <img src="https://images.unsplash.com/photo-1590080877873-584e6aa1a8f8" alt="Onions" class="product-img">
       <p>High-grade onions with excellent shelf life, perfect for international shipping and storage.</p>
       <button class="btn">Inquire Now</button>
     </div>
   </section>
 
   <!-- Sauces Section -->
-  <section id="sauces">
+  <section class="section" id="sauces">
     <div class="product-card">
-      <img src="https://images.unsplash.com/photo-1601050691243-471e3ddf5963" alt="Sauces">
       <h2>Sauces</h2>
+      <img src="https://images.unsplash.com/photo-1601050691243-471e3ddf5963" alt="Sauces" class="product-img">
       <p>Complete range of high-quality sauces made with the finest ingredients, ready for export.</p>
       <button class="btn">Inquire Now</button>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact">
+  <section class="section" id="contact">
     <h2>Contact Us</h2>
-    <p>Reach out to us for partnerships, exports, or more information.</p>
+    <p>Have questions or want to place an order? Get in touch with our export team.</p>
     <button class="btn">Email Us</button>
   </section>
 
-  <!-- JavaScript for menu toggle -->
-  <script>
-    function toggleMenu() {
-      const nav = document.getElementById('navbar');
-      nav.classList.toggle('active');
-    }
-  </script>
+  <!-- Footer -->
+  <footer>
+    &copy; 2020 K&M Exporter. All rights reserved.
+  </footer>
+
 </body>
 </html>
