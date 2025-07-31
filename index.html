@@ -36,7 +36,7 @@
     }
 
     .menu-button {
-      font-size: 24px;
+      font-size: 26px;
       color: white;
       cursor: pointer;
       display: none;
@@ -103,29 +103,49 @@
       margin-bottom: 20px;
     }
 
-    .products {
-      background-color: #fff;
-    }
-
-    .product {
-      margin-bottom: 40px;
+    .about {
+      background-color: #e8edf1;
       text-align: center;
-    }
-
-    .product img {
-      max-width: 100%;
-      border-radius: 10px;
     }
 
     .contact {
       background: url('IMG_2583.jpeg') center/cover no-repeat;
       color: white;
       text-align: center;
+      padding-bottom: 100px;
     }
 
-    .about {
-      background-color: #e8edf1;
-      text-align: center;
+    form {
+      background-color: rgba(0, 0, 0, 0.5);
+      display: inline-block;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin-top: 20px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #274047;
     }
   </style>
 </head>
@@ -137,47 +157,30 @@
     <nav id="nav">
       <a href="#home" onclick="closeMenu()">Home</a>
       <a href="#about" onclick="closeMenu()">About Us</a>
-      <a href="#products" onclick="closeMenu()">Our Products</a>
       <a href="#contact" onclick="closeMenu()">Contact</a>
     </nav>
   </header>
 
   <section class="home" id="home">
     <h1>Welcome to K&M Exporter</h1>
-    <p>Trusted Global Supplier of Fresh Produce & Sauces</p>
+    <p>Your Trusted Global Supplier of Vegetables & Sauces</p>
   </section>
 
   <section class="about" id="about">
     <h2 class="section-title">About Us</h2>
-    <p>At K&M Exporter, we specialize in delivering the highest quality vegetables and sauces to our international partners. With years of experience and a commitment to excellence, we ensure every shipment meets global standards.</p>
-  </section>
-
-  <section class="products" id="products">
-    <h2 class="section-title">Our Products</h2>
-    
-    <div class="product">
-      <h3>Potatoes</h3>
-      <img src="IMG_2575.jpeg" alt="Potatoes">
-      <p>Premium grade potatoes with long shelf life and great taste, suitable for global export markets.</p>
-    </div>
-
-    <div class="product">
-      <h3>Onions</h3>
-      <img src="IMG_2576.jpeg" alt="Onions">
-      <p>High-grade onions with excellent storage capacity, ideal for international distribution.</p>
-    </div>
-
-    <div class="product">
-      <h3>Sauces</h3>
-      <img src="IMG_2644.jpeg" alt="Sauces">
-      <p>Complete line of flavorful sauces including ketchup, BBQ, and more – perfect for retail and food service.</p>
-    </div>
+    <p>K&M Exporter is dedicated to providing premium quality vegetables and sauces to international markets. We take pride in our commitment to excellence, transparency, and reliability in every shipment.</p>
   </section>
 
   <section class="contact" id="contact">
     <h2 class="section-title">Contact Us</h2>
-    <p>Email: info@kmexporter.org</p>
-    <p>Address: 6th October, Cairo, Egypt</p>
+    <p>We’d love to hear from you. Please use the form below to get in touch.</p>
+
+    <form action="mailto:info@kmexporter.org" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </section>
 
   <script>
@@ -189,7 +192,6 @@
       document.getElementById('nav').classList.remove('active');
     }
 
-    // Close menu on scroll
     window.addEventListener('scroll', closeMenu);
   </script>
 </body>
