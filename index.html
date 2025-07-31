@@ -2,617 +2,169 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>K&M Exporting Company</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>K&M Exporter</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
-  :root {
-  --primary: #0B1F36;      /* Dark Blue from logo */
-  --light: #F5F5F5;        /* Light gray/white background */
-  --accent: #335C67;       /* Optional accent */
-  --text-dark: #1A1A1A;
-  --text-light: #ffffff;
-}
+    :root {
+      --primary: #1a3a1f;
+      --text-light: #ffffff;
+      --text-dark: #333333;
+      --background: #f3f6f4;
+    }
 
-body {
-  background-color: var(--light);
-  color: var(--text-dark);
-}
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--background);
+      color: var(--text-dark);
+    }
 
-header {
-  background-color: var(--primary);
-  color: var(--text-light);
-}
-
-.menu-button {
-  color: var(--text-light);
-}
-
-nav {
-  background-color: var(--primary);
-}
-
-nav a {
-  color: var(--text-light);
-}
-
-nav a:hover {
-  background-color: var(--accent);
-}
-    
-    /* Hero Section */
-    .hero {
-      background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('IMG_2570.jpeg');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      text-align: center;
-      padding: 200px 5% 120px;
+    header {
+      background-color: var(--primary);
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
+      padding: 10px 20px;
     }
-    
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-    }
-    
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin-bottom: 30px;
-    }
-    
-    .hero button {
-      background-color: var(--secondary);
-      color: var(--dark);
-      padding: 12px 30px;
-      border: none;
-      border-radius: 30px;
-      font-weight: bold;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.3s;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    
-    .hero button:hover {
-      background-color: #e69500;
-      transform: translateY(-3px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-    }
-    
-    /* Sections */
-    .section {
-      padding: 100px 5%;
-      scroll-margin-top: 80px;
-    }
-    
-    .section h2 {
-      text-align: center;
-      margin-bottom: 40px;
-      font-size: 2.2rem;
-      color: var(--dark);
-      position: relative;
-    }
-    
-    .section h2::after {
-      content: '';
-      display: block;
-      width: 80px;
-      height: 4px;
-      background-color: var(--secondary);
-      margin: 15px auto;
-      border-radius: 2px;
-    }
-    
-    /* About Section */
-    .about {
-      background-color: white;
-    }
-    
-    .about-content {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .about-text {
-      flex: 1;
-      min-width: 300px;
-    }
-    
-    .about-image {
-      flex: 1;
-      min-width: 300px;
-      overflow: hidden;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-    
-    .about-image img {
-      width: 100%;
+
+    .logo-container img {
+      max-width: 160px;
       height: auto;
-      display: block;
-      transition: transform 0.5s;
     }
-    
-    .about-image:hover img {
-      transform: scale(1.03);
+
+    .menu-button {
+      font-size: 28px;
+      color: var(--text-light);
+      cursor: pointer;
+      display: none;
     }
-    
-    /* Products Section */
-    .products {
-      background-color: #f1f8f1;
-    }
-    
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-    
-    .product {
-      background: white;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: all 0.3s;
+
+    nav {
       display: flex;
-      flex-direction: column;
+      gap: 20px;
     }
-    
-    .product:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+
+    nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: bold;
     }
-    
-    .product-image {
-      height: 250px;
-      overflow: hidden;
+
+    @media (max-width: 768px) {
+      .menu-button {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        background-color: var(--primary);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 15px;
+        border-radius: 0 0 0 10px;
+        z-index: 999;
+      }
+
+      nav.active {
+        display: flex;
+      }
     }
-    
-    .product-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s;
+
+    section {
+      padding: 30px 20px;
+      text-align: center;
     }
-    
-    .product:hover .product-image img {
-      transform: scale(1.05);
-    }
-    
-    .product-info {
+
+    .product-card {
+      background-color: #fff;
       padding: 20px;
-      flex-grow: 1;
+      border-radius: 10px;
+      margin: 20px auto;
+      max-width: 500px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     }
-    
-    .product-info h3 {
-      margin-bottom: 10px;
+
+    .product-card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .product-card h2 {
       color: var(--primary);
     }
-    
-    .product-info p {
-      margin-bottom: 20px;
+
+    .product-card p {
+      font-size: 16px;
     }
-    
-    .product button {
+
+    .btn {
       background-color: var(--primary);
       color: white;
-      border: none;
       padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: all 0.3s;
-      width: 100%;
-      font-weight: bold;
-    }
-    
-    .product button:hover {
-      background-color: #1e5e29;
-      transform: translateY(-2px);
-    }
-    
-    /* Export Section */
-    .export {
-      background-color: white;
-    }
-    
-    .regions {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    
-    .region {
-      background: var(--light);
-      padding: 20px;
-      border-radius: 8px;
-      text-align: center;
-      font-weight: bold;
-      transition: all 0.3s;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    }
-    
-    .region:hover {
-      background: var(--primary);
-      color: white;
-      transform: translateY(-5px);
-    }
-    
-    /* Partners Section */
-  #partners {
-  padding: 50px 20px;
-  background-color: #f9f9f9;
-  text-align: center;
-}
-
-.partners-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.partner-logo {
-  max-width: 300px;
-  height: auto;
-  margin: 10px;
-  filter: grayscale(0%);
-  transition: transform 0.3s;
-}
-
-.partner-logo:hover {
-  transform: scale(1.05);
-}
-    
-    /* Contact Section */
-    .contact {
-      background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('IMG_2583.jpeg');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      padding: 100px 5%;
-      text-align: center;
-    }
-    
-    .contact h2 {
-      color: white;
-    }
-    
-    .contact h2::after {
-      background-color: var(--secondary);
-    }
-    
-    .contact p {
-      max-width: 700px;
-      margin: 0 auto 40px;
-    }
-    
-    .contact-form {
-      max-width: 600px;
-      margin: 0 auto;
-      background: rgba(255,255,255,0.1);
-      padding: 30px;
-      border-radius: 10px;
-      backdrop-filter: blur(5px);
-    }
-    
-    .form-group {
-      margin-bottom: 20px;
-    }
-    
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 12px 15px;
       border: none;
-      border-radius: 5px;
-      font-family: inherit;
-      background: rgba(255,255,255,0.9);
-    }
-    
-    .form-group textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-    
-    .submit-btn {
-      background-color: var(--secondary);
-      color: var(--dark);
-      padding: 12px 30px;
-      border: none;
-      border-radius: 30px;
-      font-weight: bold;
-      font-size: 1rem;
+      border-radius: 6px;
       cursor: pointer;
-      transition: all 0.3s;
-    }
-    
-    .submit-btn:hover {
-      background-color: #e69500;
-      transform: translateY(-3px);
+      margin-top: 10px;
+      font-weight: bold;
     }
 
-    .email-contact {
-      margin: 20px 0;
-      font-size: 1.1rem;
-    }
-
-    .email-contact a {
-      color: var(--secondary);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .email-contact a:hover {
-      color: white;
-      text-decoration: underline;
-    }
-    
-    /* Footer */
-    footer {
-      background-color: var(--dark);
-      color: white;
-      text-align: center;
-      padding: 30px 5%;
-    }
-    
-    .social-links {
-      margin-bottom: 20px;
-    }
-    
-    .social-links a {
-      color: white;
-      font-size: 1.5rem;
-      margin: 0 10px;
-      transition: color 0.3s;
-      display: inline-block;
-    }
-    
-    .social-links a:hover {
-      color: var(--secondary);
-      transform: translateY(-3px);
-    }
-    
-    .footer-links {
-      margin-bottom: 20px;
-    }
-    
-    .footer-links a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    
-    .footer-links a:hover {
-      color: var(--secondary);
-    }
-    
-    .copyright {
-      font-size: 0.9rem;
-      opacity: 0.8;
-    }
-    
-    /* Responsive Adjustments */
-    @media (max-width: 768px) {
-      header {
-        padding: 15px 20px;
-      }
-      
-      .hero {
-        padding: 150px 20px 80px;
-      }
-      
-      .hero h1 {
-        font-size: 2rem;
-      }
-      
-      .section {
-        padding: 80px 20px;
-      }
-      
-      .regions {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .regions {
-        grid-template-columns: 1fr;
-      }
-      
-      .hero h1 {
-        font-size: 1.8rem;
-      }
-      
-      nav {
-        width: 100%;
-        right: 0;
-        border-radius: 0;
-      }
+    .btn:hover {
+      background-color: #154d26;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <div class="logo-container">
-    <img src="IMG_2650.jpeg" alt="K&M Logo">
-  </div>
-  <div class="menu-button" onclick="toggleMenu()">☰</div>
-</header>
-
-<nav id="navMenu">
-  <a href="#hero">Home</a>
-  <a href="#about">About</a>
-  <a href="#products">Products</a>
-<a href="#export">Where We Export</a>
-  <a href="#partners">Partners</a>
-  <a href="#contact">Contact</a>
-</nav>
-<section class="hero" id="hero">
-  <h1>Welcome to K&M Exporting Company</h1>
-  <p>High-quality agricultural products at competitive prices</p>
-  <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Inquire Now</button>
-</section>
-
-<section class="section about" id="about">
-  <h2>About K&M Exports</h2>
-  <div class="about-content">
-    <div class="about-image">
-      <img src="IMG_2649.jpeg" alt="About Us">
+  <!-- Header with Logo -->
+  <header>
+    <div class="logo-container">
+      <img src="IMG_2963.jpeg" alt="K&M Exporter Logo">
     </div>
-    <div class="about-text">
-      <p>We are a dedicated food exporting company based in Egypt, specializing in delivering fresh and high-quality produce including potatoes, onions, and sauces to international markets.</p>
-      <p>With years of experience in the industry, we maintain rigorous quality standards while offering competitive pricing for bulk orders.</p>
+    <div class="menu-button" onclick="toggleMenu()">☰</div>
+    <nav id="navbar">
+      <a href="#onions">Onions</a>
+      <a href="#sauces">Sauces</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Onions Section -->
+  <section id="onions">
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1590080877873-584e6aa1a8f8" alt="Onions">
+      <h2>Onions</h2>
+      <p>High-grade onions with excellent shelf life, perfect for international shipping and storage.</p>
+      <button class="btn">Inquire Now</button>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section products" id="products">
-  <h2>Our Products</h2>
-  <div class="products-grid">
-    <div class="product">
-      <div class="product-image">
-        <img src="IMG_2575.jpeg" alt="Fresh Potatoes">
-      </div>
-      <div class="product-info">
-        <h3>Potatoes</h3>
-        <p>Premium quality potatoes grown in fertile Egyptian soil, available in various sizes and grades for export.</p>
-        <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Inquire Now</button>
-      </div>
+  <!-- Sauces Section -->
+  <section id="sauces">
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1601050691243-471e3ddf5963" alt="Sauces">
+      <h2>Sauces</h2>
+      <p>Complete range of high-quality sauces made with the finest ingredients, ready for export.</p>
+      <button class="btn">Inquire Now</button>
     </div>
-    
-    <div class="product">
-      <div class="product-image">
-        <img src="IMG_2576.jpeg" alt="Fresh Onions">
-      </div>
-      <div class="product-info">
-        <h3>Onions</h3>
-        <p>High-grade onions with excellent shelf life, perfect for international shipping and storage.</p>
-        <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Inquire Now</button>
-      </div>
-    </div>
-    
-    <div class="product">
-      <div class="product-image">
-        <img src="IMG_2644.jpeg" alt="Various Sauces">
-      </div>
-      <div class="product-info">
-        <h3>Sauces</h3>
-        <p>Complete range of high-quality sauces including Ketchup, BBQ, Mustard, Ranch, Burger Sauce, and Mayonnaise.</p>
-        <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Inquire Now</button>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="section export" id="export">
-  <h2>Export Regions</h2>
-  <div class="regions">
-    <div class="region">Middle East</div>
-    <div class="region">Asia</div>
-    <div class="region">Africa</div>
-    <div class="region">European Union</div>
-  </div>
-</section>
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Reach out to us for partnerships, exports, or more information.</p>
+    <button class="btn">Email Us</button>
+  </section>
 
-<section id="partners">
-  <h2>Our Trusted Partner</h2>
-  <div class="partners-container">
-    <img src="IMG_2963.jpeg" alt="Trusted Partner" class="partner-logo">
-  </div>
-</section>
-
-<section id="contact" style="background-image: url('IMG_2583.jpeg'); background-size: cover; background-position: center; padding: 60px 20px; color: white;">
-  <div style="max-width: 600px; margin: auto; background-color: rgba(0, 0, 0, 0.6); padding: 30px; border-radius: 10px;">
-    <h2 style="text-align: center; margin-bottom: 30px;">Contact Us</h2>
-    
-    <form id="contact-form">
-      <div style="margin-bottom: 20px;">
-        <input type="text" name="name" placeholder="Your Name" required style="width: 100%; padding: 10px; border: none; border-radius: 5px;">
-      </div>
-      <div style="margin-bottom: 20px;">
-        <input type="email" name="email" placeholder="Your Email" required style="width: 100%; padding: 10px; border: none; border-radius: 5px;">
-      </div>
-      <div style="margin-bottom: 20px;">
-        <textarea name="message" placeholder="Your Message" required rows="5" style="width: 100%; padding: 10px; border: none; border-radius: 5px;"></textarea>
-      </div>
-      <div style="text-align: center;">
-        <button type="submit" style="padding: 12px 30px; background-color: #ffcc00; color: black; border: none; border-radius: 5px; font-weight: bold;">Send Message</button>
-      </div>
-    </form>
-
-    <div id="form-message" style="margin-top: 20px; text-align: center; font-weight: bold;"></div>
-  </div>
-</section>
-
-<footer>
-  <div class="social-links">
-    <a href="https://www.instagram.com/km_exportes?igsh=MXYxcTUxaHBweG8xZw%3D%3D&utm_source=qr" target="_blank">
-      <i class="fab fa-instagram"></i>
-    </a>
-    <a href="https://www.facebook.com/share/14Khpu3bwmG/?mibextid=wwXIfr" target="_blank">
-      <i class="fab fa-facebook"></i>
-    </a>
-  </div>
-  <div class="footer-links">
-    <a href="#about">About</a>
-    <a href="#products">Products</a>
-    <a href="#contact">Contact</a>
-    <a href="#export">Export</a>
-  </div>
-  <div class="copyright">
-    <p>© 2020 K&M Exporting Company. All rights reserved.</p>
-  </div>
-</footer>
-
-<script>
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  
-  const form = e.target;
-  const data = new FormData(form);
-
-  fetch('https://formsubmit.co/ajax/info@kmexporter.org', {
-    method: 'POST',
-    body: data,
-  })
-  .then(response => response.json())
-  .then(data => {
-    document.getElementById('form-message').innerText = "✅ Thank you! Your message has been sent.";
-    form.reset();
-  })
-  .catch(error => {
-    document.getElementById('form-message').innerText = "❌ Oops! Something went wrong.";
-  });
-});
-</script>
-<script>
-  function toggleMenu() {
-    const menu = document.getElementById("navMenu");
-    menu.classList.toggle("active");
-  }
-
-  // Close menu on link click
-  document.addEventListener("DOMContentLoaded", function () {
-    const navLinks = document.querySelectorAll("#navMenu a");
-    navLinks.forEach(function (link) {
-      link.addEventListener("click", function () {
-        document.getElementById("navMenu").classList.remove("active");
-      });
-    });
-  });
-</script>
+  <!-- JavaScript for menu toggle -->
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navbar');
+      nav.classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
