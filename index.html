@@ -11,173 +11,190 @@
       --accent: #335C67;
     }
 
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: Arial, sans-serif;
       background-color: var(--light);
-      color: #333;
+      color: var(--dark);
       scroll-behavior: smooth;
     }
 
     header {
-      background-color: var(--dark);
       position: fixed;
       top: 0;
-      width: 100%;
-      padding: 10px 20px;
+      left: 0;
+      right: 0;
+      height: 70px;
+      background-color: var(--dark);
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 0 20px;
       z-index: 1000;
     }
 
-    .logo {
+    header img {
       height: 50px;
     }
 
     .menu-button {
-      font-size: 26px;
+      font-size: 28px;
       color: white;
       cursor: pointer;
-      display: none;
     }
 
     nav {
+      display: none;
+      flex-direction: column;
+      position: fixed;
+      top: 70px;
+      right: 0;
+      width: 220px;
+      background-color: var(--dark);
+      border-radius: 0 0 0 10px;
+      box-shadow: -2px 4px 10px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+    }
+
+    nav.active {
       display: flex;
-      gap: 20px;
     }
 
     nav a {
-      color: white;
+      padding: 15px 20px;
       text-decoration: none;
-      font-weight: bold;
+      color: white;
+      border-bottom: 1px solid #ccc;
+      background-color: var(--dark);
     }
 
     nav a:hover {
-      color: var(--accent);
-    }
-
-    @media (max-width: 768px) {
-      .menu-button {
-        display: block;
-      }
-
-      nav {
-        display: none;
-        flex-direction: column;
-        background-color: var(--dark);
-        position: fixed;
-        top: 70px;
-        right: 0;
-        width: 200px;
-        padding: 10px;
-        z-index: 1001;
-      }
-
-      nav.active {
-        display: flex;
-      }
-
-      nav a {
-        padding: 10px 0;
-      }
+      background-color: var(--accent);
     }
 
     section {
-      padding: 100px 20px 50px;
+      padding: 100px 20px;
     }
 
     .home {
-      background: url('IMG_2570.jpeg') center/cover no-repeat;
+      background: url('IMG_2570.jpeg') no-repeat center center/cover;
       color: white;
       text-align: center;
       height: 100vh;
       display: flex;
-      flex-direction: column;
+      align-items: center;
       justify-content: center;
     }
 
-    .section-title {
-      font-size: 2em;
-      color: var(--dark);
-      margin-bottom: 20px;
+    .about {
+      background: url('IMG_2583.jpeg') no-repeat center center/cover;
+      color: white;
     }
 
-    .about {
-      background-color: #e8edf1;
-      text-align: center;
+    .partners img {
+      width: 100%;
+      max-width: 600px;
+      display: block;
+      margin: 0 auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
     .contact {
-      background: url('IMG_2583.jpeg') center/cover no-repeat;
+      background: url('IMG_2583.jpeg') no-repeat center center/cover;
       color: white;
-      text-align: center;
-      padding-bottom: 100px;
     }
 
     form {
-      background-color: rgba(0, 0, 0, 0.5);
-      display: inline-block;
+      background: rgba(255, 255, 255, 0.85);
       padding: 20px;
+      max-width: 500px;
+      margin: 20px auto;
       border-radius: 10px;
-      max-width: 400px;
-      margin-top: 20px;
+      color: var(--dark);
     }
 
     input, textarea {
       width: 100%;
       padding: 10px;
-      margin-top: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
       border-radius: 5px;
-      border: none;
-      font-size: 16px;
     }
 
     button {
+      padding: 10px 20px;
       background-color: var(--accent);
       color: white;
       border: none;
-      padding: 10px 20px;
-      font-size: 16px;
-      margin-top: 10px;
-      border-radius: 5px;
       cursor: pointer;
     }
 
     button:hover {
-      background-color: #274047;
+      background-color: #2F4C5A;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="IMG_2650.jpeg" alt="K&M Logo" class="logo">
+    <img src="IMG_2650.jpeg" alt="K&M Exporter Logo" />
     <div class="menu-button" onclick="toggleMenu()">☰</div>
-    <nav id="nav">
-      <a href="#home" onclick="closeMenu()">Home</a>
-      <a href="#about" onclick="closeMenu()">About Us</a>
-      <a href="#contact" onclick="closeMenu()">Contact</a>
-    </nav>
   </header>
 
-  <section class="home" id="home">
+  <nav id="menu">
+    <a href="#home" onclick="closeMenu()">Home</a>
+    <a href="#about" onclick="closeMenu()">About Us</a>
+    <a href="#products" onclick="closeMenu()">Our Products</a>
+    <a href="#exports" onclick="closeMenu()">Where We Export</a>
+    <a href="#partners" onclick="closeMenu()">Our Partners</a>
+    <a href="#contact" onclick="closeMenu()">Contact Us</a>
+  </nav>
+
+  <section id="home" class="home">
     <h1>Welcome to K&M Exporter</h1>
-    <p>Your Trusted Global Supplier of Vegetables & Sauces</p>
   </section>
 
-  <section class="about" id="about">
-    <h2 class="section-title">About Us</h2>
-    <p>K&M Exporter is dedicated to providing premium quality vegetables and sauces to international markets. We take pride in our commitment to excellence, transparency, and reliability in every shipment.</p>
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>K&M Exporter is a modern export company specializing in fresh vegetables and sauces. With a strong presence in international markets, we pride ourselves on quality and reliability.</p>
   </section>
 
-  <section class="contact" id="contact">
-    <h2 class="section-title">Contact Us</h2>
-    <p>We’d love to hear from you. Please use the form below to get in touch.</p>
+  <section id="products">
+    <h2>Our Products</h2>
+    <ul>
+      <li>Fresh Potatoes</li>
+      <li>Onions</li>
+      <li>Assorted Sauces</li>
+      <li>Other seasonal vegetables</li>
+    </ul>
+  </section>
 
+  <section id="exports">
+    <h2>Where We Export</h2>
+    <ul>
+      <li>Middle East</li>
+      <li>Europe</li>
+      <li>North Africa</li>
+      <li>Asia</li>
+    </ul>
+  </section>
+
+  <section id="partners" class="partners">
+    <h2>Our Trusted Partners</h2>
+    <img src="IMG_2963.jpeg" alt="Our Partner">
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
     <form action="mailto:info@kmexporter.org" method="POST" enctype="text/plain">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
       <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
       <button type="submit">Send Message</button>
     </form>
@@ -185,14 +202,12 @@
 
   <script>
     function toggleMenu() {
-      document.getElementById('nav').classList.toggle('active');
+      document.getElementById("menu").classList.toggle("active");
     }
 
     function closeMenu() {
-      document.getElementById('nav').classList.remove('active');
+      document.getElementById("menu").classList.remove("active");
     }
-
-    window.addEventListener('scroll', closeMenu);
   </script>
 </body>
 </html>
