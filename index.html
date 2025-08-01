@@ -21,13 +21,13 @@
   <!-- Header -->
   <header class="bg-[#0B1F36] sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-      <h1 class="text-white font-bold text-xl">K&M Exporter</h1>
-      <button id="menu-toggle" class="md:hidden text-white bg-[#335C67] p-2 rounded hover:bg-[#2F4C5A] transition">
+      <h1 class="text-[#F5DC7A] font-bold text-xl">K&M Exporter</h1>
+      <button id="menu-toggle" class="md:hidden text-[#0B1F36] bg-[#F5DC7A] p-3 rounded-lg hover:bg-[#E0CC70] transition">
         <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
           <path d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
-      <nav id="menu" class="hidden md:flex space-x-6 text-white font-semibold">
+      <nav id="menu" class="hidden md:flex space-x-6 text-[#F5F5F5] font-semibold">
         <a href="#home">Home</a>
         <a href="#about">About Us</a>
         <a href="#products">Our Products</a>
@@ -37,13 +37,17 @@
       </nav>
     </div>
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="md:hidden hidden bg-[#0B1F36] px-4 pb-4 space-y-2 text-white font-semibold">
-      <a href="#home" onclick="toggleMenu()">Home</a>
-      <a href="#about" onclick="toggleMenu()">About Us</a>
-      <a href="#products" onclick="toggleMenu()">Our Products</a>
-      <a href="#export" onclick="toggleMenu()">Where We Export</a>
-      <a href="#partners" onclick="toggleMenu()">Our Trusted Partners</a>
-      <a href="#contact" onclick="toggleMenu()">Contact Us</a>
+    <div id="mobile-menu" class="md:hidden hidden absolute top-16 left-0 right-0 bg-[#0B1F36] shadow-lg">
+      <div class="container mx-auto px-4 pb-4">
+        <div class="flex flex-col py-2">
+          <a href="#home" class="block py-3 px-4 hover:bg-[#1E3A5A]" onclick="toggleMenu()">Home</a>
+          <a href="#about" class="block py-3 px-4 hover:bg-[#1E3A5A]" onclick="toggleMenu()">About Us</a>
+          <a href="#products" class="block py-3 px-4 hover:bg-[#1E3A5A]" onclick="toggleMenu()">Our Products</a>
+          <a href="#export" class="block py-3 px-4 hover:bg-[#1E3A5A]" onclick="toggleMenu()">Where We Export</a>
+          <a href="#partners" class="block py-3 px-4 hover:bg-[#1E3A5A]" onclick="toggleMenu()">Our Trusted Partners</a>
+          <a href="#contact" class="block py-3 px-4 hover:bg-[#1E3A5A]" onclick="toggleMenu()">Contact Us</a>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -165,9 +169,15 @@
     function toggleMenu() {
       const mobileMenu = document.getElementById('mobile-menu');
       mobileMenu.classList.toggle('hidden');
+      document.body.classList.toggle('overflow-hidden');
     }
 
     document.getElementById('menu-toggle').addEventListener('click', toggleMenu);
+    
+    // Close menu when clicking on a link
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', toggleMenu);
+    });
   </script>
 </body>
 </html>
