@@ -13,45 +13,44 @@
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       background-color: var(--light);
-      color: var(--dark);
       scroll-behavior: smooth;
     }
 
     header {
-      background-color: var(--dark);
-      color: white;
-      padding: 10px 20px;
-      position: sticky;
+      position: fixed;
       top: 0;
+      width: 100%;
+      background-color: var(--dark);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 999;
+      padding: 10px 20px;
+      z-index: 1000;
     }
 
-    .logo-container img {
+    header img {
       height: 50px;
     }
 
     .menu-button {
-      font-size: 24px;
+      font-size: 26px;
+      color: white;
       cursor: pointer;
-      display: block;
+      user-select: none;
     }
 
     nav {
       display: none;
       flex-direction: column;
-      background-color: var(--dark);
       position: fixed;
       top: 70px;
       right: 0;
+      background-color: var(--dark);
       width: 200px;
       padding: 15px;
-      border-radius: 0 0 0 10px;
-      z-index: 998;
+      z-index: 999;
     }
 
     nav.active {
@@ -60,231 +59,179 @@
 
     nav a {
       color: white;
-      padding: 10px 0;
       text-decoration: none;
-      border-bottom: 1px solid #444;
-    }
-
-    nav a:hover {
-      background-color: var(--accent);
+      margin: 10px 0;
+      font-weight: bold;
     }
 
     section {
-      padding: 60px 20px;
+      padding: 80px 20px;
+      text-align: center;
     }
 
     .home {
-      background: url("IMG_2570.jpeg") no-repeat center center/cover;
+      background: url('IMG_2570.jpeg') center/cover no-repeat;
       height: 100vh;
       color: white;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: center;
-      font-size: 32px;
-      text-align: center;
     }
 
     .about, .products, .export, .partners, .contact {
       background-color: var(--light);
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 28px;
-      margin-bottom: 20px;
       color: var(--dark);
     }
 
-    .section-content {
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
-      font-size: 18px;
+    .about h2,
+    .products h2,
+    .export h2,
+    .partners h2,
+    .contact h2 {
+      color: var(--accent);
     }
 
-    .products .grid,
-    .export .grid {
+    .product-grid,
+    .export-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 20px;
-      margin-top: 20px;
-      text-align: center;
+      margin-top: 30px;
     }
 
-    .products .item,
-    .export .item {
+    .product-item,
+    .export-item {
       background-color: white;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .products .item span,
-    .export .item span {
-      font-size: 40px;
-      display: block;
-      margin-bottom: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
     .partners img {
-      display: block;
-      max-width: 100%;
-      margin: 20px auto;
+      width: 100%;
+      max-width: 400px;
       border-radius: 10px;
     }
 
-    .contact {
-      background: url("IMG_2583.jpeg") no-repeat center center/cover;
-      color: white;
-    }
-
-    .contact form {
-      max-width: 500px;
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      max-width: 400px;
       margin: auto;
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 20px;
-      border-radius: 10px;
     }
 
-    .contact input,
-    .contact textarea {
+    form input,
+    form textarea {
       width: 100%;
       padding: 10px;
-      margin: 10px 0;
-      border: none;
+      border: 1px solid #ccc;
       border-radius: 5px;
     }
 
-    .contact button {
+    form button {
+      padding: 10px 20px;
       background-color: var(--accent);
       color: white;
       border: none;
-      padding: 10px 20px;
       border-radius: 5px;
       cursor: pointer;
+    }
+
+    .social {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .social a img {
+      height: 30px;
     }
 
     footer {
       background-color: var(--dark);
       color: white;
       text-align: center;
-      padding: 20px;
-    }
-
-    .socials {
-      margin-bottom: 10px;
-    }
-
-    .socials a {
-      margin: 0 10px;
-    }
-
-    .socials img {
-      height: 24px;
-      vertical-align: middle;
-      filter: invert(1);
-    }
-
-    .inquiry-button {
-      display: inline-block;
-      margin-top: 20px;
-      background-color: var(--accent);
-      color: white;
-      padding: 10px 15px;
-      border-radius: 5px;
-      text-decoration: none;
+      padding: 15px;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="logo-container">
-      <img src="IMG_2650.jpeg" alt="K&M Exporter Logo">
-    </div>
+    <img src="IMG_2650.jpeg" alt="K&M Exporter Logo">
     <div class="menu-button" onclick="toggleMenu()">☰</div>
+    <nav id="menu">
+      <a href="#home" onclick="closeMenu()">Home</a>
+      <a href="#about" onclick="closeMenu()">About Us</a>
+      <a href="#products" onclick="closeMenu()">Our Products</a>
+      <a href="#export" onclick="closeMenu()">Where We Export</a>
+      <a href="#partners" onclick="closeMenu()">Our Partners</a>
+      <a href="#contact" onclick="closeMenu()">Contact Us</a>
+    </nav>
   </header>
 
-  <nav id="menu">
-    <a href="#home" onclick="closeMenu()">Home</a>
-    <a href="#about" onclick="closeMenu()">About Us</a>
-    <a href="#products" onclick="closeMenu()">Our Products</a>
-    <a href="#export" onclick="closeMenu()">Where We Export</a>
-    <a href="#partners" onclick="closeMenu()">Our Partners</a>
-    <a href="#contact" onclick="closeMenu()">Contact Us</a>
-  </nav>
-
-  <section id="home" class="home">
-    Welcome to K&M Exporter
+  <section class="home" id="home">
+    <h1>Welcome to K&M Exporter</h1>
+    <p>Your trusted partner in global agricultural trade</p>
   </section>
 
-  <section id="about" class="about">
-    <h2 class="section-title">About Us</h2>
-    <div class="section-content">
-      <p>K&M Exporter specializes in providing premium-quality agricultural products and sauces. With years of experience in the export industry, we are committed to delivering freshness, reliability, and satisfaction to our global partners.</p>
+  <section class="about" id="about">
+    <h2>About Us</h2>
+    <p>At K&M Exporter, we specialize in the international trade of high-quality fresh produce and sauces. With a commitment to excellence, we deliver products that meet the highest global standards. From our farms to your shelves, trust us to supply the very best.</p>
+  </section>
+
+  <section class="products" id="products">
+    <h2>Our Products</h2>
+    <div class="product-grid">
+      <div class="product-item">🍅 Sauces<br><small>Ketchup, BBQ, Mustard, Ranch...</small></div>
+      <div class="product-item">🥔 Potatoes</div>
+      <div class="product-item">🧅 Onions</div>
+      <div class="product-item">🍋 Lemons</div>
+    </div>
+    <br>
+    <a href="#contact"><button>Inquiry</button></a>
+  </section>
+
+  <section class="export" id="export">
+    <h2>Where We Export</h2>
+    <div class="export-grid">
+      <div class="export-item">🇪🇺 Europe</div>
+      <div class="export-item">🇸🇦 Middle East</div>
+      <div class="export-item">🇺🇸 North America</div>
+      <div class="export-item">🌍 Africa</div>
     </div>
   </section>
 
-  <section id="products" class="products">
-    <h2 class="section-title">Our Products</h2>
-    <div class="grid">
-      <div class="item">
-        <span>🧂</span>
-        Sauces: Ketchup, BBQ, Mayo, Mustard, Ranch
-      </div>
-      <div class="item">
-        <span>🥔</span>
-        Fresh Potatoes
-      </div>
-      <div class="item">
-        <span>🧅</span>
-        Fresh Onions
-      </div>
-      <div class="item">
-        <span>🍋</span>
-        Fresh Lemons
-      </div>
-    </div>
-    <div class="section-content">
-      <a href="#contact" class="inquiry-button">Make an Inquiry</a>
-    </div>
+  <section class="partners" id="partners">
+    <h2>Our Trusted Partners</h2>
+    <img src="IMG_2963.jpeg" alt="Partner Logos">
   </section>
 
-  <section id="export" class="export">
-    <h2 class="section-title">Where We Export</h2>
-    <div class="grid">
-      <div class="item"><span>🇪🇺</span>Europe</div>
-      <div class="item"><span>🇸🇦</span>Gulf Region</div>
-      <div class="item"><span>🇺🇸</span>North America</div>
-      <div class="item"><span>🌍</span>Africa</div>
-    </div>
-  </section>
-
-  <section id="partners" class="partners">
-    <h2 class="section-title">Our Trusted Partners</h2>
-    <img src="IMG_2963.jpeg" alt="Our Partners">
-  </section>
-
-  <section id="contact" class="contact">
-    <h2 class="section-title">Contact Us</h2>
-    <form action="mailto:info@kmexporter.org" method="post" enctype="text/plain">
+  <section class="contact" id="contact" style="background: url('IMG_2583.jpeg') center/cover no-repeat; color: white;">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
       <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
       <button type="submit">Send</button>
+      <p id="thankYouMessage" style="display:none; color: lightgreen; margin-top: 15px;">✅ Thank you for your message!</p>
     </form>
+    <div class="social">
+      <a href="https://www.facebook.com/share/19ZX3PnsXk/?mibextid=wwXIfr" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/km_exportes?igsh=MXYxcTUxaHBweG8xZw%3D%3D&utm_source=qr" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+      </a>
+    </div>
   </section>
 
   <footer>
-    <div class="socials">
-      <a href="https://www.facebook.com/share/19ZX3PnsXk/?mibextid=wwXIfr" target="_blank">
-        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" alt="Facebook">
-      </a>
-      <a href="https://www.instagram.com/km_exportes?igsh=MXYxcTUxaHBweG8xZw%3D%3D&utm_source=qr" target="_blank">
-        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram">
-      </a>
-    </div>
-    <p>&copy; 2020 K&M Exporter. All rights reserved.</p>
+    &copy; 2020 K&M Exporter. All rights reserved.
   </footer>
 
   <script>
@@ -295,7 +242,16 @@
     function closeMenu() {
       document.getElementById('menu').classList.remove('active');
     }
-  </script>
 
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      this.reset();
+      const msg = document.getElementById("thankYouMessage");
+      msg.style.display = "block";
+      setTimeout(() => {
+        msg.style.display = "none";
+      }, 5000);
+    });
+  </script>
 </body>
 </html>
