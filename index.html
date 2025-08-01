@@ -22,26 +22,35 @@
       align-items: center;
       padding: 10px 20px;
     }
-    header img {
-      height: 40px;
-    }
-    nav {
-      display: none;
-      flex-direction: column;
-      background-color: #0B1F36;
-    }
-    nav a {
-      padding: 10px 20px;
+    .logo-text {
       color: white;
-      text-decoration: none;
-    }
-    nav a:hover {
-      background-color: #335C67;
+      font-weight: bold;
+      font-size: 20px;
     }
     .menu-btn {
       font-size: 24px;
       color: white;
       cursor: pointer;
+    }
+    nav {
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 200px;
+      background-color: #0B1F36;
+      display: none;
+      flex-direction: column;
+      border-radius: 0 0 0 10px;
+      box-shadow: -2px 2px 8px rgba(0,0,0,0.2);
+    }
+    nav a {
+      padding: 12px 20px;
+      color: white;
+      text-decoration: none;
+      border-bottom: 1px solid #335C67;
+    }
+    nav a:hover {
+      background-color: #335C67;
     }
     .show {
       display: flex;
@@ -49,14 +58,6 @@
     section {
       padding: 60px 20px;
       text-align: center;
-    }
-    .home {
-      background: url('IMG_2570.jpeg') center/cover no-repeat;
-      color: white;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
     }
     .about, .products, .export, .partners, .contact {
       background-color: white;
@@ -125,12 +126,17 @@
     @media (min-width: 768px) {
       nav {
         display: flex !important;
-        flex-direction: row;
         position: static;
+        flex-direction: row;
         background-color: transparent;
+        width: auto;
+        box-shadow: none;
       }
       .menu-btn {
         display: none;
+      }
+      nav a {
+        border: none;
       }
     }
   </style>
@@ -138,10 +144,9 @@
 <body>
 
 <header>
-  <img src="IMG_2650.jpeg" alt="K&M Exporter Logo" />
+  <div class="logo-text">K&M Exporter</div>
   <i class="fas fa-bars menu-btn" onclick="toggleMenu()"></i>
   <nav id="menu">
-    <a href="#home" onclick="toggleMenu()">Home</a>
     <a href="#about" onclick="toggleMenu()">About Us</a>
     <a href="#products" onclick="toggleMenu()">Our Products</a>
     <a href="#export" onclick="toggleMenu()">Where We Export</a>
@@ -150,14 +155,9 @@
   </nav>
 </header>
 
-<section class="home" id="home">
-  <h1>Welcome to K&M Exporter</h1>
-  <p>Exporting Egypt’s Best Sauces and Fresh Produce</p>
-</section>
-
 <section class="about" id="about">
   <h2>About Us</h2>
-  <p>Located in the heart of the Industrial Zone of 6th October City, Egypt, K&M Exporter specializes in the production and export of high-quality sauces and fresh agricultural products. We are dedicated to delivering exceptional products to international markets.</p>
+  <p>Located in the Industrial Zone of 6th October City, Egypt, K&M Exporter specializes in the production and export of high-quality sauces and fresh agricultural products. We are dedicated to delivering exceptional products to international markets.</p>
 </section>
 
 <section class="products" id="products">
