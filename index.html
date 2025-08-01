@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>K&M Exporter</title>
   <style>
     :root {
@@ -11,100 +11,105 @@
       --accent: #335C67;
     }
 
-    body, html {
+    body {
       margin: 0;
-      padding: 0;
       font-family: Arial, sans-serif;
-      scroll-behavior: smooth;
       background-color: var(--light);
+      scroll-behavior: smooth;
     }
 
     header {
+      background-color: var(--dark);
+      color: white;
+      padding: 10px 20px;
       position: sticky;
       top: 0;
-      background-color: var(--dark);
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 10px 20px;
+      justify-content: space-between;
       z-index: 1000;
     }
 
     header img {
-      height: 50px;
+      height: 40px;
     }
 
-    .menu-button {
+    .menu-btn {
       font-size: 28px;
       color: white;
+      background: none;
+      border: none;
       cursor: pointer;
     }
 
     nav {
       display: none;
       flex-direction: column;
-      background-color: var(--dark);
       position: fixed;
-      top: 70px;
+      top: 60px;
       right: 0;
+      background-color: var(--dark);
       width: 200px;
-      padding: 10px;
-    }
-
-    nav.active {
-      display: flex;
+      padding: 15px;
+      z-index: 999;
+      border-radius: 0 0 0 10px;
+      box-shadow: -2px 4px 10px rgba(0, 0, 0, 0.2);
     }
 
     nav a {
       color: white;
+      padding: 10px 0;
       text-decoration: none;
-      padding: 10px;
-      border-bottom: 1px solid #fff3;
     }
 
     nav a:hover {
       background-color: var(--accent);
     }
 
-    section {
-      padding: 60px 20px;
-      color: var(--dark);
+    nav.active {
+      display: flex;
     }
 
-    .home {
-      background: url('IMG_2570.jpeg') no-repeat center center/cover;
-      height: 100vh;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    section {
+      padding: 60px 20px;
       text-align: center;
     }
 
     .section-title {
-      font-size: 32px;
+      font-size: 28px;
+      color: var(--dark);
       margin-bottom: 20px;
-      text-align: center;
     }
 
-    .modern-section {
-      background-color: white;
-      border-radius: 8px;
-      padding: 30px;
-      margin: 20px auto;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      max-width: 1000px;
+    .hero {
+      background: url('IMG_2570.jpeg') no-repeat center center/cover;
+      color: white;
+      padding: 100px 20px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin: 0;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    }
+
+    .modern-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .modern-section ul li {
+      font-size: 20px;
+      margin: 10px 0;
     }
 
     .inquiry-btn {
-      display: block;
-      margin: 20px auto 0;
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
       background-color: var(--accent);
       color: white;
-      border: none;
-      padding: 10px 20px;
       text-decoration: none;
-      font-size: 16px;
       border-radius: 5px;
     }
 
@@ -116,153 +121,145 @@
     }
 
     .region-card {
-      background: white;
+      background-color: var(--accent);
+      color: white;
+      padding: 15px 25px;
       border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      text-align: center;
-      padding: 20px;
       font-size: 18px;
-      width: 180px;
     }
 
-    .partners img {
+    .partner-img {
       max-width: 100%;
-      display: block;
-      margin: auto;
+      height: auto;
       border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
     }
 
-    .contact {
+    #contact {
       background: url('IMG_2583.jpeg') no-repeat center center/cover;
       color: white;
     }
 
-    .contact form {
-      max-width: 500px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
+    form {
+      background-color: rgba(0,0,0,0.7);
+      display: inline-block;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
     }
 
-    .contact input, .contact textarea {
+    form input, form textarea {
+      width: 250px;
       padding: 10px;
       margin: 10px 0;
       border: none;
       border-radius: 5px;
     }
 
-    .contact button {
+    form button {
+      padding: 10px 20px;
       background-color: var(--accent);
-      color: white;
-      padding: 10px;
       border: none;
+      color: white;
       border-radius: 5px;
       cursor: pointer;
     }
 
     footer {
-      text-align: center;
-      padding: 20px;
       background-color: var(--dark);
       color: white;
+      text-align: center;
+      padding: 20px;
     }
 
-    .socials a {
+    .socials img {
+      height: 24px;
       margin: 0 10px;
-      text-decoration: none;
-      color: white;
-    }
-
-    @media (max-width: 600px) {
-      .regions {
-        flex-direction: column;
-        align-items: center;
-      }
+      vertical-align: middle;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <img src="IMG_2650.jpeg" alt="K&M Logo">
-  <div class="menu-button" onclick="toggleMenu()">☰</div>
-</header>
+  <header>
+    <img src="IMG_2650.jpeg" alt="K&M Logo">
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <nav id="menu">
+      <a href="#home" onclick="toggleMenu()">Home</a>
+      <a href="#about" onclick="toggleMenu()">About Us</a>
+      <a href="#products" onclick="toggleMenu()">Our Products</a>
+      <a href="#export" onclick="toggleMenu()">Where We Export</a>
+      <a href="#partners" onclick="toggleMenu()">Our Partners</a>
+      <a href="#contact" onclick="toggleMenu()">Contact Us</a>
+    </nav>
+  </header>
 
-<nav id="navMenu">
-  <a href="#home" onclick="toggleMenu()">Home</a>
-  <a href="#about" onclick="toggleMenu()">About Us</a>
-  <a href="#products" onclick="toggleMenu()">Our Products</a>
-  <a href="#export" onclick="toggleMenu()">Where We Export</a>
-  <a href="#partners" onclick="toggleMenu()">Our Partners</a>
-  <a href="#contact" onclick="toggleMenu()">Contact</a>
-</nav>
+  <section id="home" class="hero">
+    <h1>Welcome to K&M Exporter</h1>
+  </section>
 
-<section class="home" id="home">
-  <h1>Welcome to K&M Exporter</h1>
-</section>
+  <section id="about">
+    <div class="section-title">About Us</div>
+    <div class="modern-section">
+      <p>We are a globally trusted exporter of fresh vegetables and sauces. Our expertise lies in providing high-quality potatoes, onions, lemons, and a wide variety of sauces to markets across the world. At K&M Exporter, we prioritize freshness, reliability, and long-term partnerships.</p>
+    </div>
+  </section>
 
-<section id="about">
-  <div class="section-title">About Us</div>
-  <div class="modern-section">
-    <p>K&M Exporter is a trusted supplier of premium vegetables and sauces, committed to delivering high-quality products across international markets. With a passion for excellence and reliability, we pride ourselves on long-lasting partnerships built on trust.</p>
-  </div>
-</section>
+  <section id="products">
+    <div class="section-title">Our Products</div>
+    <div class="modern-section">
+      <ul>
+        <li>🍯 Sauces (Ketchup, BBQ, Mayonnaise, Mustard, Ranch, Burger Sauce)</li>
+        <li>🥔 Fresh Potatoes</li>
+        <li>🧅 Fresh Onions</li>
+        <li>🍋 Fresh Lemons</li>
+      </ul>
+      <a href="#contact" class="inquiry-btn">Send Inquiry</a>
+    </div>
+  </section>
 
-<section id="products">
-  <div class="section-title">Our Products</div>
-  <div class="modern-section">
-    <ul>
-      <li>🍅 Ketchup</li>
-      <li>🔥 BBQ Sauce</li>
-      <li>🥚 Mayonnaise</li>
-      <li>🌭 Mustard</li>
-      <li>🥗 Ranch</li>
-      <li>🍔 Burger Sauce</li>
-    </ul>
-    <a href="#contact" class="inquiry-btn">Send Inquiry</a>
-  </div>
-</section>
+  <section id="export">
+    <div class="section-title">Where We Export</div>
+    <div class="regions">
+      <div class="region-card">🕌 Gulf Region</div>
+      <div class="region-card">🌍 Europe</div>
+      <div class="region-card">🎎 Asia</div>
+      <div class="region-card">🦁 Africa</div>
+    </div>
+  </section>
 
-<section id="export">
-  <div class="section-title">Where We Export</div>
-  <div class="regions">
-    <div class="region-card">🕌 Gulf Region</div>
-    <div class="region-card">🌍 Europe</div>
-    <div class="region-card">🎎 Asia</div>
-    <div class="region-card">🌍 Africa</div>
-  </div>
-</section>
+  <section id="partners">
+    <div class="section-title">Our Partners</div>
+    <img src="IMG_2963.jpeg" alt="Our Trusted Partners" class="partner-img">
+  </section>
 
-<section id="partners" class="partners">
-  <div class="section-title">Our Partners</div>
-  <img src="IMG_2963.jpeg" alt="Partners">
-</section>
+  <section id="contact">
+    <div class="section-title">Contact Us</div>
+    <form action="mailto:info@kmexporter.org" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required><br>
+      <input type="email" name="email" placeholder="Your Email" required><br>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea><br>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 
-<section id="contact" class="contact">
-  <div class="section-title">Contact Us</div>
-  <form action="mailto:info@kmexporter.org" method="post" enctype="text/plain">
-    <input type="text" name="Name" placeholder="Your Name" required />
-    <input type="email" name="Email" placeholder="Your Email" required />
-    <textarea name="Message" placeholder="Your Message" rows="5" required></textarea>
-    <button type="submit">Send</button>
-  </form>
-</section>
+  <footer>
+    <div class="socials">
+      <a href="https://www.facebook.com/share/19ZX3PnsXk/?mibextid=wwXIfr" target="_blank">
+        <img src="facebook-icon.png" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/km_exportes?igsh=MXYxcTUxaHBweG8xZw%3D%3D&utm_source=qr" target="_blank">
+        <img src="instagram-icon.png" alt="Instagram">
+      </a>
+    </div>
+    <p>&copy; 2020 K&M Exporter. All rights reserved.</p>
+  </footer>
 
-<footer>
-  <div class="socials">
-    <a href="https://www.facebook.com/share/19ZX3PnsXk/?mibextid=wwXIfr" target="_blank">📘 Facebook</a>
-    |
-    <a href="https://www.instagram.com/km_exportes?igsh=MXYxcTUxaHBweG8xZw%3D%3D&utm_source=qr" target="_blank">📸 Instagram</a>
-  </div>
-  <p>&copy; 2020 K&M Exporter. All rights reserved.</p>
-</footer>
-
-<script>
-  function toggleMenu() {
-    const nav = document.getElementById("navMenu");
-    nav.classList.toggle("active");
-  }
-</script>
-
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('menu');
+      nav.classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
