@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/61fd516e-144b-4142-bc59-dbc4c73a5047.png');
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d54-86f1-2a93ccde5887/image/61fd516e-144b-4142-bc59-dbc4c73a5047.png');
             background-size: cover;
             background-position: center;
         }
@@ -25,10 +25,12 @@
         .partner-logo:hover {
             filter: grayscale(0);
         }
-        .contact-bg {
+        .form-bg {
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('IMG_2583.jpeg');
             background-size: cover;
             background-position: center;
+            border-radius: 0.5rem;
+            padding: 2rem;
         }
     </style>
 </head>
@@ -376,7 +378,7 @@
     </section>
 
     <!-- Contact Us Section -->
-    <section id="contact" class="py-20 contact-bg text-white">
+    <section id="contact" class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Contact Us</h2>
@@ -386,7 +388,7 @@
             
             <div class="flex flex-col lg:flex-row gap-12">
                 <div class="lg:w-1/2">
-                    <form id="contactForm" class="space-y-6 text-white">
+                    <form id="contactForm" class="space-y-6 text-white form-bg">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
