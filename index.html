@@ -1,6 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Previous sections remain exactly the same up to the Trusted Partners section -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K&M Exporter - Premium Egyptian Agricultural Products</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://placehold.co/1920x1080') no-repeat center center;
+            background-size: cover;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .transition-slow {
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-green-800">K&M EXPORTER</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-green-600 transition-slow">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-green-600 transition-slow">About Us</a>
+                    <a href="#exports" class="text-gray-700 hover:text-green-600 transition-slow">Our Exports</a>
+                    <a href="#partners" class="text-gray-700 hover:text-green-600 transition-slow">Partners</a>
+                    <a href="#contact" class="text-gray-700 hover:text-green-600 transition-slow">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="mobile-menu-button">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg text-white py-32">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Premium Egyptian Agricultural Products</h1>
+            <p class="text-xl md:text-2xl mb-8">Exporting the finest sauces, potatoes, onions, and lemons from the fertile lands of Egypt</p>
+            <a href="#contact" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full transition-slow inline-block">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-16">About K&M Exporter</h2>
+            
+            <div class="flex flex-col md:flex-row items-center mb-16">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <h3 class="text-2xl font-semibold text-green-700 mb-4">Our Story</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Founded in 2010, K&M Exporter has grown to become one of Egypt's most trusted agricultural export companies. 
+                        With decades of combined experience in the industry, we specialize in delivering premium quality sauces, 
+                        fresh potatoes, fresh onions, and fresh lemons to global markets.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Our products are sourced directly from carefully selected farms across Egypt's most fertile regions, 
+                        ensuring maximum freshness and quality for our international clients.
+                    </p>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://placehold.co/600x400" alt="Modern agricultural facility in Egypt with workers inspecting fresh produce" class="rounded-lg shadow-lg" />
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm card-hover transition-slow">
+                    <div class="text-green-600 text-4xl mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2 text-gray-800">Quality Assurance</h4>
+                    <p class="text-gray-600">Rigorous quality control at every stage ensures only premium products reach our clients.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm card-hover transition-slow">
+                    <div class="text-green-600 text-4xl mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2 text-gray-800">Fast Shipping</h4>
+                    <p class="text-gray-600">Optimized cold chain logistics guarantee freshness upon arrival at destination.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm card-hover transition-slow">
+                    <div class="text-green-600 text-4xl mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2 text-gray-800">Competitive Pricing</h4>
+                    <p class="text-gray-600">Direct sourcing from farmers allows us to offer the best prices in the market.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm card-hover transition-slow">
+                    <div class="text-green-600 text-4xl mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2 text-gray-800">Custom Packaging</h4>
+                    <p class="text-gray-600">Flexible packaging solutions tailored to your specific market requirements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Our Products Section -->
     <section class="py-20 bg-gray-50">
@@ -9,12 +135,28 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="bg-white p-6 rounded-lg shadow-sm card-hover transition-slow">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/274373c3-b61c-47fe-8840-858efdcc4e8f.png" alt="Assortment of premium Egyptian sauces" class="w-full h-48 object-cover rounded-md mb-4" />
+                    <img src="https://placehold.co/400x300" alt="Assortment of premium Egyptian sauces in jars and bottles neatly arranged on a wooden table" class="w-full h-48 object-cover rounded-md mb-4" />
                     <h3 class="text-xl font-semibold mb-2 text-green-700">Sauces</h3>
-                    <p class="text-gray-600">Authentic Egyptian sauces made from traditional recipes.</p>
+                    <p class="text-gray-600">Authentic Egyptian sauces made from traditional recipes with the finest ingredients.</p>
                 </div>
                 
-                <!-- Additional product cards would go here -->
+                <div class="bg-white p-6 rounded-lg shadow-sm card-hover transition-slow">
+                    <img src="https://placehold.co/400x300" alt="Freshly harvested Egyptian potatoes in a wicker basket with soil still visible on some" class="w-full h-48 object-cover rounded-md mb-4" />
+                    <h3 class="text-xl font-semibold mb-2 text-green-700">Fresh Potatoes</h3>
+                    <p class="text-gray-600">Premium quality potatoes with excellent taste and texture, ideal for various culinary uses.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm card-hover transition-slow">
+                    <img src="https://placehold.co/400x300" alt="Heap of fresh Egyptian red onions on a wooden crate with green tops still attached" class="w-full h-48 object-cover rounded-md mb-4" />
+                    <h3 class="text-xl font-semibold mb-2 text-green-700">Fresh Onions</h3>
+                    <p class="text-gray-600">Crisp, flavorful onions grown in Egypt's ideal climate for superior taste and longevity.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm card-hover transition-slow">
+                    <img src="https://placehold.co/400x300" alt="Basket of bright yellow Egyptian lemons with green leaves placed on rustic wooden background" class="w-full h-48 object-cover rounded-md mb-4" />
+                    <h3 class="text-xl font-semibold mb-2 text-green-700">Fresh Lemons</h3>
+                    <p class="text-gray-600">Juicy, aromatic lemons with high juice content and perfect acid-sugar balance.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -25,229 +167,64 @@
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-16">Our Global Reach</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <!-- Export region cards would go here -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-lg card-hover transition-slow">
+                    <img src="https://placehold.co/800x500" alt="European city skyline with fresh produce market full of colorful vegetables and fruits" class="w-full h-64 object-cover" />
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-3 text-green-700">Europe</h3>
+                        <p class="text-gray-600 mb-4">
+                            Our products are distributed across major European markets including Germany, France, Italy, and the Netherlands. 
+                            We meet stringent EU quality standards with our premium Egyptian produce.
+                        </p>
+                        <div class="text-sm text-gray-500">
+                            <span class="font-medium">Major Products:</span> Potatoes, Onions, Lemon Juice Concentrates
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-lg card-hover transition-slow">
+                    <img src="https://placehold.co/800x500" alt="Middle Eastern spice market with sacks of onions and potatoes in traditional setting" class="w-full h-64 object-cover" />
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-3 text-green-700">Middle East</h3>
+                        <p class="text-gray-600 mb-4">
+                            We supply fresh produce to GCC countries including Saudi Arabia, UAE, and Qatar. 
+                            Our products are preferred for their quality and cultural appropriateness.
+                        </p>
+                        <div class="text-sm text-gray-500">
+                            <span class="font-medium">Major Products:</span> Fresh Lemons, Onions, Traditional Sauces
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-lg card-hover transition-slow">
+                    <img src="https://placehold.co/800x500" alt="African supermarket with crates of fresh produce and shoppers examining vegetables" class="w-full h-64 object-cover" />
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-3 text-green-700">Africa</h3>
+                        <p class="text-gray-600 mb-4">
+                            Our African distribution network covers North and Sub-Saharan markets including Morocco, 
+                            Libya, and Nigeria with products tailored to regional preferences.
+                        </p>
+                        <div class="text-sm text-gray-500">
+                            <span class="font-medium">Major Products:</span> Potatoes, Onions, Spicy Sauces
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-lg card-hover transition-slow">
+                    <img src="https://placehold.co/800x500" alt="Asian supermarket aisle with displays of international produce including Egyptian vegetables" class="w-full h-64 object-cover" />
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-3 text-green-700">Asia</h3>
+                        <p class="text-gray-600 mb-4">
+                            We've successfully introduced Egyptian agricultural products to Asian markets including 
+                            China, Malaysia, and Singapore with growing demand each year.
+                        </p>
+                        <div class="text-sm text-gray-500">
+                            <span class="font-medium">Major Products:</span> All Products (Growing Market)
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Trusted Partners Section -->
-    <section id="partners" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-16">Our Trusted Partners</h2>
-            <div class="flex justify-center">
-                <img src="IMG_2963.jpeg" alt="Official logos of K&M Exporter's trusted international partners" class="rounded-lg shadow-lg max-w-full h-auto">
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Us Section -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-16">Contact K&M Exporter</h2>
-            
-            <div class="flex flex-col lg:flex-row gap-12">
-                <div class="lg:w-1/2">
-                    <h3 class="text-2xl font-semibold text-green-700 mb-6">Get in Touch</h3>
-                    <p class="text-gray-600 mb-8 leading-relaxed">
-                        Interested in our premium Egyptian agricultural products? Have questions about our export services?
-                        Fill out the form and our team will get back to you within 24 hours.
-                    </p>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="text-green-600 text-xl mr-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Email</h4>
-                                <p class="text-gray-600">info@kmexporter.org</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="text-green-600 text-xl mr-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Phone</h4>
-                                <p class="text-gray-600">+20 XXX XXX XXXX</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="text-green-600 text-xl mr-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Headquarters</h4>
-                                <p class="text-gray-600">Cairo, Egypt</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-8">
-                        <h4 class="font-semibold text-gray-800 mb-4">Follow Us</h4>
-                        <div class="flex space-x-4">
-                            <a href="https://www.facebook.com/share/157Lp69A4Ei/?mibextid=wwXIfr" target="_blank" class="text-green-600 hover:text-green-800 transition-slow">
-                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
-                                </svg>
-                            </a>
-                            <a href="https://www.instagram.com/km_exportes?igsh=MXYxcTUxaHBweG8xZw%3D%3D&utm_source=qr" target="_blank" class="text-green-600 hover:text-green-800 transition-slow">
-                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="lg:w-1/2">
-                    <form id="contactForm" class="bg-gray-50 p-8 rounded-lg shadow-md">
-                        <div class="mb-6">
-                            <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
-                            <input type="text" id="name" name="name" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
-                        </div>
-                        
-                        <div class="mb-6">
-                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
-                            <input type="email" id="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
-                        </div>
-                        
-                        <div class="mb-6">
-                            <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
-                        </div>
-                        
-                        <div class="mb-6">
-                            <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
-                            <select id="subject" name="subject" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
-                                <option value="inquiry">Product Inquiry</option>
-                                <option value="partnership">Partnership Opportunity</option>
-                                <option value="order">Order Information</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        
-                        <div class="mb-6">
-                            <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
-                            <textarea id="message" name="message" rows="5" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-md transition-slow">
-                            Send Message
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between">
-                <div class="mb-8 md:mb-0">
-                    <h3 class="text-2xl font-bold text-green-300 mb-4">K&M EXPORTER</h3>
-                    <p class="text-gray-400 max-w-xs">
-                        Exporting premium Egyptian agricultural products to markets worldwide since 2010.
-                    </p>
-                </div>
-                
-                <div class="mb-8 md:mb-0">
-                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#home" class="text-gray-400 hover:text-white transition-slow">Home</a></li>
-                        <li><a href="#about" class="text-gray-400 hover:text-white transition-slow">About Us</a></li>
-                        <li><a href="#exports" class="text-gray-400 hover:text-white transition-slow">Our Exports</a></li>
-                        <li><a href="#partners" class="text-gray-400 hover:text-white transition-slow">Partners</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-slow">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-green-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
-                            <span>Cairo, Egypt</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-green-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg>
-                            <span>info@kmexporter.org</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-green-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                            </svg>
-                            <span>+20 XXX XXX XXXX</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 mb-4 md:mb-0">© 2023 K&M Exporter. All rights reserved.</p>
-                <div class="flex space-x-6">
-                    <a href="https://www.facebook.com/share/157Lp69A4Ei/?mibextid=wwXIfr" target="_blank" class="text-gray-400 hover:text-white transition-slow">
-                        <span class="sr-only">Facebook</span>
-                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
-                        </svg>
-                    </a>
-                    <a href="https://www.instagram.com/km_exportes?igsh=MXYxcTUxaHBweG8xZw%3D%3D&utm_source=qr" target="_blank" class="text-gray-400 hover:text-white transition-slow">
-                        <span class="sr-only">Instagram</span>
-                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Form submission handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            
-            // Here you would typically send the data to a server
-            // For demonstration, we'll just log it and show an alert
-            console.log({
-                name,
-                email,
-                phone,
-                subject,
-                message
-            });
-            
-            alert('Thank you for your message! We will contact you soon.');
-            document.getElementById('contactForm').reset();
-            
-            // In a real implementation, you would use fetch() or similar to send to your backend
-            // which would then email info@kmexporter.org
-        });
-        
-        // Mobile menu toggle functionality would go here
-    </script>
-</body>
-</html>
+    
