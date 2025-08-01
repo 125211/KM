@@ -5,148 +5,111 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>K&M Exporter</title>
   <style>
-    :root {
-      --dark: #0B1F36;
-      --light: #F5F5F5;
-      --accent: #335C67;
-    }
-
-    body, html {
-      margin: 0;
+    body {
       font-family: Arial, sans-serif;
-      background-color: var(--light);
+      background-color: #F5F5F5;
+      margin: 0;
+      padding: 0;
     }
 
     header {
-      background-color: var(--dark);
+      background-color: #0B1F36;
       color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 20px;
+      padding: 1rem 2rem;
       position: sticky;
       top: 0;
       z-index: 1000;
     }
 
-    .company-name {
-      font-size: 20px;
-      font-weight: bold;
-    }
-
-    .menu-btn {
+    .menu-toggle {
       background: none;
       border: none;
       color: white;
-      font-size: 26px;
+      font-size: 1.2rem;
       cursor: pointer;
     }
 
-    nav {
+    .menu {
       display: none;
       flex-direction: column;
+      background-color: #0B1F36;
       position: absolute;
+      right: 0;
       top: 60px;
-      right: 20px;
-      background-color: var(--dark);
-      border-radius: 5px;
-      overflow: hidden;
     }
 
-    nav a {
+    .menu a {
+      padding: 1rem;
       color: white;
-      padding: 10px 20px;
       text-decoration: none;
-      display: block;
     }
 
-    nav a:hover {
-      background-color: var(--accent);
+    .menu a:hover {
+      background-color: #335C67;
     }
 
-    nav.active {
-      display: flex;
-    }
-
-    section {
+    .section {
       padding: 60px 20px;
       text-align: center;
     }
 
-    .home-section {
+    #home {
       background: url('IMG_2570.jpeg') no-repeat center center/cover;
-      color: white;
       height: 100vh;
+      color: white;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
     }
 
-    .section-title {
-      color: var(--dark);
-      font-size: 28px;
-      margin-bottom: 20px;
+    #contact {
+      background: url('IMG_2583.jpeg') no-repeat center center/cover;
+      background-size: cover;
+      padding: 60px 20px;
+      color: white;
     }
 
-    .products-grid, .regions-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .product, .region {
-      background: white;
+    form {
+      background-color: rgba(11, 31, 54, 0.8);
       padding: 20px;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 500px;
+      margin: auto;
     }
 
-    .inquiry-btn {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: var(--accent);
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-
-    .partners img {
-      max-width: 90%;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.15);
-    }
-
-    form input, form textarea {
+    form input, form textarea, form button {
       width: 100%;
-      padding: 12px;
+      padding: 10px;
       margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+      border: none;
+      border-radius: 4px;
     }
 
     form button {
-      background-color: var(--dark);
+      background-color: #335C67;
       color: white;
-      padding: 10px 20px;
-      border: none;
       cursor: pointer;
-      border-radius: 5px;
+    }
+
+    #thanksMessage {
+      color: #00ff88;
+      font-weight: bold;
+      margin-top: 20px;
     }
 
     footer {
-      background: var(--dark);
+      background-color: #0B1F36;
       color: white;
       text-align: center;
-      padding: 20px 10px;
+      padding: 20px;
     }
 
-    .social-links img {
-      height: 24px;
+    .socials img {
+      width: 24px;
       margin: 0 10px;
       vertical-align: middle;
     }
@@ -155,93 +118,83 @@
 <body>
 
   <header>
-    <div class="company-name">K&M Exporter</div>
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
-    <nav id="menu">
-      <a href="#home" onclick="toggleMenu()">Home</a>
-      <a href="#products" onclick="toggleMenu()">Our Products</a>
-      <a href="#regions" onclick="toggleMenu()">Where We Export</a>
-      <a href="#partners" onclick="toggleMenu()">Our Partners</a>
-      <a href="#contact" onclick="toggleMenu()">Contact Us</a>
+    <div><strong>K&M Exporter</strong></div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav class="menu" id="menu">
+      <a href="#home" onclick="closeMenu()">Home</a>
+      <a href="#products" onclick="closeMenu()">Our Products</a>
+      <a href="#contact" onclick="closeMenu()">Contact Us</a>
     </nav>
   </header>
 
-  <section id="home" class="home-section">
+  <section id="home" class="section">
     <h1>Welcome to K&M Exporter</h1>
-    <p>Your partner in premium sauces & fresh produce.</p>
+    <p>Premium Sauces & Fresh Produce from Egypt</p>
   </section>
 
-  <section id="products">
-    <h2 class="section-title">Our Products</h2>
-    <div class="products-grid">
-      <div class="product">
-        <h3>🍅 Sauces</h3>
-        <p>Ketchup, BBQ, Mayonnaise, Mustard, Ranch, Burger Sauce</p>
-      </div>
-      <div class="product">
-        <h3>🥔 Potatoes</h3>
-        <p>Fresh, high-quality Egyptian potatoes</p>
-      </div>
-      <div class="product">
-        <h3>🧅 Onions</h3>
-        <p>Golden and red onions, harvested with care</p>
-      </div>
-      <div class="product">
-        <h3>🍋 Lemons</h3>
-        <p>Fresh citrus for every export need</p>
-      </div>
+  <section id="products" class="section">
+    <h2>Our Products</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+      <div><h3>🍅 Sauces</h3><p>Ketchup, BBQ, Mayonnaise, Mustard, Ranch, Burger Sauce</p></div>
+      <div><h3>🥔 Potatoes</h3><p>Fresh harvested Egyptian potatoes</p></div>
+      <div><h3>🧅 Onions</h3><p>Fresh onions exported globally</p></div>
+      <div><h3>🍋 Lemons</h3><p>Juicy and organic lemons</p></div>
     </div>
-    <button class="inquiry-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Inquire Now</button>
+    <br>
+    <a href="#contact"><button style="background-color: #335C67; color: white; padding: 10px 20px; border: none; border-radius: 5px;">Inquire Now</button></a>
   </section>
 
-  <section id="regions">
-    <h2 class="section-title">Where We Export</h2>
-    <div class="regions-grid">
-      <div class="region">🇪🇺 Europe</div>
-      <div class="region">🇸🇦 Middle East</div>
-      <div class="region">🇺🇸 North America</div>
-      <div class="region">🌍 Africa</div>
-    </div>
-  </section>
-
-  <section id="partners" class="partners">
-    <h2 class="section-title">Our Trusted Partners</h2>
-    <img src="IMG_2963.jpeg" alt="Our Partners">
-  </section>
-
-  <section id="contact">
-    <h2 class="section-title">Contact Us</h2>
-    <form onsubmit="event.preventDefault(); showThanks();">
+  <section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <form id="contact-form" method="POST" action="sendmail.php">
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
       <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
       <button type="submit">Send Message</button>
     </form>
-    <p id="thanksMessage" style="display:none; color: green; margin-top: 20px;">Thanks! Your message has been sent.</p>
+    <p id="thanksMessage" style="display: none;">Thanks! Your message has been sent.</p>
   </section>
 
   <footer>
-    <div class="social-links">
+    <div class="socials">
       <a href="https://www.facebook.com/share/1B56rtHuyn/?mibextid=wwXIfr" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Facebook-icon-1.png" alt="Facebook" />
+        <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook Logo">
       </a>
-      <a href="https://www.instagram.com/km_exportes?igsh=MXYxcTUxaHBweG8xZw" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+      <a href="https://www.instagram.com/km_exportes?igsh=MXYxcTUxaHBweG8xZw%3D%3D&utm_source=qr" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram Logo">
       </a>
     </div>
-    <p style="margin-top: 10px;">&copy; 2025 K&M Exporter. All rights reserved.</p>
-    <p>Industrial Zone - 6th October City - Egypt</p>
+    <p>&copy; 2025 K&M Exporter. All rights reserved. Industrial Zone - 6th October City - Egypt</p>
   </footer>
 
   <script>
     function toggleMenu() {
-      document.getElementById('menu').classList.toggle('active');
+      const menu = document.getElementById("menu");
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
     }
 
-    function showThanks() {
-      document.getElementById('thanksMessage').style.display = 'block';
+    function closeMenu() {
+      document.getElementById("menu").style.display = "none";
     }
+
+    document.getElementById("contact-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const form = e.target;
+      const formData = new FormData(form);
+      fetch("sendmail.php", {
+        method: "POST",
+        body: formData
+      })
+      .then(res => {
+        if (res.ok) {
+          document.getElementById("thanksMessage").style.display = "block";
+          form.reset();
+        } else {
+          alert("Failed to send message.");
+        }
+      })
+      .catch(() => alert("Error sending message."));
+    });
   </script>
-
 </body>
 </html>
