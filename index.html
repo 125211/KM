@@ -2,209 +2,226 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>K&M Exporter</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
   <style>
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #F5F5F5;
-      color: #0B1F36;
-      scroll-behavior: smooth;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
     }
     header {
+      background-color: #0B1F36;
+      color: white;
+      padding: 1rem 2rem;
       position: sticky;
       top: 0;
-      z-index: 1000;
-      background: #0B1F36;
-      color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
+      z-index: 1000;
     }
-    .menu-toggle {
+    .company-name {
       font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .menu-btn {
       background: none;
       border: none;
       color: white;
+      font-size: 1.2rem;
       cursor: pointer;
     }
-    nav {
+    .nav {
       display: none;
-      flex-direction: column;
-      background-color: #0B1F36;
       position: absolute;
       top: 60px;
       right: 20px;
+      background-color: #0B1F36;
       border-radius: 5px;
+      overflow: hidden;
     }
-    nav a {
+    .nav a {
+      display: block;
+      padding: 10px 20px;
       color: white;
       text-decoration: none;
-      padding: 0.5rem 1rem;
-      display: block;
     }
-    nav a:hover {
+    .nav a:hover {
       background-color: #335C67;
     }
-    .show-nav {
-      display: flex;
-    }
-    section {
-      padding: 60px 20px;
-      max-width: 1200px;
+    .section {
+      padding: 3rem 1.5rem;
+      max-width: 900px;
       margin: auto;
     }
-    .home {
-      background: url('IMG_2570.jpeg') no-repeat center center/cover;
-      height: 100vh;
+    #home {
+      background: url('IMG_2570.jpeg') center/cover no-repeat;
+      height: 400px;
       color: white;
       text-align: center;
       display: flex;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
-    }
-    .section-title {
       font-size: 2rem;
-      margin-bottom: 1rem;
-      text-align: center;
-      color: #0B1F36;
+      font-weight: bold;
     }
-    .products, .export, .partners {
+    .products, .exports {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .card {
       background: white;
       border-radius: 10px;
-      padding: 30px;
-      margin-bottom: 40px;
-    }
-    .products .item, .export .item {
-      margin: 10px 0;
-      font-size: 1.2rem;
-    }
-    .partners img {
-      width: 100%;
-      border-radius: 8px;
-    }
-    .contact form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    input, textarea {
-      padding: 10px;
-      font-size: 1rem;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    button {
-      background-color: #335C67;
-      color: white;
-      border: none;
-      padding: 12px;
-      font-size: 1rem;
-      cursor: pointer;
-      border-radius: 5px;
+      padding: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
     footer {
-      text-align: center;
-      padding: 1rem;
       background-color: #0B1F36;
       color: white;
-    }
-    .socials a {
-      margin: 0 10px;
-      display: inline-block;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
     }
     .socials img {
       width: 24px;
-      height: 24px;
+      margin: 0 10px;
       vertical-align: middle;
     }
-    @media (min-width: 600px) {
-      nav {
-        position: static;
-        display: flex !important;
-        flex-direction: row;
-      }
-      .menu-toggle {
-        display: none;
-      }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 0.5rem 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .contact-form button {
+      background-color: #0B1F36;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .contact-form button:hover {
+      background-color: #2F4C5A;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>K&M Exporter</h1>
-  <button class="menu-toggle" onclick="document.getElementById('navbar').classList.toggle('show-nav')">☰</button>
-  <nav id="navbar">
-    <a href="#home" onclick="closeNav()">Home</a>
-    <a href="#products" onclick="closeNav()">Our Products</a>
-    <a href="#export" onclick="closeNav()">Where We Export</a>
-    <a href="#partners" onclick="closeNav()">Our Partners</a>
-    <a href="#contact" onclick="closeNav()">Contact</a>
-  </nav>
+  <div class="company-name">K&M Exporter</div>
+  <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
+  <div id="navMenu" class="nav">
+    <a href="#home">Home</a>
+    <a href="#products">Our Products</a>
+    <a href="#exports">Where We Export</a>
+    <a href="#contact">Contact Us</a>
+  </div>
 </header>
 
-<section class="home" id="home">
-  <h2>Welcome to K&M Exporter</h2>
-  <p>Specializing in Sauces and Fresh Agricultural Products</p>
+<section id="home">
+  Welcome to K&M Exporter
 </section>
 
-<section class="products" id="products">
-  <h2 class="section-title">Our Products</h2>
-  <div class="item">🍅 Sauces: Ketchup, BBQ, Mayonnaise, Mustard, Ranch, Burger Sauce</div>
-  <div class="item">🥔 Fresh Potatoes</div>
-  <div class="item">🧅 Fresh Onions</div>
-  <div class="item">🍋 Fresh Lemons</div>
-  <a href="#contact"><button>Inquire Now</button></a>
+<section id="products" class="section">
+  <h2>Our Products</h2>
+  <div class="products">
+    <div class="card">
+      <h3>🍅 Sauces</h3>
+      <p>Ketchup, BBQ, Mayonnaise, Mustard, Ranch, Burger Sauce</p>
+    </div>
+    <div class="card">
+      <h3>🥔 Potatoes</h3>
+      <p>Freshly harvested Egyptian potatoes</p>
+    </div>
+    <div class="card">
+      <h3>🧅 Onions</h3>
+      <p>High-quality red and yellow onions</p>
+    </div>
+    <div class="card">
+      <h3>🍋 Lemons</h3>
+      <p>Fresh and juicy Egyptian lemons</p>
+    </div>
+  </div>
 </section>
 
-<section class="export" id="export">
-  <h2 class="section-title">Where We Export</h2>
-  <div class="item">🇪🇺 Europe</div>
-  <div class="item">🇺🇸 North America</div>
-  <div class="item">🇦🇪 Gulf Region</div>
-  <div class="item">🌍 Africa</div>
+<section id="exports" class="section">
+  <h2>Where We Export</h2>
+  <div class="exports">
+    <div class="card"><h3>🇪🇺 Europe</h3></div>
+    <div class="card"><h3>🇺🇸 North America</h3></div>
+    <div class="card"><h3>🇸🇦 Middle East</h3></div>
+    <div class="card"><h3>🌍 Africa</h3></div>
+  </div>
 </section>
 
-<section class="partners" id="partners">
-  <h2 class="section-title">Our Trusted Partners</h2>
-  <img src="IMG_2963.jpeg" alt="Our Partners"/>
-</section>
-
-<section class="contact" id="contact">
-  <h2 class="section-title">Contact Us</h2>
-  <form action="https://formsubmit.co/info@kmexporter.org" method="POST">
+<section id="contact" class="section">
+  <h2>Contact Us</h2>
+  <form id="contactForm" class="contact-form">
     <input type="text" name="name" placeholder="Your Name" required />
     <input type="email" name="email" placeholder="Your Email" required />
     <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-    <input type="hidden" name="_next" value="https://kmexporter.org/thanks.html" />
-    <input type="hidden" name="_captcha" value="false" />
     <button type="submit">Send Message</button>
   </form>
-  <p>📍 Industrial Zone - 6th October City - Egypt</p>
+  <div id="formMessage" style="margin-top: 1rem;"></div>
+</section>
+
+<section class="section">
+  <h2>Our Trusted Partners</h2>
+  <img src="IMG_2963.jpeg" alt="Partners" style="width:100%; border-radius: 10px;" />
 </section>
 
 <footer>
   <div class="socials">
     <a href="https://www.facebook.com/share/1B56rtHuyn/?mibextid=wwXIfr" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Facebook-icon-1.png" alt="Facebook">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" />
     </a>
     <a href="https://www.instagram.com/km_exportes?igsh=MXYxcTUxaHBweG8xZw%3D%3D&utm_source=qr" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
     </a>
   </div>
   <p>&copy; 2025 K&M Exporter. All rights reserved.</p>
 </footer>
 
 <script>
-  function closeNav() {
-    document.getElementById('navbar').classList.remove('show-nav');
+  function toggleMenu() {
+    const nav = document.getElementById('navMenu');
+    nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
   }
+
+  // FormSubmit AJAX integration
+  const form = document.getElementById('contactForm');
+  const formMessage = document.getElementById('formMessage');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/info@kmexporter.org', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: formData
+      });
+
+      if (response.ok) {
+        form.reset();
+        formMessage.textContent = '✅ Thank you! Your message has been sent.';
+        formMessage.style.color = 'green';
+      } else {
+        formMessage.textContent = '❌ Something went wrong. Please try again later.';
+        formMessage.style.color = 'red';
+      }
+    } catch (error) {
+      formMessage.textContent = '❌ Error sending message.';
+      formMessage.style.color = 'red';
+    }
+  });
 </script>
 
 </body>
