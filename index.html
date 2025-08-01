@@ -4,138 +4,161 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>K&M Exporter</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
-    html { scroll-behavior: smooth; }
-    #menu-toggle:checked ~ #mobile-menu { display: block; }
+    html {
+      scroll-behavior: smooth;
+    }
+    .bg-contact {
+      background-image: url('IMG_2583.jpeg');
+      background-size: cover;
+      background-position: center;
+    }
   </style>
 </head>
-<body class="bg-gray-100 text-gray-900">
+<body class="bg-[#F5F5F5] text-gray-800">
 
   <!-- Header -->
-  <header class="fixed w-full bg-[#0B1F36] text-white px-6 py-4 flex justify-between items-center z-50">
-    <div class="text-xl font-bold">K&M Exporter</div>
-    <input type="checkbox" id="menu-toggle" class="hidden peer">
-    <label for="menu-toggle" class="md:hidden cursor-pointer">
-      <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-    </label>
-    <nav id="mobile-menu" class="absolute right-6 top-16 bg-[#0B1F36] text-white rounded shadow-md hidden w-48 peer-checked:block md:peer-checked:hidden md:static md:flex md:w-auto md:space-x-6">
-      <a href="#home" class="block px-4 py-2 hover:bg-[#2F4C5A]" onclick="document.getElementById('menu-toggle').checked = false">Home</a>
-      <a href="#about" class="block px-4 py-2 hover:bg-[#2F4C5A]" onclick="document.getElementById('menu-toggle').checked = false">About Us</a>
-      <a href="#products" class="block px-4 py-2 hover:bg-[#2F4C5A]" onclick="document.getElementById('menu-toggle').checked = false">Our Products</a>
-      <a href="#export" class="block px-4 py-2 hover:bg-[#2F4C5A]" onclick="document.getElementById('menu-toggle').checked = false">Where We Export</a>
-      <a href="#partners" class="block px-4 py-2 hover:bg-[#2F4C5A]" onclick="document.getElementById('menu-toggle').checked = false">Our Partners</a>
-      <a href="#contact" class="block px-4 py-2 hover:bg-[#2F4C5A]" onclick="document.getElementById('menu-toggle').checked = false">Contact</a>
-    </nav>
+  <header class="bg-[#0B1F36] sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-white font-bold text-xl">K&M Exporter</h1>
+      <button id="menu-toggle" class="md:hidden text-white bg-[#335C67] p-2 rounded hover:bg-[#2F4C5A] transition">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+          <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <nav id="menu" class="hidden md:flex space-x-6 text-white font-semibold">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#products">Our Products</a>
+        <a href="#export">Where We Export</a>
+        <a href="#partners">Our Trusted Partners</a>
+        <a href="#contact">Contact Us</a>
+      </nav>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-[#0B1F36] px-4 pb-4 space-y-2 text-white font-semibold">
+      <a href="#home" onclick="toggleMenu()">Home</a>
+      <a href="#about" onclick="toggleMenu()">About Us</a>
+      <a href="#products" onclick="toggleMenu()">Our Products</a>
+      <a href="#export" onclick="toggleMenu()">Where We Export</a>
+      <a href="#partners" onclick="toggleMenu()">Our Trusted Partners</a>
+      <a href="#contact" onclick="toggleMenu()">Contact Us</a>
+    </div>
   </header>
 
-  <!-- Home -->
+  <!-- Home Section -->
   <section id="home" class="h-screen bg-cover bg-center flex items-center justify-center text-white text-center" style="background-image: url('IMG_2570.jpeg');">
-    <div class="bg-black bg-opacity-60 p-6 rounded-lg">
-      <h1 class="text-4xl font-bold mb-4">Welcome to K&M Exporter</h1>
-      <p class="text-lg">Exporting Egypt’s best – from sauces to fresh produce.</p>
-    </div>
+    <h2 class="text-4xl md:text-5xl font-bold bg-black bg-opacity-50 px-4 py-2 rounded">Welcome to K&M Exporter</h2>
   </section>
 
   <!-- About Us -->
-  <section id="about" class="py-20 bg-white px-6">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-bold text-[#0B1F36] mb-6">About Us</h2>
-      <p class="text-lg text-gray-700 leading-relaxed">
-        Based in the Industrial Zone of 6th October City, K&M Exporter is dedicated to delivering Egypt’s finest agricultural goods and food products to global markets. Our portfolio includes sauces, potatoes, onions, lemons, and more — all produced under strict quality standards.
-      </p>
-    </div>
+  <section id="about" class="py-16 px-6 md:px-20 bg-white">
+    <h2 class="text-3xl font-bold text-center mb-6">About Us</h2>
+    <p class="text-lg text-center max-w-4xl mx-auto">
+      K&M Exporter is a trusted name in Egypt’s industrial zone of 6th October City. We specialize in high-quality food products ranging from flavorful sauces to fresh agricultural produce. Our commitment to excellence ensures that each shipment meets international standards, making us a reliable partner for global markets.
+    </p>
   </section>
 
   <!-- Our Products -->
-  <section id="products" class="py-20 bg-gray-100 px-6">
-    <div class="max-w-5xl mx-auto text-center">
-      <h2 class="text-3xl font-bold text-[#0B1F36] mb-10">Our Products</h2>
-      <div class="grid gap-8 md:grid-cols-2">
-        <div class="bg-white p-6 rounded shadow">
-          <h3 class="text-xl font-bold text-[#0B1F36] mb-2">Sauces</h3>
-          <p class="text-gray-700">Ketchup, BBQ, Mayo, Mustard, Ranch, Burger Sauce</p>
-        </div>
-        <div class="bg-white p-6 rounded shadow">
-          <h3 class="text-xl font-bold text-[#0B1F36] mb-2">Potatoes</h3>
-          <p class="text-gray-700">Top-quality Egyptian potatoes for export</p>
-        </div>
-        <div class="bg-white p-6 rounded shadow">
-          <h3 class="text-xl font-bold text-[#0B1F36] mb-2">Onions</h3>
-          <p class="text-gray-700">Golden & red onions with international standards</p>
-        </div>
-        <div class="bg-white p-6 rounded shadow">
-          <h3 class="text-xl font-bold text-[#0B1F36] mb-2">Lemons</h3>
-          <p class="text-gray-700">Fresh citrus fruits for European and Gulf markets</p>
-        </div>
+  <section id="products" class="py-16 px-6 md:px-20 bg-[#F5F5F5]">
+    <h2 class="text-3xl font-bold text-center mb-12">Our Products</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Product 1 -->
+      <div class="bg-white rounded-lg shadow-md p-6 text-center">
+        <div class="text-4xl mb-2">🍅</div>
+        <h3 class="text-xl font-bold mb-2">Sauces</h3>
+        <p class="text-gray-600">Ketchup, BBQ, Mayonnaise, Mustard, Ranch & Burger Sauce</p>
       </div>
-      <a href="#contact" class="mt-10 inline-block bg-[#0B1F36] text-white py-2 px-6 rounded hover:bg-[#2F4C5A]">Inquire Now</a>
+      <!-- Product 2 -->
+      <div class="bg-white rounded-lg shadow-md p-6 text-center">
+        <div class="text-4xl mb-2">🥔</div>
+        <h3 class="text-xl font-bold mb-2">Fresh Potatoes</h3>
+        <p class="text-gray-600">High-quality potatoes carefully sorted and packed for export.</p>
+      </div>
+      <!-- Product 3 -->
+      <div class="bg-white rounded-lg shadow-md p-6 text-center">
+        <div class="text-4xl mb-2">🧅</div>
+        <h3 class="text-xl font-bold mb-2">Fresh Onions</h3>
+        <p class="text-gray-600">Premium onions grown in fertile Egyptian lands.</p>
+      </div>
+      <!-- Product 4 -->
+      <div class="bg-white rounded-lg shadow-md p-6 text-center">
+        <div class="text-4xl mb-2">🍋</div>
+        <h3 class="text-xl font-bold mb-2">Fresh Lemons</h3>
+        <p class="text-gray-600">Citrusy, juicy, and handpicked to maintain freshness.</p>
+      </div>
     </div>
   </section>
 
   <!-- Where We Export -->
-  <section id="export" class="py-20 bg-white px-6">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-bold text-[#0B1F36] mb-6">Where We Export</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-2xl">
-        <div>🇪🇺 Europe</div>
-        <div>🇸🇦 Gulf</div>
-        <div>🌍 Africa</div>
-        <div>🇸🇬 Asia</div>
+  <section id="export" class="py-16 px-6 md:px-20 bg-white">
+    <h2 class="text-3xl font-bold text-center mb-12">Where We Export</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+      <div>
+        <div class="text-5xl mb-2">🇪🇺</div>
+        <h4 class="text-lg font-semibold">Europe</h4>
+      </div>
+      <div>
+        <div class="text-5xl mb-2">🇦🇪</div>
+        <h4 class="text-lg font-semibold">Gulf</h4>
+      </div>
+      <div>
+        <div class="text-5xl mb-2">🇺🇸</div>
+        <h4 class="text-lg font-semibold">North America</h4>
+      </div>
+      <div>
+        <div class="text-5xl mb-2">🌍</div>
+        <h4 class="text-lg font-semibold">Africa</h4>
       </div>
     </div>
   </section>
 
   <!-- Our Trusted Partners -->
-  <section id="partners" class="py-20 bg-gray-100 px-6">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-bold text-[#0B1F36] mb-6">Our Trusted Partners</h2>
-      <img src="IMG_2963.jpeg" alt="Partners" class="mx-auto rounded shadow-lg max-w-full" />
-    </div>
+  <section id="partners" class="py-16 px-6 md:px-20 bg-[#F5F5F5] text-center">
+    <h2 class="text-3xl font-bold mb-8">Our Trusted Partners</h2>
+    <img src="IMG_2963.jpeg" alt="Our Partners" class="mx-auto rounded shadow-lg max-w-full h-auto" />
   </section>
 
   <!-- Contact Us -->
-  <section id="contact" class="text-white py-20 bg-cover bg-center" style="background-image: url('IMG_2583.jpeg');">
-  <div class="max-w-4xl mx-auto px-6 bg-black bg-opacity-60 rounded-lg py-10">
-    <h2 class="text-4xl font-bold mb-6 text-center">Contact Us</h2>
-    <p class="text-center text-lg mb-8">📧 info@kmexporter.org</p>
-    <p class="text-center text-lg mb-8">📍 Industrial Zone - 6th October City - Egypt</p>
-    <form action="https://formsubmit.co/info@kmexporter.org" method="POST" class="space-y-6">
-      <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-3 rounded text-black" />
-      <input type="email" name="email" placeholder="Your Email" required class="w-full px-4 py-3 rounded text-black" />
-      <textarea name="message" placeholder="Your Message" rows="5" required class="w-full px-4 py-3 rounded text-black"></textarea>
-      <button type="submit" class="bg-white text-blue-900 px-6 py-3 rounded font-semibold hover:bg-gray-200 transition">Send Message</button>
-    </form>
-  </div>
-</section>
+  <section id="contact" class="py-16 px-6 md:px-20 bg-contact text-white">
+    <div class="bg-black bg-opacity-60 p-8 rounded-lg max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-6">Contact Us</h2>
+      <form target="_blank" action="https://formsubmit.co/info@kmexporter.org" method="POST">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <input type="text" name="name" placeholder="Full Name" required class="p-3 rounded w-full text-black" />
+          <input type="email" name="email" placeholder="Email Address" required class="p-3 rounded w-full text-black" />
+        </div>
+        <textarea name="message" placeholder="Your Message" required rows="6" class="w-full p-3 rounded text-black mb-4"></textarea>
+        <button type="submit" class="w-full bg-[#335C67] hover:bg-[#2F4C5A] text-white py-3 rounded transition">Send Message</button>
+      </form>
+      <div class="mt-6 text-center text-sm">
+        📧 info@kmexporter.org<br/>
+        📍 Industrial Zone - 6th October City - Egypt
+      </div>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="bg-[#0B1F36] text-white text-center py-6">
     <div class="flex justify-center space-x-6 mb-2">
-      <a href="https://www.facebook.com/share/1B56rtHuyn/?mibextid=wwXIfr" target="_blank">Facebook</a>
-      <a href="https://www.instagram.com/km_exportes?igsh=MXYxcTUxaHBweG8xZw%3D%3D&utm_source=qr" target="_blank">Instagram</a>
+      <a href="https://www.facebook.com/share/1B56rtHuyn/?mibextid=wwXIfr" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" class="w-6 h-6 inline" />
+      </a>
+      <a href="https://www.instagram.com/km_exportes?igsh=MXYxcTUxaHBweG8xZw%3D%3D&utm_source=qr" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="w-6 h-6 inline" />
+      </a>
     </div>
-    <p class="text-sm">&copy; 2025 K&M Exporter. All rights reserved.</p>
+    <p>&copy; 2025 K&M Exporter. All rights reserved.</p>
   </footer>
 
-  <!-- JS for Ajax form -->
   <script>
-    document.getElementById('contact-form').addEventListener('submit', function (e) {
-      e.preventDefault();
-      const form = e.target;
-      const data = new FormData(form);
-      fetch(form.action, {
-        method: "POST",
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      }).then(response => {
-        if (response.ok) {
-          form.reset();
-          document.getElementById('form-message').classList.remove('hidden');
-        }
-      });
-    });
-  </script>
+    function toggleMenu() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenu.classList.toggle('hidden');
+    }
 
+    document.getElementById('menu-toggle').addEventListener('click', toggleMenu);
+  </script>
 </body>
 </html>
