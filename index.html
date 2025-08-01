@@ -4,140 +4,208 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>K&M Exporter</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
   <style>
-    html {
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #F5F5F5;
+      color: #0B1F36;
       scroll-behavior: smooth;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #0B1F36;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+    .menu-toggle {
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+    nav {
+      display: none;
+      flex-direction: column;
+      background-color: #0B1F36;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      border-radius: 5px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      display: block;
+    }
+    nav a:hover {
+      background-color: #335C67;
+    }
+    .show-nav {
+      display: flex;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .home {
+      background: url('IMG_2570.jpeg') no-repeat center center/cover;
+      height: 100vh;
+      color: white;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      color: #0B1F36;
+    }
+    .products, .export, .partners {
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      margin-bottom: 40px;
+    }
+    .products .item, .export .item {
+      margin: 10px 0;
+      font-size: 1.2rem;
+    }
+    .partners img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    input, textarea {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #335C67;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #0B1F36;
+      color: white;
+    }
+    .socials a {
+      margin: 0 10px;
+      display: inline-block;
+    }
+    .socials img {
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+    }
+    @media (min-width: 600px) {
+      nav {
+        position: static;
+        display: flex !important;
+        flex-direction: row;
+      }
+      .menu-toggle {
+        display: none;
+      }
     }
   </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body>
 
-  <!-- Header -->
-  <header class="fixed top-0 w-full bg-[#0B1F36] text-white shadow z-50">
-    <div class="container mx-auto flex items-center justify-between px-4 py-3">
-      <h1 class="text-xl font-bold">K&M Exporter</h1>
-      <nav class="relative">
-        <button id="menu-toggle" class="focus:outline-none">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-        </button>
-        <ul id="menu" class="hidden absolute right-0 mt-2 bg-white text-black rounded shadow-lg w-40">
-          <li><a href="#home" class="block px-4 py-2 hover:bg-gray-200">Home</a></li>
-          <li><a href="#products" class="block px-4 py-2 hover:bg-gray-200">Our Products</a></li>
-          <li><a href="#export" class="block px-4 py-2 hover:bg-gray-200">Where We Export</a></li>
-          <li><a href="#partners" class="block px-4 py-2 hover:bg-gray-200">Our Partners</a></li>
-          <li><a href="#contact" class="block px-4 py-2 hover:bg-gray-200">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<header>
+  <h1>K&M Exporter</h1>
+  <button class="menu-toggle" onclick="document.getElementById('navbar').classList.toggle('show-nav')">☰</button>
+  <nav id="navbar">
+    <a href="#home" onclick="closeNav()">Home</a>
+    <a href="#products" onclick="closeNav()">Our Products</a>
+    <a href="#export" onclick="closeNav()">Where We Export</a>
+    <a href="#partners" onclick="closeNav()">Our Partners</a>
+    <a href="#contact" onclick="closeNav()">Contact</a>
+  </nav>
+</header>
 
-  <!-- Home -->
-  <section id="home" class="h-screen bg-cover bg-center flex items-center justify-center" style="background-image: url('IMG_2570.jpeg');">
-    <h2 class="text-4xl md:text-5xl font-bold text-white bg-black bg-opacity-50 px-6 py-4 rounded">Welcome to K&M Exporter</h2>
-  </section>
+<section class="home" id="home">
+  <h2>Welcome to K&M Exporter</h2>
+  <p>Specializing in Sauces and Fresh Agricultural Products</p>
+</section>
 
-  <!-- Our Products -->
-  <section id="products" class="py-20 bg-white">
-    <div class="container mx-auto px-4">
-      <h3 class="text-3xl font-bold text-center mb-10 text-[#0B1F36]">Our Products</h3>
-      <div class="grid md:grid-cols-2 gap-8 text-center">
-        <div class="bg-[#F5F5F5] p-6 rounded shadow">
-          <div class="text-4xl mb-2">🍅</div>
-          <h4 class="text-xl font-bold">Sauces</h4>
-          <p>Ketchup, BBQ, Mayonnaise, Mustard, Ranch, Burger Sauce</p>
-        </div>
-        <div class="bg-[#F5F5F5] p-6 rounded shadow">
-          <div class="text-4xl mb-2">🥔</div>
-          <h4 class="text-xl font-bold">Fresh Potatoes</h4>
-        </div>
-        <div class="bg-[#F5F5F5] p-6 rounded shadow">
-          <div class="text-4xl mb-2">🧅</div>
-          <h4 class="text-xl font-bold">Fresh Onions</h4>
-        </div>
-        <div class="bg-[#F5F5F5] p-6 rounded shadow">
-          <div class="text-4xl mb-2">🍋</div>
-          <h4 class="text-xl font-bold">Fresh Lemons</h4>
-        </div>
-      </div>
-      <div class="mt-10 text-center">
-        <a href="#contact" class="bg-[#0B1F36] text-white px-6 py-3 rounded hover:bg-[#335C67]">Make an Inquiry</a>
-      </div>
-    </div>
-  </section>
+<section class="products" id="products">
+  <h2 class="section-title">Our Products</h2>
+  <div class="item">🍅 Sauces: Ketchup, BBQ, Mayonnaise, Mustard, Ranch, Burger Sauce</div>
+  <div class="item">🥔 Fresh Potatoes</div>
+  <div class="item">🧅 Fresh Onions</div>
+  <div class="item">🍋 Fresh Lemons</div>
+  <a href="#contact"><button>Inquire Now</button></a>
+</section>
 
-  <!-- Where We Export -->
-  <section id="export" class="py-20 bg-[#F5F5F5]">
-    <div class="container mx-auto px-4">
-      <h3 class="text-3xl font-bold text-center mb-10 text-[#0B1F36]">Where We Export</h3>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-3xl">
-        <div>🇪🇺<div class="text-base mt-2">Europe</div></div>
-        <div>🇬🇧<div class="text-base mt-2">UK</div></div>
-        <div>🇸🇦<div class="text-base mt-2">Gulf</div></div>
-        <div>🌍<div class="text-base mt-2">Africa</div></div>
-      </div>
-    </div>
-  </section>
+<section class="export" id="export">
+  <h2 class="section-title">Where We Export</h2>
+  <div class="item">🇪🇺 Europe</div>
+  <div class="item">🇺🇸 North America</div>
+  <div class="item">🇦🇪 Gulf Region</div>
+  <div class="item">🌍 Africa</div>
+</section>
 
-  <!-- Our Partners -->
-  <section id="partners" class="py-20 bg-white">
-    <div class="container mx-auto px-4 text-center">
-      <h3 class="text-3xl font-bold mb-10 text-[#0B1F36]">Our Trusted Partners</h3>
-      <img src="IMG_2963.jpeg" alt="Trusted Partners" class="mx-auto rounded shadow-lg w-full max-w-4xl">
-    </div>
-  </section>
+<section class="partners" id="partners">
+  <h2 class="section-title">Our Trusted Partners</h2>
+  <img src="IMG_2963.jpeg" alt="Our Partners"/>
+</section>
 
-  <!-- Contact -->
-  <section id="contact" class="py-20 bg-cover bg-center text-white" style="background-image: url('IMG_2583.jpeg');">
-    <div class="container mx-auto px-4 max-w-2xl bg-black bg-opacity-60 p-10 rounded">
-      <h3 class="text-3xl font-bold mb-6 text-center">Contact Us</h3>
-      <form name="contact" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="contact">
-        <div class="mb-4">
-          <label for="name" class="block mb-2">Name</label>
-          <input type="text" name="name" id="name" required class="w-full px-4 py-2 rounded text-black">
-        </div>
-        <div class="mb-4">
-          <label for="email" class="block mb-2">Email</label>
-          <input type="email" name="email" id="email" required class="w-full px-4 py-2 rounded text-black">
-        </div>
-        <div class="mb-4">
-          <label for="message" class="block mb-2">Message</label>
-          <textarea name="message" id="message" rows="4" required class="w-full px-4 py-2 rounded text-black"></textarea>
-        </div>
-        <button type="submit" class="bg-[#0B1F36] text-white px-6 py-2 rounded hover:bg-[#335C67]">Send Message</button>
-      </form>
-      <p class="mt-6 text-center text-sm">Industrial Zone - 6th October City - Egypt</p>
-    </div>
-  </section>
+<section class="contact" id="contact">
+  <h2 class="section-title">Contact Us</h2>
+  <form action="https://formsubmit.co/info@kmexporter.org" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+    <input type="hidden" name="_next" value="https://kmexporter.org/thanks.html" />
+    <input type="hidden" name="_captcha" value="false" />
+    <button type="submit">Send Message</button>
+  </form>
+  <p>📍 Industrial Zone - 6th October City - Egypt</p>
+</section>
 
-  <!-- Footer -->
-  <footer class="bg-[#0B1F36] text-white text-center py-6">
-    <div class="flex justify-center space-x-6 mb-2">
-      <a href="https://www.facebook.com/share/1B56rtHuyn/?mibextid=wwXIfr" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" class="w-6 h-6 inline">
-      </a>
-      <a href="https://www.instagram.com/km_exportes?igsh=MXYxcTUxaHBweG8xZw%3D%3D&utm_source=qr" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="w-6 h-6 inline">
-      </a>
-    </div>
-    <p>&copy; 2025 K&M Exporter. All rights reserved.</p>
-  </footer>
+<footer>
+  <div class="socials">
+    <a href="https://www.facebook.com/share/1B56rtHuyn/?mibextid=wwXIfr" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Facebook-icon-1.png" alt="Facebook">
+    </a>
+    <a href="https://www.instagram.com/km_exportes?igsh=MXYxcTUxaHBweG8xZw%3D%3D&utm_source=qr" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+    </a>
+  </div>
+  <p>&copy; 2025 K&M Exporter. All rights reserved.</p>
+</footer>
 
-  <script>
-    document.getElementById('menu-toggle').addEventListener('click', () => {
-      const menu = document.getElementById('menu');
-      menu.classList.toggle('hidden');
-    });
-    document.querySelectorAll('#menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        document.getElementById('menu').classList.add('hidden');
-      });
-    });
-  </script>
+<script>
+  function closeNav() {
+    document.getElementById('navbar').classList.remove('show-nav');
+  }
+</script>
 
 </body>
 </html>
