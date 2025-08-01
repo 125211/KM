@@ -25,6 +25,11 @@
         .partner-logo:hover {
             filter: grayscale(0);
         }
+        .contact-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('IMG_2583.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
     </style>
 </head>
 <body class="font-sans bg-gray-50">
@@ -371,7 +376,7 @@
     </section>
 
     <!-- Contact Us Section -->
-    <section id="contact" class="py-20 bg-white">
+    <section id="contact" class="py-20 contact-bg text-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Contact Us</h2>
@@ -381,7 +386,7 @@
             
             <div class="flex flex-col lg:flex-row gap-12">
                 <div class="lg:w-1/2">
-                    <form id="contactForm" class="space-y-6">
+                    <form id="contactForm" class="space-y-6 text-white">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
