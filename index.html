@@ -7,9 +7,8 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #F5F5F5;
       margin: 0;
-      padding: 0;
+      background-color: #F5F5F5;
     }
 
     header {
@@ -28,7 +27,7 @@
       background: none;
       border: none;
       color: white;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       cursor: pointer;
     }
 
@@ -37,14 +36,15 @@
       flex-direction: column;
       background-color: #0B1F36;
       position: absolute;
-      right: 0;
       top: 60px;
+      right: 0;
     }
 
     .menu a {
       padding: 1rem;
       color: white;
       text-decoration: none;
+      display: block;
     }
 
     .menu a:hover {
@@ -74,7 +74,7 @@
     }
 
     form {
-      background-color: rgba(11, 31, 54, 0.8);
+      background-color: rgba(11, 31, 54, 0.9);
       padding: 20px;
       border-radius: 8px;
       max-width: 500px;
@@ -146,7 +146,7 @@
 
   <section id="contact" class="section">
     <h2>Contact Us</h2>
-    <form id="contact-form" method="POST" action="sendmail.php">
+    <form id="contact-form" method="POST">
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
       <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
@@ -158,10 +158,10 @@
   <footer>
     <div class="socials">
       <a href="https://www.facebook.com/share/1B56rtHuyn/?mibextid=wwXIfr" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook Logo">
+        <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook">
       </a>
       <a href="https://www.instagram.com/km_exportes?igsh=MXYxcTUxaHBweG8xZw%3D%3D&utm_source=qr" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram Logo">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
       </a>
     </div>
     <p>&copy; 2025 K&M Exporter. All rights reserved. Industrial Zone - 6th October City - Egypt</p>
@@ -179,45 +179,24 @@
 
     document.getElementById("contact-form").addEventListener("submit", function (e) {
       e.preventDefault();
-      const form = e.target;
-      const formData = new FormData(form);
-      fetch("sendmail.php", {
-        method: "POST",
+      const formData = new FormData(this);
+      fetch('sendmail.php', {
+        method: 'POST',
         body: formData
       })
-      .then(res => {
-        if (res.ok) {
+      .then(response => {
+        if (response.ok) {
           document.getElementById("thanksMessage").style.display = "block";
-          form.reset();
+          this.reset();
         } else {
           alert("Failed to send message.");
         }
       })
-      .catch(() => alert("Error sending message."));
+      .catch(error => {
+        console.error("Error:", error);
+        alert("Error sending message.");
+      });
     });
   </script>
 </body>
 </html>
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $to = "info@kmexporter.org";
-    $subject = "New Message from K&M Exporter Website";
-    $name = strip_tags(trim($_POST["name"]));
-    $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
-    $message = trim($_POST["message"]);
-
-    $email_content = "Name: $name\n";
-    $email_content .= "Email: $email\n\n";
-    $email_content .= "Message:\n$message\n";
-
-    $headers = "From: $name <$email>";
-
-    if (mail($to, $subject, $email_content, $headers)) {
-        http_response_code(200);
-    } else {
-        http_response_code(500);
-    }
-} else {
-    http_response_code(403);
-}
-?>
